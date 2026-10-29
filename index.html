@@ -74,6 +74,7 @@
             <p><strong>Verified and ready.</strong> Your original file is unchanged.</p>
             <a class="download-button" id="download-file" download="BITBOXMK2.bin">Download BITBOXMK2.bin <span aria-hidden="true">↓</span></a>
             <p class="download-note">The downloaded file identifies itself as <strong>2.3.4+c</strong> in Tools. This page creates a file; it does not flash your module.</p>
+            <p class="download-note">On your SD card, the patched file must be named exactly <code>BITBOXMK2.bin</code>. Remove any duplicate-download suffix such as <code>(1)</code> before copying it. <a href="#installation">See installation steps below.</a></p>
           </div>
 
           <noscript><p class="noscript-message">JavaScript is required to verify and patch the firmware locally. No file is uploaded.</p></noscript>
@@ -96,6 +97,8 @@
               <li><strong>Pitch-preserving Speed</strong><span>50–200% Sample speed with LFO/CV modulation. Multiple Pitch voices or one exclusive Speed voice.</span></li>
               <li><strong>Double-tap dial defaults</strong><span>Reset a base value while keeping its modulation.</span></li>
             </ul>
+            <a class="reference-download" href="bitbox-mkii-2.3.4c-reference.pdf" download="bitbox-mkii-2.3.4c-reference.pdf">Download the reference guide <span aria-hidden="true">↓</span></a>
+            <p class="reference-meta">4-page PDF · Feature locations, settings and installation</p>
           </section>
           <section class="support-note" aria-labelledby="support-title">
             <h2 id="support-title">Enjoying the extra control?</h2>
@@ -112,6 +115,21 @@
           </section>
         </aside>
       </div>
+
+      <section class="installation-note" id="installation" aria-labelledby="installation-title">
+        <div>
+          <p class="eyebrow">AFTER DOWNLOADING</p>
+          <h2 id="installation-title">Install on your Bitbox MkII</h2>
+          <p>See your <a href="https://1010music.com/wp-content/uploads/2023/03/bitbox-mk2-2.0-user-manual-2023-03-01-clean.pdf" target="_blank" rel="noopener noreferrer">Bitbox MkII manual</a> for the full flashing procedure. Back up your card before updating.</p>
+          <p class="filename-note"><strong>The exact name matters.</strong> The patched file on the SD card must be named <code>BITBOXMK2.bin</code>. If your Downloads folder already contains that name, your browser may add <code>(1)</code>, <code>1</code> or another suffix. Rename the patched download before copying it.</p>
+        </div>
+        <ol class="install-steps">
+          <li><strong>Copy the patched file.</strong> Place <code>BITBOXMK2.bin</code> in the SD card’s root directory, outside any folder.</li>
+          <li><strong>Insert the card with the unit powered off.</strong> Hold <strong>INFO</strong> while powering on, then release INFO when the upgrade message appears.</li>
+          <li><strong>Wait for the automatic reboot.</strong> Allow about 30 seconds and leave power on until the update finishes.</li>
+          <li><strong>Confirm 2.3.4+c.</strong> Press <strong>HOME</strong> until the Menu screen appears. The version is in its lower-right corner, and also at the top-right of Tools.</li>
+        </ol>
+      </section>
 
       <section class="use-note" aria-labelledby="use-title">
         <h2 id="use-title">A note from the author</h2>

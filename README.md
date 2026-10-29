@@ -11,7 +11,18 @@ not the complete original or customized firmware.
 1. Back up your entire microSD card, including projects, samples and presets.
 2. Download official Bitbox MkII 2.3.4 using the link on the patcher and extract it.
 3. Select the extracted firmware in the patcher and apply the patch.
-4. Download the verified result as **BITBOXMK2.bin**.
+4. Download the verified result as **BITBOXMK2.bin**. Remove any duplicate-download
+   suffix such as `(1)` or `1`: the file on the SD card must have that exact name.
+
+[Download the four-page feature and installation reference](bitbox-mkii-2.3.4c-reference.pdf).
+It includes feature locations, renamed tabs, settings, modulation and Pitch/Speed
+sharing. The patcher page links it below the four feature summaries.
+
+For flashing, see the [official MkII manual](https://1010music.com/wp-content/uploads/2023/03/bitbox-mk2-2.0-user-manual-2023-03-01-clean.pdf).
+Copy the patched file to the card root. Power off, insert the card, hold INFO
+while powering on, and release INFO when the upgrade message appears. Allow
+about 30 seconds and wait for the automatic reboot. Confirm **2.3.4+c** at the
+lower-right of Menu (press HOME until it appears), or the top-right of Tools.
 
 The patcher verifies the entire original file with SHA-256 before applying any
 changes, then verifies the entire output before offering a download. It creates

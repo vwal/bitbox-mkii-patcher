@@ -105,6 +105,20 @@ h2 { font-size: 19px; line-height: 1.35; letter-spacing: -.5px; font-weight: 650
 .feature-summary li { margin-bottom: 17px; padding-left: 13px; border-left: 2px solid #d7dfd2; }
 .feature-summary strong { display: block; font-size: 11px; font-weight: 650; }
 .feature-summary li span { display: block; font-size: 11px; line-height: 1.65; color: var(--muted); margin-top: 3px; }
+.reference-download { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 22px; padding: 11px 13px; border: 1px solid #b9c7bb; border-radius: 5px; color: var(--green); font-size: 11px; font-weight: 650; text-decoration: none; }
+.reference-download:hover { background: var(--green-light); }
+.reference-download span { font-size: 17px; }
+.reference-meta { margin: 7px 0 0; color: var(--muted); font-size: 10px; line-height: 1.6; }
+.installation-note { display: grid; grid-template-columns: 1fr 1.15fr; gap: 36px; margin-top: 32px; padding: 27px 28px; background: var(--green-light); border-radius: 8px; scroll-margin-top: 20px; }
+.installation-note .eyebrow { margin-bottom: 10px; font-size: 9px; }
+.installation-note p:not(.eyebrow) { margin: 12px 0 0; color: var(--muted); font-size: 12px; line-height: 1.75; }
+.installation-note .filename-note { padding-top: 12px; border-top: 1px solid #ced8ca; }
+.filename-note strong { color: var(--ink); }
+.installation-note code { white-space: nowrap; }
+.install-steps { margin: 0; padding-left: 20px; color: var(--muted); font-size: 12px; line-height: 1.75; }
+.install-steps li { padding-left: 5px; margin-bottom: 12px; }
+.install-steps li:last-child { margin-bottom: 0; }
+.install-steps strong { color: var(--ink); font-weight: 650; }
 .support-note { margin-top: 27px; padding-top: 23px; border-top: 1px solid var(--line); }
 .support-note h2 { font-size: 17px; line-height: 1.35; }
 .support-note p { font-size: 12px; line-height: 1.75; color: var(--muted); margin: 10px 0 15px; }
@@ -164,6 +178,7 @@ details[open] summary > span { transform: rotate(45deg); }
   .feature-summary h2 br { display: none; }
   .feature-summary ul { display: grid; grid-template-columns: 1fr 1fr; gap: 17px; }
   .feature-summary li { margin: 0; }
+  .installation-note { grid-template-columns: 1fr; gap: 22px; padding: 23px 22px; }
   .site-footer { flex-direction: column; gap: 5px; font-size: 9px; }
 }
 @media (max-width: 380px) {
