@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Apply the bitbox mkII 2.3.4+c customization locally in your browser. Firmware files are never uploaded.">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>bitbox mkII · Local firmware patcher</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="patch-data.js"></script>
+  <script defer src="engine.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#patcher">Skip to patcher</a>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="bitbox mkII patcher home">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span>bitbox mkII <span class="brand-subtitle">/ custom firmware</span></span>
+      </a>
+      <span class="local-badge"><span aria-hidden="true"></span>Browser-local</span>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">UNOFFICIAL COMMUNITY PATCH · MKII ONLY</p>
+        <h1 id="page-title">Custom firmware.<br>Patched in your browser.</h1>
+        <p class="intro-copy">Start with official 2.3.4. Add waveform zoom, a screen saver and more—your firmware stays on your computer.</p>
+        <div class="version-path" aria-label="Official version 2.3.4 becomes customized version 2.3.4 plus c">
+          <span><small>OFFICIAL</small><strong>2.3.4</strong></span>
+          <span class="version-arrow" aria-hidden="true">→</span>
+          <span><small>CUSTOMIZED</small><strong>2.3.4+c</strong></span>
+        </div>
+      </section>
+
+      <div class="workspace">
+        <section class="patch-card" id="patcher" aria-labelledby="patch-title">
+          <div class="card-heading">
+            <span class="section-number" aria-hidden="true">01—03</span>
+            <h2 id="patch-title">Make your patched firmware</h2>
+          </div>
+          <p class="card-copy">Download <a href="https://1010music.com/wp-content/uploads/2024/05/BITBOXMK2234.zip" target="_blank" rel="noopener noreferrer">official bitbox mkII 2.3.4</a>, extract the archive, then choose its <code>BITBOXMK2.bin</code> file below.</p>
+          <p class="backup-reminder"><strong>Before reflashing:</strong> back up your entire microSD card—including projects, samples and presets—to another drive.</p>
+
+          <div class="file-zone" id="file-zone">
+            <span class="file-symbol" aria-hidden="true">↓</span>
+            <label class="file-picker" for="firmware-file">
+              <span class="choose-button">Choose firmware file</span>
+              <input class="visually-hidden" id="firmware-file" type="file" accept=".bin,application/octet-stream" aria-describedby="file-help">
+            </label>
+            <p id="file-help">or drop the extracted <code>.bin</code> here</p>
+            <p class="file-requirement">Official 2.3.4 · 674,896 bytes</p>
+          </div>
+
+          <div class="selected-file" id="selected-file" hidden>
+            <span class="selected-icon" aria-hidden="true">BIN</span>
+            <span class="selected-description"><strong id="selected-name"></strong><small id="selected-size"></small></span>
+            <button class="text-button" id="clear-file" type="button">Clear</button>
+          </div>
+
+          <div class="status-message" id="status-message" role="status" aria-live="polite" aria-atomic="true">Choose a file to begin. Its contents, not its filename, determine whether it is compatible.</div>
+
+          <ol class="progress-list" id="progress-list" aria-label="Patch verification progress">
+            <li id="stage-input" data-state="pending"><span class="step-marker" aria-hidden="true">1</span><span><strong>Verify original</strong><small>Match the official 2.3.4 SHA-256</small></span><span class="step-state">Waiting</span></li>
+            <li id="stage-patch" data-state="pending"><span class="step-marker" aria-hidden="true">2</span><span><strong>Apply customizations</strong><small>Build a separate file in browser memory</small></span><span class="step-state">Waiting</span></li>
+            <li id="stage-output" data-state="pending"><span class="step-marker" aria-hidden="true">3</span><span><strong>Verify result</strong><small>Match the exact 2.3.4+c SHA-256</small></span><span class="step-state">Waiting</span></li>
+          </ol>
+
+          <button class="primary-button" id="apply-patch" type="button" disabled>Apply patch <span aria-hidden="true">→</span></button>
+          <div class="download-result" id="download-result" hidden>
+            <p><strong>Verified and ready.</strong> Your original file is unchanged.</p>
+            <a class="download-button" id="download-file" download="BITBOXMK2.bin">Download BITBOXMK2.bin <span aria-hidden="true">↓</span></a>
+            <p class="download-note">The downloaded file identifies itself as <strong>2.3.4+c</strong> in Tools. This page creates a file; it does not flash your module.</p>
+          </div>
+
+          <noscript><p class="noscript-message">JavaScript is required to verify and patch the firmware locally. No file is uploaded.</p></noscript>
+        </section>
+
+        <aside class="sidebar" aria-label="About this patch">
+          <section class="privacy-note" aria-labelledby="privacy-title">
+            <span class="privacy-icon" aria-hidden="true">↳</span>
+            <h2 id="privacy-title">Your file stays here.</h2>
+            <p>Reading, hashing and patching happen in your browser. No firmware uploads, accounts or analytics.</p>
+            <p class="small-copy">Once this page has loaded, applying the patch does not need a network connection.</p>
+          </section>
+
+          <section class="feature-summary" aria-labelledby="features-title">
+            <p class="eyebrow">IN THIS CUSTOMIZATION</p>
+            <h2 id="features-title">Small changes.<br>More control.</h2>
+            <ul>
+              <li><strong>Waveform amplitude zoom</strong><span>Vertical pinch from 25–3200%, with a two-finger reset.</span></li>
+              <li><strong>Screen saver & signal wake</strong><span>Optional blanking, with MIDI and CV-trigger wake choices. Disabled by default.</span></li>
+              <li><strong>Pitch-preserving Speed</strong><span>50–200% Sample speed with LFO/CV modulation. Multiple Pitch voices or one exclusive Speed voice.</span></li>
+              <li><strong>Double-tap dial defaults</strong><span>Reset a base value while keeping its modulation.</span></li>
+            </ul>
+          </section>
+          <section class="support-note" aria-labelledby="support-title">
+            <h2 id="support-title">Enjoying the extra control?</h2>
+            <p>This modification is offered free of charge, but if you find it useful, a tip would make my day!</p>
+            <a class="coffee-button" href="https://www.buymeacoffee.com/vwal" target="_blank" rel="noopener noreferrer" aria-label="Buy me a coffee — support vwal (opens in a new tab)">
+              <svg class="coffee-cup" viewBox="0 0 36 44" aria-hidden="true" focusable="false">
+                <path d="M7 12h22l-3 27H10z" fill="#ffffff" stroke="#000000" stroke-width="2.4" stroke-linejoin="round"/>
+                <path d="M8 7h20l2 5H6z" fill="#ffffff" stroke="#000000" stroke-width="2.4" stroke-linejoin="round"/>
+                <path d="M12 3h12l3 4H9z" fill="#000000"/>
+                <path d="M9 21h18l-1 10H10z" fill="#FFDD00" stroke="#000000" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+              <span>Buy me a coffee</span>
+            </a>
+          </section>
+        </aside>
+      </div>
+
+      <section class="use-note" aria-labelledby="use-title">
+        <h2 id="use-title">A note from the author</h2>
+        <p>I’ve tested this modification thoroughly, and it works as intended on my own Bitbox MkII. I’m sharing it “as is,” without any warranty. You install and use it at your own risk. To the extent permitted by applicable law, I accept no liability for any damage to your hardware, or for loss or corruption of projects, samples, presets or other data, arising from its installation or use.</p>
+      </section>
+
+      <section class="technical-details" aria-label="Checksums and compatibility">
+        <details>
+          <summary>Checksums & compatibility <span aria-hidden="true">+</span></summary>
+          <div class="details-content">
+            <p>Only the exact official <strong>bitbox mkII 2.3.4</strong> image is accepted. Other versions, models, ZIP archives and already patched files are rejected. Both hashes must match before a download is offered.</p>
+            <dl class="hash-list">
+              <div><dt>Original · 2.3.4 · SHA-256</dt><dd id="source-hash">35ab7995ad0eca8484f3b28bc76389f10b2037dbb21a4a394e950d9329073e86</dd></div>
+              <div><dt>Patched · 2.3.4+c · SHA-256</dt><dd id="target-hash">5fce58174b7b76884c0dc9b0dc5eed51975193fb3aa3fe9ed310bd8ce4f1273b</dd></div>
+            </dl>
+            <p class="small-copy">The patcher uses your browser’s SHA-256 implementation. Use an HTTPS address or a local preview server if your browser cannot verify files from a downloaded page.</p>
+          </div>
+        </details>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Independent customization. Not an official 1010music release.</p>
+      <p>For bitbox mkII · 2.3.4 → 2.3.4+c</p>
+    </footer>
+  </div>
+</body>
+</html>

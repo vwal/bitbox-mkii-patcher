@@ -1,0 +1,12 @@
+# Publish only this reviewed static website. Firmware and working files stay local.
+*
+!/.gitignore
+!/.nojekyll
+!/README.md
+!/SHA256SUMS
+!/app.js
+!/engine.js
+!/favicon.svg
+!/index.html
+!/patch-data.js
+!/styles.css
