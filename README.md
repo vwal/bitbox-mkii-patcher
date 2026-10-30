@@ -16,7 +16,8 @@ not the complete original or customized firmware.
 
 [Download the four-page feature and installation reference](bitbox-mkii-2.3.4c-reference.pdf).
 It includes feature locations, renamed tabs, settings, modulation and Pitch/Speed
-sharing. The patcher page links it below the four feature summaries.
+sharing, installation and returning to official firmware. The patcher page links
+it below the four feature summaries.
 
 For flashing, see the [official MkII manual](https://1010music.com/wp-content/uploads/2023/03/bitbox-mk2-2.0-user-manual-2023-03-01-clean.pdf).
 Copy the patched file to the card root. Power off, insert the card, hold INFO
@@ -27,6 +28,15 @@ lower-right of Menu (press HOME until it appears), or the top-right of Tools.
 The patcher verifies the entire original file with SHA-256 before applying any
 changes, then verifies the entire output before offering a download. It creates
 a file; it does not flash your module.
+
+## Return to official firmware
+
+Back up your card, then replace the patched file in its root directory with the
+original, unmodified **BITBOXMK2.bin** from the official 2.3.4 archive. The
+filename must match exactly. With the unit powered off, insert the card, hold
+**INFO** while powering on, and release INFO when the upgrade message appears.
+Allow about 30 seconds and leave power on until the automatic reboot. Confirm
+**2.3.4** in the lower-right corner of the Menu screen.
 
 ## Added features
 
