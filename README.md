@@ -6,6 +6,9 @@ An unofficial customization of 1010music Bitbox MkII firmware **2.3.4** to
 **2.3.4+c**. This repository contains only the static website and a binary delta,
 not the complete original or customized firmware.
 
+[Watch the video overview](https://youtu.be/OjgC4UoyOIA). The page also includes
+an optional player that loads only when requested.
+
 ## Use
 
 1. Back up your entire microSD card, including projects, samples and presets.
@@ -49,10 +52,17 @@ Allow about 30 seconds and leave power on until the automatic reboot. Confirm
 ## Privacy
 
 Firmware is processed entirely in your browser. No file, filename, hash or patch
-result is uploaded. There are no analytics, cookies, third-party scripts or
-remote fonts. The page's Content Security Policy disables network connections
-and form submission. The host receives ordinary requests for website files;
-following the download or optional support link visits that external site.
+result is uploaded. The patcher itself has no analytics, cookies, third-party
+scripts or remote fonts. The page's Content Security Policy disables scripted
+network connections and form submission, with a specific frame allowance for
+the optional YouTube player. The host receives ordinary requests for website
+files; following the download or optional support link visits that external site.
+
+The overview player contacts YouTube only after **Load video player** is pressed.
+It uses the youtube-nocookie.com privacy-enhanced host and sends the site origin
+as its referrer. YouTube's data practices apply when loaded. The cross-origin
+player receives no firmware data, and patching does not require the video.
+The direct Watch on YouTube link is always available.
 
 ## Exact firmware hashes
 

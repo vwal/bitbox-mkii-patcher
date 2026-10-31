@@ -37,6 +37,7 @@ code { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size
 .eyebrow { margin: 0 0 17px; font-size: 10px; font-weight: 700; letter-spacing: 1.6px; color: var(--orange); }
 h1 { font-size: clamp(34px, 4.9vw, 54px); line-height: 1.07; letter-spacing: -2.5px; font-weight: 640; margin: 0 0 20px; }
 .intro-copy { max-width: 530px; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.65; }
+.intro-video-link { display: inline-flex; gap: 8px; align-items: center; margin-top: 17px; font-size: 12px; font-weight: 600; }
 .version-path { position: absolute; right: 0; bottom: 57px; display: flex; align-items: center; gap: 20px; padding-left: 26px; border-left: 1px solid var(--line); }
 .version-path > span:not(.version-arrow) { display: flex; flex-direction: column; gap: 6px; }
 .version-path small { font-size: 8px; letter-spacing: 1.2px; font-weight: 700; color: var(--muted); }
@@ -109,6 +110,20 @@ h2 { font-size: 19px; line-height: 1.35; letter-spacing: -.5px; font-weight: 650
 .reference-download:hover { background: var(--green-light); }
 .reference-download span { font-size: 17px; }
 .reference-meta { margin: 7px 0 0; color: var(--muted); font-size: 10px; line-height: 1.6; }
+.video-overview { display: grid; grid-template-columns: 1fr 1.4fr; align-items: center; gap: 32px; margin-top: 32px; padding: 28px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); scroll-margin-top: 20px; }
+.video-copy .eyebrow { margin-bottom: 10px; font-size: 9px; }
+.video-copy h2 { font-size: 24px; letter-spacing: -.8px; }
+.video-copy p:not(.eyebrow) { margin: 12px 0 17px; color: var(--muted); font-size: 12px; line-height: 1.75; }
+.video-external-link { font-size: 12px; font-weight: 600; }
+.video-copy .video-privacy { margin-bottom: 0; font-size: 10px; }
+.video-player { min-width: 0; aspect-ratio: 16 / 9; border-radius: 6px; overflow: hidden; background: var(--green); }
+.video-placeholder { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 18px; color: var(--card); text-align: center; }
+.video-play-symbol { font-size: 27px; line-height: 1; color: #cbdac5; }
+.video-placeholder-title { font: 12px ui-monospace, SFMono-Regular, Consolas, monospace; }
+.video-load-button { padding: 9px 15px; border: 1px solid #b9c7bb; border-radius: 5px; background: var(--card); color: var(--green); font-size: 12px; font-weight: 600; }
+.video-load-button:hover { background: var(--green-light); }
+.video-placeholder noscript p { margin: 0; font-size: 11px; }
+.video-player iframe { display: block; width: 100%; height: 100%; border: 0; }
 .installation-note { display: grid; grid-template-columns: 1fr 1.15fr; gap: 36px; margin-top: 32px; padding: 27px 28px; background: var(--green-light); border-radius: 8px; scroll-margin-top: 20px; }
 .installation-note .eyebrow { margin-bottom: 10px; font-size: 9px; }
 .installation-note p:not(.eyebrow) { margin: 12px 0 0; color: var(--muted); font-size: 12px; line-height: 1.75; }
@@ -179,6 +194,7 @@ details[open] summary > span { transform: rotate(45deg); }
   .feature-summary ul { display: grid; grid-template-columns: 1fr 1fr; gap: 17px; }
   .feature-summary li { margin: 0; }
   .installation-note { grid-template-columns: 1fr; gap: 22px; padding: 23px 22px; }
+  .video-overview { grid-template-columns: 1fr; gap: 22px; padding: 23px 22px; }
   .site-footer { flex-direction: column; gap: 5px; font-size: 9px; }
 }
 @media (max-width: 380px) {

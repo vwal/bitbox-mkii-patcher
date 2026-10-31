@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Apply the bitbox mkII 2.3.4+c customization locally in your browser. Firmware files are never uploaded.">
   <meta name="referrer" content="no-referrer">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; frame-src https://www.youtube-nocookie.com; object-src 'none'; base-uri 'none'; form-action 'none'">
   <title>bitbox mkII · Local firmware patcher</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="styles.css">
   <script defer src="patch-data.js"></script>
   <script defer src="engine.js"></script>
   <script defer src="app.js"></script>
+  <script defer src="video.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#patcher">Skip to patcher</a>
@@ -29,6 +30,7 @@
         <p class="eyebrow">UNOFFICIAL COMMUNITY PATCH · MKII ONLY</p>
         <h1 id="page-title">Custom firmware.<br>Patched in your browser.</h1>
         <p class="intro-copy">Start with official 2.3.4. Add waveform zoom, a screen saver and more—your firmware stays on your computer.</p>
+        <a class="intro-video-link" href="#video-overview">Watch the video overview <span aria-hidden="true">↓</span></a>
         <div class="version-path" aria-label="Official version 2.3.4 becomes customized version 2.3.4 plus c">
           <span><small>OFFICIAL</small><strong>2.3.4</strong></span>
           <span class="version-arrow" aria-hidden="true">→</span>
@@ -84,7 +86,7 @@
           <section class="privacy-note" aria-labelledby="privacy-title">
             <span class="privacy-icon" aria-hidden="true">↳</span>
             <h2 id="privacy-title">Your file stays here.</h2>
-            <p>Reading, hashing and patching happen in your browser. No firmware uploads, accounts or analytics.</p>
+            <p>Reading, hashing and patching happen in your browser. No firmware uploads or account needed.</p>
             <p class="small-copy">Once this page has loaded, applying the patch does not need a network connection.</p>
           </section>
 
@@ -115,6 +117,24 @@
           </section>
         </aside>
       </div>
+
+      <section class="video-overview" id="video-overview" aria-labelledby="video-title">
+        <div class="video-copy">
+          <p class="eyebrow">VIDEO OVERVIEW</p>
+          <h2 id="video-title">See the patch in action.</h2>
+          <p>A hands-on overview of the firmware changes, demonstrated on the Bitbox MkII.</p>
+          <a class="video-external-link" href="https://youtu.be/OjgC4UoyOIA" target="_blank" rel="noopener noreferrer">Watch on YouTube <span aria-hidden="true">↗</span></a>
+          <p class="video-privacy" id="video-privacy">The player connects to YouTube only when you load it. Your firmware stays in the patcher.</p>
+        </div>
+        <div class="video-player" id="video-player">
+          <div class="video-placeholder" id="video-placeholder">
+            <span class="video-play-symbol" aria-hidden="true">▶</span>
+            <span class="video-placeholder-title">Bitbox MkII · 2.3.4+c</span>
+            <button class="video-load-button" id="load-video" type="button" aria-describedby="video-privacy" hidden>Load video player</button>
+            <noscript><p>Use the Watch on YouTube link to view the overview.</p></noscript>
+          </div>
+        </div>
+      </section>
 
       <section class="installation-note" id="installation" aria-labelledby="installation-title">
         <div>
