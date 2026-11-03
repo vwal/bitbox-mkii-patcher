@@ -3,11 +3,11 @@
 [Open the patcher](https://vwal.github.io/bitbox-mkii-patcher/)
 
 An unofficial customization of 1010music Bitbox MkII firmware **2.3.4** to
-**2.3.4+c**. This repository contains only the static website and a binary delta,
+**2.3.4+c2**. This repository contains only the static website and a binary delta,
 not the complete original or customized firmware.
 
-[Watch the video overview](https://youtu.be/OjgC4UoyOIA). The page also includes
-an optional player that loads only when requested.
+[Watch the first release (+c) video overview](https://youtu.be/OjgC4UoyOIA). The page also includes
+an optional player that loads only when requested. A video covering +c2 is coming soon.
 
 ## Use
 
@@ -17,15 +17,15 @@ an optional player that loads only when requested.
 4. Download the verified result as **BITBOXMK2.bin**. Remove any duplicate-download
    suffix such as `(1)` or `1`: the file on the SD card must have that exact name.
 
-[Download the four-page feature and installation reference](bitbox-mkii-2.3.4c-reference.pdf).
-It includes feature locations, renamed tabs, settings, modulation and Pitch/Speed
-sharing, installation and returning to official firmware. The patcher page links
-it below the four feature summaries.
+| Printable PDF | US Letter | A4 |
+| --- | --- | --- |
+| Eight-page firmware guide | [Download](bitbox-mkii-2.3.4c2-reference.pdf) | [Download](bitbox-mkii-2.3.4c2-reference-a4.pdf) |
+| One-page navigation card | [Download](bitbox-mkii-2.3.4c2-quick-card.pdf) | [Download](bitbox-mkii-2.3.4c2-quick-card-a4.pdf) |
 
 For flashing, see the [official MkII manual](https://1010music.com/wp-content/uploads/2023/03/bitbox-mk2-2.0-user-manual-2023-03-01-clean.pdf).
 Copy the patched file to the card root. Power off, insert the card, hold INFO
 while powering on, and release INFO when the upgrade message appears. Allow
-about 30 seconds and wait for the automatic reboot. Confirm **2.3.4+c** at the
+about 30 seconds and wait for the automatic reboot. Confirm **2.3.4+c2** at the
 lower-right of Menu (press HOME until it appears), or the top-right of Tools.
 
 The patcher verifies the entire original file with SHA-256 before applying any
@@ -41,13 +41,22 @@ filename must match exactly. With the unit powered off, insert the card, hold
 Allow about 30 seconds and leave power on until the automatic reboot. Confirm
 **2.3.4** in the lower-right corner of the Menu screen.
 
-## Added features
+## Second custom release (+c2)
 
-- Vertical waveform zoom from 25–3200%, with a two-finger reset.
-- Optional screen saver and MIDI/CV-trigger wake; disabled by default.
-- Pitch-preserving Sample Speed from 50–200%, with LFO/CV modulation.
-  Multiple native Pitch voices or one exclusive Speed voice can run at a time.
-- Double-tap dial defaults that keep modulation settings.
+- **Tone on Sample, Clip, Slice and Granular pads.** Fidelity adds five sampler-inspired colors and seven fixed-rate crunch modes. Drive, Filter 2 and Res 2 support LFO/CV modulation. Slope 1 switches the primary filter between 12 and 24 dB/octave. Filter 2 is an independent 24 dB filter.
+- **Clip timing and performance.** Loop Fade, ±100 ms Shift, Play Len from a quarter to 32 bars (or Full), Sync 1/32 and five Live Flip modes. Beat Rpt, 1/8 Rpt, 1/16 Rpt, Half Rpt and Rotate preserve transport position.
+- **Reverb.** Room, Hall and Chamber join Plate. The new types add Size, Diffusion and Width. All four offer Level.
+- **Master processing.** Tools → Comp exposes threshold, ratio, gain and parallel Mix. Tools → Mstr provides attack, release, enable, four distortion shapes and a bipolar sweep filter on Out 1/2.
+- **Recording.** FX1 and FX2 survive recording. The selected pad’s sends process live monitoring while the input WAV stays dry.
+- **MIDI input monitor.** Tools → MIDI → Monitor shows a timestamped 32-event history with Freeze/Resume, scrolling, filtering, Clear and separate Clock and Active Sensing indicators.
+- **Pad fixes and navigation.** Slice honors its saved Mono setting after switching from a polyphonic Sample pad. Blank pads expose LFO/Spd and Speed at 100%. Tone remembers the selected encoder bank and returns from modulation editing to the same dial. Configuration is labeled Cnf.
+
+## First custom release (+c), included in +c2
+
+- Vertical waveform zoom from 25–3200%, with two-finger reset and horizontal fit.
+- An optional screen saver with selectable timeout and MIDI/CV-trigger wake.
+- Pitch-preserving Sample Speed from 50–200% with LFO/CV modulation. Multiple native Pitch voices or one exclusive Speed voice can be active.
+- Double-tap reset on numeric dials, preserving modulation assignments.
 
 ## Privacy
 
@@ -69,7 +78,7 @@ The direct Watch on YouTube link is always available.
 | Image | Bytes | SHA-256 |
 | --- | ---: | --- |
 | Official 2.3.4 | 674,896 | `35ab7995ad0eca8484f3b28bc76389f10b2037dbb21a4a394e950d9329073e86` |
-| Customized 2.3.4+c | 696,708 | `5fce58174b7b76884c0dc9b0dc5eed51975193fb3aa3fe9ed310bd8ce4f1273b` |
+| Customized 2.3.4+c2 | 727,440 | `8bcb28eb58be54147458dcf247b8f35bb3f15932bdc6bcf027c8da128283f895` |
 
 ## Hosting
 
@@ -90,3 +99,5 @@ This modification is offered free of charge, but if you find it useful, a tip
 would make my day! [Buy me a coffee](https://www.buymeacoffee.com/vwal).
 
 Independent customization. Not an official 1010music release.
+
+[Third-party code credits and licenses](THIRD_PARTY_NOTICES.txt).

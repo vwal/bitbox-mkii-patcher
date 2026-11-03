@@ -145,7 +145,7 @@
           message([
             "Checking the original file’s SHA-256 against official 2.3.4…",
             "Original firmware verified. Applying the customizations locally…",
-            "Checking the finished file’s SHA-256 against the exact 2.3.4+c build…",
+            "Checking the finished file’s SHA-256 against the exact 2.3.4+c2 build…",
           ][index]);
         },
       });

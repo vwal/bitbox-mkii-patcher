@@ -7,7 +7,7 @@
   button.hidden = false;
   button.addEventListener("click", () => {
     const frame = document.createElement("iframe");
-    frame.title = "Bitbox MkII custom firmware video overview";
+    frame.title = "Bitbox MkII first custom release (2.3.4+c) overview";
     frame.allow = "encrypted-media; picture-in-picture; fullscreen";
     frame.allowFullscreen = true;
     // YouTube requires an embed referrer; send only the site's origin.
