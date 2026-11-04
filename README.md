@@ -3,11 +3,11 @@
 [Open the patcher](https://vwal.github.io/bitbox-mkii-patcher/)
 
 An unofficial customization of 1010music Bitbox MkII firmware **2.3.4** to
-**2.3.4+c2**. This repository contains only the static website and a binary delta,
+**2.3.4+c3**. This repository contains only the static website and a binary delta,
 not the complete original or customized firmware.
 
 [Watch the first release (+c) video overview](https://youtu.be/OjgC4UoyOIA). The page also includes
-an optional player that loads only when requested. A video covering +c2 is coming soon.
+an optional player that loads only when requested. An updated video covering +c2 and +c3 is coming soon.
 
 ## Use
 
@@ -19,13 +19,13 @@ an optional player that loads only when requested. A video covering +c2 is comin
 
 | Printable PDF | US Letter | A4 |
 | --- | --- | --- |
-| Eight-page firmware guide | [Download](bitbox-mkii-2.3.4c2-reference.pdf) | [Download](bitbox-mkii-2.3.4c2-reference-a4.pdf) |
-| One-page navigation card | [Download](bitbox-mkii-2.3.4c2-quick-card.pdf) | [Download](bitbox-mkii-2.3.4c2-quick-card-a4.pdf) |
+| Twelve-page firmware guide | [Download](bitbox-mkii-2.3.4c3-reference.pdf) | [Download](bitbox-mkii-2.3.4c3-reference-a4.pdf) |
+| One-page navigation card | [Download](bitbox-mkii-2.3.4c3-quick-card.pdf) | [Download](bitbox-mkii-2.3.4c3-quick-card-a4.pdf) |
 
 For flashing, see the [official MkII manual](https://1010music.com/wp-content/uploads/2023/03/bitbox-mk2-2.0-user-manual-2023-03-01-clean.pdf).
 Copy the patched file to the card root. Power off, insert the card, hold INFO
 while powering on, and release INFO when the upgrade message appears. Allow
-about 30 seconds and wait for the automatic reboot. Confirm **2.3.4+c2** at the
+about 30 seconds and wait for the automatic reboot. Confirm **2.3.4+c3** at the
 lower-right of Menu (press HOME until it appears), or the top-right of Tools.
 
 The patcher verifies the entire original file with SHA-256 before applying any
@@ -41,6 +41,23 @@ filename must match exactly. With the unit powered off, insert the card, hold
 Allow about 30 seconds and leave power on until the automatic reboot. Confirm
 **2.3.4** in the lower-right corner of the Menu screen.
 
+## Third custom release (+c3)
+
+- **Tape, BBD and Codec delay.** Choose Digital, Tape, BBD or Codec. Tape adds saturation, frequency loss, wow and flutter; BBD makes dark, drifting repeats; Codec adds accumulating 16 kHz, 4-bit ADPCM character. FX1 → More adds 0–100% Flutter on every delay type. Zero preserves each type’s base character, including Tape’s built-in flutter.
+- **Deeper reverb controls.** Room, Hall and Chamber gain Bass x, Xover, Mod Rate, Mod Dpth, Early, Hi Cut and Lo Cut on a second page. Main returns to the original controls without restarting the tail. The extra controls work independently on FX2 and FX3. Plate retains its original controls.
+- **FX3: an independent second reverb.** Tap the selected FX2 cell again to switch it to FX3, then press INFO. Choose Plate, Room, Hall or Chamber, with its own settings and tail. Tap the selected cell again to return to FX2. Any pad can feed FX3 from Pos → FX3 Send. Its separate FX3 Out setting selects Out1/2, the stereo FX1/2 pair, or either mono FX jack.
+- **Modulate all three sends.** Select FX1 Send, FX2 Send or FX3 Send and press INFO for LFO, CV, velocity, KEY or other native sources. Three slots per send share the stock total of twelve saved modulation routes per pad. Send modulation acts on the pad’s mixed audio. Voice-dependent sources use one active voice’s value. Recording preserves send levels and routes, and input monitoring uses them while recording stays dry.
+- **KEY tracking.** Note position becomes a modulation source: for example, higher notes can open a filter or increase a send. KEY is centered on MIDI note 60 and is separate from the existing PTCH controller source. Existing source selections and saved routes keep their meanings; KEY is appended after CC.
+- **CV scaling and pitch quantizing.** Set shared CV Scale from 0–400% and Offset from −100–100%, with immediate updates to held CV. Quantize CV pitch to one of eleven scales with a selectable C–B root. Defaults are 100%, 0%, Off and C. Scale/Offset apply to all eight EXT modulation sources; quantizing separately affects the native CV-pitch source. Raw gate detection, signal wake, MIDI notes and audio-input modulation stay unchanged.
+- **Slice duration grid.** With Slicer Sync On, choose Free, 1 bar, 1/2, 1/4, 1/8, 1/16 or 1/32. Slice durations round to whole grid units, with at least one unit. This controls duration; it does not stretch the audio to fill that duration. Free preserves native timing and Sync Off bypasses the grid.
+- **Phone, ADPCM and µ-law.** Three more manual Fidelity choices: Phone for 8 kHz telephone-style µ-law color, ADPCM for adaptive 4-bit color at 22.05 kHz, and u-Law at 16 kHz. Available on Sample, Clip, Slicer and Granular pads. Earlier Fidelity settings retain their saved values.
+- **FX returns where you need them.** Send delay and reverb returns to Out1/2 or the physical FX1/2 pair, together or independently. Dly1 Rvb2 splits delay to mono FX1 and reverb to mono FX2. FX3 has its own output selector. Dry pad assignments remain separate from return routing.
+- **Compress either output pair.** Choose Off, Out1/2, FX1/2 or Both. Threshold, Ratio, Attack, Release, Gain and parallel Mix are shared; the two stereo pairs have independent compressor histories. The Main and Mstr controls edit the same setting. Master distortion and Sweep still process Out1/2.
+- **Breakcut and periodic fills.** Breakcut adds changing sixteenth-note cuts and repeats. Fill every chooses Always or the final bar of each 2-, 4-, 8- or 16-bar phrase, then normal playback resumes. Periodic timing works with all Live Flip modes on quantized, synchronized Clips. The underlying musical clock keeps its phase.
+- **Live retry and counter reset.** Return active Speed to 100% and zero its modulation amounts, or return all active Pitch operations to neutral, to release the reservation. A blocked control shows RETRY when available: restart, or return it to neutral and adjust again. Waiting voices never start stretching automatically. One Sample voice can use Speed, or multiple native Pitch voices can play. Speed and Pitch cannot operate together, even on the same pad. Nonzero modulation amounts retain their Speed or Pitch reservation; note transposition can also retain Pitch. Double-tap the bar:beat counter to renumber the next bar as 1:1 without moving playback or clock phase.
+- **A quieter-looking screen saver.** Optionally show ten edge-to-edge lines in shades of dark blue, purple and white on black. One line changes every half-second. Off keeps the black-screen saver. The normal inactivity timeout and wake rules still apply. Both the screen saver and its graphic are disabled by default.
+- **Reset Tools or FX settings.** RESET opens a confirmation page with separate Tools and FX choices. Tools restores global settings and saves them immediately. FX restores FX1/FX2/FX3 settings; save the preset to retain that reset. Both preserve pad assignments, pad parameters and modulation. Memory consolidation also leaves room for these additions without increasing the internal state reservation.
+
 ## Second custom release (+c2)
 
 - **Tone on Sample, Clip, Slice and Granular pads.** Fidelity adds five sampler-inspired colors and seven fixed-rate crunch modes. Drive, Filter 2 and Res 2 support LFO/CV modulation. Slope 1 switches the primary filter between 12 and 24 dB/octave. Filter 2 is an independent 24 dB filter.
@@ -51,7 +68,7 @@ Allow about 30 seconds and leave power on until the automatic reboot. Confirm
 - **MIDI input monitor.** Tools → MIDI → Monitor shows a timestamped 32-event history with Freeze/Resume, scrolling, filtering, Clear and separate Clock and Active Sensing indicators.
 - **Pad fixes and navigation.** Slice honors its saved Mono setting after switching from a polyphonic Sample pad. Blank pads expose LFO/Spd and Speed at 100%. Tone remembers the selected encoder bank and returns from modulation editing to the same dial. Configuration is labeled Cnf.
 
-## First custom release (+c), included in +c2
+## First custom release (+c / c1), included in +c3
 
 - Vertical waveform zoom from 25–3200%, with two-finger reset and horizontal fit.
 - An optional screen saver with selectable timeout and MIDI/CV-trigger wake.
@@ -78,7 +95,7 @@ The direct Watch on YouTube link is always available.
 | Image | Bytes | SHA-256 |
 | --- | ---: | --- |
 | Official 2.3.4 | 674,896 | `35ab7995ad0eca8484f3b28bc76389f10b2037dbb21a4a394e950d9329073e86` |
-| Customized 2.3.4+c2 | 727,440 | `8bcb28eb58be54147458dcf247b8f35bb3f15932bdc6bcf027c8da128283f895` |
+| Customized 2.3.4+c3 | 748,612 | `89b993d89db865a8a5dfd46f64ca337edff6cde66e1f2620e42bc984639d747b` |
 
 ## Hosting
 
@@ -89,8 +106,8 @@ For local preview, run `python3 -m http.server 8080 --bind 127.0.0.1` and open
 
 ## From the author
 
-I’ve tested this modification thoroughly, and it works as intended on my own
-Bitbox MkII. I’m sharing it “as is,” without any warranty. You install and use it
+Earlier builds have been tested on my own Bitbox MkII, and each release is
+checked with automated firmware and patcher tests. I’m sharing it “as is,” without any warranty. You install and use it
 at your own risk. To the extent permitted by applicable law, I accept no
 liability for any damage to your hardware, or for loss or corruption of
 projects, samples, presets or other data, arising from its installation or use.
@@ -101,3 +118,9 @@ would make my day! [Buy me a coffee](https://www.buymeacoffee.com/vwal).
 Independent customization. Not an official 1010music release.
 
 [Third-party code credits and licenses](THIRD_PARTY_NOTICES.txt).
+
+## Credits
+
+Thanks to [semierendonmez-commits](https://github.com/semierendonmez-commits) and [bitbox-mk2-semi](https://github.com/semierendonmez-commits/bitbox-mk2-semi), and the [portkit contributors](https://github.com/kyrillleier-jpg/portkit-micro) (MIT), for code and ideas adapted here. The Fidelity/filter work draws on [blackbox-mod by Justin Joe](https://github.com/j3threejay/blackbox-mod) (MIT); the state-variable filter follows [Emilie Gillet's stmlib](https://github.com/pichenettes/stmlib) (MIT).
+
+The original 1010music firmware is not included or licensed here. Share this patcher rather than complete patched firmware. See the full third-party notices for the imports and licenses.

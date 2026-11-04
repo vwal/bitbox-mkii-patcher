@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Apply the bitbox mkII 2.3.4+c2 customization locally in your browser. Firmware files are never uploaded.">
+  <meta name="description" content="Apply the bitbox mkII 2.3.4+c3 customization locally in your browser. Firmware files are never uploaded.">
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; frame-src https://www.youtube-nocookie.com; object-src 'none'; base-uri 'none'; form-action 'none'">
   <title>bitbox mkII · Local firmware patcher</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="styles.css?v=c2">
-  <script defer src="patch-data.js?v=c2"></script>
-  <script defer src="engine.js?v=c2"></script>
-  <script defer src="app.js?v=c2"></script>
-  <script defer src="video.js?v=c2"></script>
+  <link rel="stylesheet" href="styles.css?v=c3">
+  <script defer src="patch-data.js?v=c3"></script>
+  <script defer src="engine.js?v=c3"></script>
+  <script defer src="app.js?v=c3"></script>
+  <script defer src="video.js?v=c3"></script>
 </head>
 <body>
   <a class="skip-link" href="#patcher">Skip to patcher</a>
@@ -29,12 +29,12 @@
       <section class="intro" aria-labelledby="page-title">
         <p class="eyebrow">UNOFFICIAL COMMUNITY PATCH · MKII ONLY</p>
         <h1 id="page-title">Custom firmware.<br>Patched in your browser.</h1>
-        <p class="intro-copy">The second custom release adds pad tone controls, live Clip repeats, master effects and a MIDI monitor. It includes every feature from the first release.</p>
-        <nav class="intro-links" aria-label="On this page"><a href="#patcher">Patch firmware</a><a href="#release-two">What’s new in +c2</a><a href="#release-one">First release features</a></nav>
-        <div class="version-path" aria-label="Official version 2.3.4 becomes customized version 2.3.4 plus c2">
+        <p class="intro-copy">The third custom release adds a second reverb, modulated sends, new delay colors and CV tools. Every earlier feature is included; explore the additions by release below.</p>
+        <nav class="intro-links" aria-label="On this page"><a href="#patcher">Patch firmware</a><a href="#release-three">New in +c3</a><a href="#release-two">Added in +c2</a><a href="#release-one">Added in +c(1)</a></nav>
+        <div class="version-path" aria-label="Official version 2.3.4 becomes customized version 2.3.4 plus c3">
           <span><small>OFFICIAL</small><strong>2.3.4</strong></span>
           <span class="version-arrow" aria-hidden="true">→</span>
-          <span><small>CUSTOMIZED</small><strong>2.3.4+c2</strong></span>
+          <span><small>CUSTOMIZED</small><strong>2.3.4+c3</strong></span>
         </div>
       </section>
 
@@ -44,7 +44,7 @@
             <span class="section-number" aria-hidden="true">01—03</span>
             <h2 id="patch-title">Make your patched firmware</h2>
           </div>
-          <p class="card-copy">Download <a href="https://1010music.com/wp-content/uploads/2024/05/BITBOXMK2234.zip" target="_blank" rel="noopener noreferrer">official bitbox mkII 2.3.4</a>, extract the archive, then choose its <code>BITBOXMK2.bin</code> file below. Start from this official file even if your module already runs +c.</p>
+          <p class="card-copy">Download <a href="https://1010music.com/wp-content/uploads/2024/05/BITBOXMK2234.zip" target="_blank" rel="noopener noreferrer">official bitbox mkII 2.3.4</a>, extract the archive, then choose its <code>BITBOXMK2.bin</code> file below. Start from this official file even if your module already runs +c, +c2 or a test build.</p>
           <p class="backup-reminder"><strong>Before reflashing:</strong> back up your entire microSD card—including projects, samples and presets—to another drive.</p>
 
           <div class="file-zone" id="file-zone">
@@ -68,14 +68,14 @@
           <ol class="progress-list" id="progress-list" aria-label="Patch verification progress">
             <li id="stage-input" data-state="pending"><span class="step-marker" aria-hidden="true">1</span><span><strong>Verify original</strong><small>Match the official 2.3.4 SHA-256</small></span><span class="step-state">Waiting</span></li>
             <li id="stage-patch" data-state="pending"><span class="step-marker" aria-hidden="true">2</span><span><strong>Apply customizations</strong><small>Build a separate file in browser memory</small></span><span class="step-state">Waiting</span></li>
-            <li id="stage-output" data-state="pending"><span class="step-marker" aria-hidden="true">3</span><span><strong>Verify result</strong><small>Match the exact 2.3.4+c2 SHA-256</small></span><span class="step-state">Waiting</span></li>
+            <li id="stage-output" data-state="pending"><span class="step-marker" aria-hidden="true">3</span><span><strong>Verify result</strong><small>Match the exact 2.3.4+c3 SHA-256</small></span><span class="step-state">Waiting</span></li>
           </ol>
 
           <button class="primary-button" id="apply-patch" type="button" disabled>Apply patch <span aria-hidden="true">→</span></button>
           <div class="download-result" id="download-result" hidden>
             <p><strong>Verified and ready.</strong> Your original file is unchanged.</p>
             <a class="download-button" id="download-file" download="BITBOXMK2.bin">Download BITBOXMK2.bin <span aria-hidden="true">↓</span></a>
-            <p class="download-note">The downloaded file identifies itself as <strong>2.3.4+c2</strong> in Tools. This page creates a file; it does not flash your module.</p>
+            <p class="download-note">The downloaded file identifies itself as <strong>2.3.4+c3</strong> in Tools. This page creates a file; it does not flash your module.</p>
             <p class="download-note">On your SD card, the patched file must be named exactly <code>BITBOXMK2.bin</code>. Remove any duplicate-download suffix such as <code>(1)</code> before copying it. <a href="#installation">See installation steps below.</a></p>
           </div>
 
@@ -93,8 +93,8 @@
           <section class="feature-summary" aria-labelledby="guide-title">
             <p class="eyebrow">AT THE MODULE</p>
             <h2 id="guide-title">Find a control.</h2>
-            <div class="paper-choices"><h3>Reference guide</h3><p>8 pages · Features, quick card, installation and recovery</p><div><a href="bitbox-mkii-2.3.4c2-reference.pdf" download aria-label="Download US Letter reference guide">US Letter ↓</a><a href="bitbox-mkii-2.3.4c2-reference-a4.pdf" download aria-label="Download A4 reference guide">A4 ↓</a></div></div>
-            <div class="paper-choices"><h3>Quick reference card</h3><p>1 page · Print and keep beside the module</p><div><a href="bitbox-mkii-2.3.4c2-quick-card.pdf" download aria-label="Download US Letter quick reference card">US Letter ↓</a><a href="bitbox-mkii-2.3.4c2-quick-card-a4.pdf" download aria-label="Download A4 quick reference card">A4 ↓</a></div></div>
+            <div class="paper-choices"><h3>Reference guide</h3><p>12 pages · Features by release, navigation, installation and recovery</p><div><a href="bitbox-mkii-2.3.4c3-reference.pdf" download aria-label="Download US Letter reference guide">US Letter ↓</a><a href="bitbox-mkii-2.3.4c3-reference-a4.pdf" download aria-label="Download A4 reference guide">A4 ↓</a></div></div>
+            <div class="paper-choices"><h3>Quick reference card</h3><p>1 page · Print and keep beside the module</p><div><a href="bitbox-mkii-2.3.4c3-quick-card.pdf" download aria-label="Download US Letter quick reference card">US Letter ↓</a><a href="bitbox-mkii-2.3.4c3-quick-card-a4.pdf" download aria-label="Download A4 quick reference card">A4 ↓</a></div></div>
           </section>
           <section class="support-note" aria-labelledby="support-title">
             <h2 id="support-title">Enjoying the extra control?</h2>
@@ -112,9 +112,30 @@
         </aside>
       </div>
 
+      <section class="release-catalog latest-release" id="release-three" aria-labelledby="latest-title">
+        <p class="eyebrow">THIRD CUSTOM RELEASE · 2.3.4+c3</p>
+        <h2 id="latest-title">New in +c3</h2>
+        <p class="catalog-intro">The additions below join everything introduced in +c(1) and +c2. Patch the official 2.3.4 file once to get the complete current release.</p>
+        <div class="release-grid">
+          <article><p class="control-path">FX1 → TYPE / MORE</p><h3>Tape, BBD and Codec delay</h3><p>Choose Digital, Tape, BBD or Codec. Tape adds saturation, frequency loss, wow and flutter; BBD makes dark, drifting repeats; Codec adds accumulating 16 kHz, 4-bit ADPCM character.</p><p>FX1 → More adds 0–100% Flutter on every delay type. Zero preserves each type’s base character, including Tape’s built-in flutter.</p></article>
+          <article><p class="control-path">FX2 / FX3 → MORE</p><h3>Deeper reverb controls</h3><p>Room, Hall and Chamber gain Bass x, Xover, Mod Rate, Mod Dpth, Early, Hi Cut and Lo Cut on a second page. Main returns to the original controls without restarting the tail.</p><p>The extra controls work independently on FX2 and FX3. Plate retains its original controls.</p></article>
+          <article><p class="control-path">PADS → TAP SELECTED FX2 AGAIN</p><h3>FX3: an independent second reverb</h3><p>Tap the selected FX2 cell again to switch it to FX3, then press INFO. Choose Plate, Room, Hall or Chamber, with its own settings and tail. Tap the selected cell again to return to FX2.</p><p>Any pad can feed FX3 from Pos → FX3 Send. Its separate FX3 Out setting selects Out1/2, the stereo FX1/2 pair, or either mono FX jack.</p></article>
+          <article><p class="control-path">PAD → POS → SEND → INFO</p><h3>Modulate all three sends</h3><p>Select FX1 Send, FX2 Send or FX3 Send and press INFO for LFO, CV, velocity, KEY or other native sources. Three slots per send share the stock total of twelve saved modulation routes per pad.</p><p>Send modulation acts on the pad’s mixed audio. Voice-dependent sources use one active voice’s value. Recording preserves send levels and routes, and input monitoring uses them while recording stays dry.</p></article>
+          <article><p class="control-path">MODULATION SOURCE → KEY</p><h3>KEY tracking</h3><p>Note position becomes a modulation source: for example, higher notes can open a filter or increase a send. KEY is centered on MIDI note 60 and is separate from the existing PTCH controller source.</p><p>Existing source selections and saved routes keep their meanings; KEY is appended after CC.</p></article>
+          <article><p class="control-path">TOOLS → REC → CV IN</p><h3>CV scaling and pitch quantizing</h3><p>Set shared CV Scale from 0–400% and Offset from −100–100%, with immediate updates to held CV. Quantize CV pitch to one of eleven scales with a selectable C–B root.</p><p>Defaults are 100%, 0%, Off and C. Scale/Offset apply to all eight EXT modulation sources; quantizing separately affects the native CV-pitch source. Raw gate detection, signal wake, MIDI notes and audio-input modulation stay unchanged.</p></article>
+          <article><p class="control-path">SLICER → POS → SYNC GRID</p><h3>Slice duration grid</h3><p>With Slicer Sync On, choose Free, 1 bar, 1/2, 1/4, 1/8, 1/16 or 1/32. Slice durations round to whole grid units, with at least one unit.</p><p>This controls duration; it does not stretch the audio to fill that duration. Free preserves native timing and Sync Off bypasses the grid.</p></article>
+          <article><p class="control-path">PAD → TONE → FIDELITY</p><h3>Phone, ADPCM and µ-law</h3><p>Three more manual Fidelity choices: Phone for 8 kHz telephone-style µ-law color, ADPCM for adaptive 4-bit color at 22.05 kHz, and u-Law at 16 kHz.</p><p>Available on Sample, Clip, Slicer and Granular pads. Earlier Fidelity settings retain their saved values.</p></article>
+          <article><p class="control-path">TOOLS → REC → FX OUT</p><h3>FX returns where you need them</h3><p>Send delay and reverb returns to Out1/2 or the physical FX1/2 pair, together or independently. Dly1 Rvb2 splits delay to mono FX1 and reverb to mono FX2.</p><p>FX3 has its own output selector. Dry pad assignments remain separate from return routing.</p></article>
+          <article><p class="control-path">TOOLS → MAIN / MSTR → COMPRESSOR</p><h3>Compress either output pair</h3><p>Choose Off, Out1/2, FX1/2 or Both. Threshold, Ratio, Attack, Release, Gain and parallel Mix are shared; the two stereo pairs have independent compressor histories.</p><p>The Main and Mstr controls edit the same setting. Master distortion and Sweep still process Out1/2.</p></article>
+          <article><p class="control-path">CLIP → POS → LIVE FLIP / FILL EVERY</p><h3>Breakcut and periodic fills</h3><p>Breakcut adds changing sixteenth-note cuts and repeats. Fill every chooses Always or the final bar of each 2-, 4-, 8- or 16-bar phrase, then normal playback resumes.</p><p>Periodic timing works with all Live Flip modes on quantized, synchronized Clips. The underlying musical clock keeps its phase.</p></article>
+          <article><p class="control-path">PITCH / SPEED · TOP-LEFT COUNTER</p><h3>Live retry and counter reset</h3><p>Return active Speed to 100% and zero its modulation amounts, or return all active Pitch operations to neutral, to release the reservation. A blocked control shows RETRY when available: restart, or return it to neutral and adjust again. Waiting voices never start stretching automatically.</p><p>One Sample voice can use Speed, or multiple native Pitch voices can play. Speed and Pitch cannot operate together, even on the same pad. Nonzero modulation amounts retain their Speed or Pitch reservation; note transposition can also retain Pitch. Double-tap the bar:beat counter to renumber the next bar as 1:1 without moving playback or clock phase.</p></article>
+          <article><p class="control-path">TOOLS → DISP → SAVER GFX</p><h3>A quieter-looking screen saver</h3><p>Optionally show ten edge-to-edge lines in shades of dark blue, purple and white on black. One line changes every half-second. Off keeps the black-screen saver.</p><p>The normal inactivity timeout and wake rules still apply. Both the screen saver and its graphic are disabled by default.</p></article>
+          <article><p class="control-path">TOOLS → MAIN → RESET</p><h3>Reset Tools or FX settings</h3><p>RESET opens a confirmation page with separate Tools and FX choices. Tools restores global settings and saves them immediately. FX restores FX1/FX2/FX3 settings; save the preset to retain that reset.</p><p>Both preserve pad assignments, pad parameters and modulation. Memory consolidation also leaves room for these additions without increasing the internal state reservation.</p></article>
+        </div>
+      </section>
       <section class="release-catalog" id="release-two" aria-labelledby="new-title">
         <p class="eyebrow">SECOND CUSTOM RELEASE · 2.3.4+c2</p>
-        <h2 id="new-title">What’s new in +c2</h2>
+        <h2 id="new-title">Introduced in +c2</h2>
         <div class="release-grid">
           <article><p class="control-path">PAD PARAMETERS → TONE</p><h3>Fidelity, drive and filters</h3>
             <p>Shape Sample, Clip, Slice and Granular pads. Fidelity extends Interp with SP1200, SP-12, S950, MPC60 and SP Raw colors, plus 12-bit crunch at 16, 12, 10, 8, 6, 4 or 2 kHz. Normal and HighQ are still available.</p>
@@ -126,7 +147,7 @@
             <p>Choose Room, Hall or Chamber alongside the original Plate. The three new types offer Size, Diffusion and Width. All four have Level.</p>
             <p>FX1 and FX2 sends survive recording. Hear the live input through the selected pad’s sends while recording a dry WAV.</p></article>
           <article><p class="control-path">TOOLS → COMP / MSTR</p><h3>Compress, distort and sweep the mix</h3>
-            <p>Set compressor threshold, ratio, gain and parallel Mix under Comp. Under Mstr, choose Comp env for attack, release and on/off.</p>
+            <p>Set compressor threshold, ratio, gain and parallel Mix under Comp. Under Mstr, choose Comp env for attack and release. +c3 expands Compressor from on/off to an output-bus selector.</p>
             <p>Choose Master FX for Soft, Hard, Fold or Tube distortion with up to +24 dB Drive. Turn Sweep left for low-pass or right for high-pass. On Out 1/2, distortion and sweep process the mix and FX returns before the optional compressor.</p></article>
           <article><p class="control-path">TOOLS → MIDI → MONITOR</p><h3>Inspect incoming MIDI</h3>
             <p>Read notes, CCs, program changes, pressure, pitch bend and transport in a timestamped 32-event history. Freeze, scroll, filter by channel, clear or resume. Clock and Active Sensing have separate activity lights.</p></article>
@@ -136,22 +157,22 @@
         </div>
       </section>
       <section class="release-catalog first-release" id="release-one" aria-labelledby="first-title">
-        <p class="eyebrow">FIRST CUSTOM RELEASE · 2.3.4+c</p>
-        <h2 id="first-title">Also included in +c2</h2>
+        <p class="eyebrow">FIRST CUSTOM RELEASE · 2.3.4+c (c1)</p>
+        <h2 id="first-title">Introduced in +c(1)</h2>
         <div class="release-grid">
           <article><h3>Waveform amplitude zoom</h3><p>Pinch or spread vertically from 25–3200%. Horizontal zoom controls time. A two-finger tap restores 100% amplitude and fits the waveform horizontally.</p></article>
-          <article><h3>Pitch-preserving Sample Speed</h3><p>Set 50–200% under LFO/Spd and assign LFO or CV with INFO. One voice can use Speed, or multiple voices can use native Pitch. Blocked voices play at neutral until restarted, and their controls stay editable.</p></article>
+          <article><h3>Pitch-preserving Sample Speed</h3><p>Set 50–200% under LFO/Spd and assign LFO or CV with INFO. One voice can use Speed, or multiple voices can use native Pitch. Busy controls stay editable and blocked voices play at neutral. +c3 adds a deliberate neutral-then-adjust retry without restarting; see the current rules above.</p></article>
           <article><h3>Screen saver and signal wake</h3><p>Under Tools → Disp, choose disabled (default) or 1, 2, 3, 5, 10, 15, 30 or 60 minutes. The first physical input wakes only. Optional MIDI, CV-trigger or combined signal wake lets the first musical event through. MIDI clock and active sensing are excluded from wake activity.</p></article>
           <article><h3>Double-tap dial defaults</h3><p>Double-tap a numeric dial to restore its base value and keep its modulation assignments. Tools shortens MIDI In to MIDI and shows the full custom version at the top right.</p></article>
         </div>
-        <p class="guide-links">Reference guide: <a href="bitbox-mkii-2.3.4c2-reference.pdf" download>US Letter PDF</a> / <a href="bitbox-mkii-2.3.4c2-reference-a4.pdf" download>A4 PDF</a><br>Quick card: <a href="bitbox-mkii-2.3.4c2-quick-card.pdf" download>US Letter PDF</a> / <a href="bitbox-mkii-2.3.4c2-quick-card-a4.pdf" download>A4 PDF</a></p>
+        <p class="guide-links">Reference guide: <a href="bitbox-mkii-2.3.4c3-reference.pdf" download>US Letter PDF</a> / <a href="bitbox-mkii-2.3.4c3-reference-a4.pdf" download>A4 PDF</a><br>Quick card: <a href="bitbox-mkii-2.3.4c3-quick-card.pdf" download>US Letter PDF</a> / <a href="bitbox-mkii-2.3.4c3-quick-card-a4.pdf" download>A4 PDF</a></p>
       </section>
 
       <section class="video-overview" id="video-overview" aria-labelledby="video-title">
         <div class="video-copy">
           <p class="eyebrow">FIRST RELEASE VIDEO · 2.3.4+c</p>
           <h2 id="video-title">Watch the first release.</h2>
-          <p>See waveform zoom, Sample Speed and the other first-release features on the Bitbox MkII. A video covering <strong>2.3.4+c2</strong> is coming soon.</p>
+          <p>See waveform zoom, Sample Speed and the other first-release features on the Bitbox MkII. An updated video covering <strong>+c2 and +c3</strong> is coming soon. The guides cover all three releases.</p>
           <a class="video-external-link" href="https://youtu.be/OjgC4UoyOIA" target="_blank" rel="noopener noreferrer">Watch on YouTube <span aria-hidden="true">↗</span></a>
           <p class="video-privacy" id="video-privacy">The player connects to YouTube only when you load it. Your firmware stays in the patcher.</p>
         </div>
@@ -176,7 +197,7 @@
           <li><strong>Copy the patched file.</strong> Place <code>BITBOXMK2.bin</code> in the SD card’s root directory, outside any folder.</li>
           <li><strong>Insert the card with the unit powered off.</strong> Hold <strong>INFO</strong> while powering on, then release INFO when the upgrade message appears.</li>
           <li><strong>Wait for the automatic reboot.</strong> Allow about 30 seconds and leave power on until the update finishes.</li>
-          <li><strong>Confirm 2.3.4+c2.</strong> Press <strong>HOME</strong> until the Menu screen appears. The version is in its lower-right corner, and also at the top-right of Tools.</li>
+          <li><strong>Confirm 2.3.4+c3.</strong> Press <strong>HOME</strong> until the Menu screen appears. The version is in its lower-right corner, and also at the top-right of Tools.</li>
         </ol>
       </section>
 
@@ -196,7 +217,14 @@
 
       <section class="use-note" aria-labelledby="use-title">
         <h2 id="use-title">A note from the author</h2>
-        <p>I’ve tested this modification thoroughly, and it works as intended on my own Bitbox MkII. I’m sharing it “as is,” without any warranty. You install and use it at your own risk. To the extent permitted by applicable law, I accept no liability for any damage to your hardware, or for loss or corruption of projects, samples, presets or other data, arising from its installation or use.</p>
+        <p>Earlier builds have been tested on my own Bitbox MkII, and each release is checked with automated firmware and patcher tests. I’m sharing it “as is,” without any warranty. You install and use it at your own risk. To the extent permitted by applicable law, I accept no liability for any damage to your hardware, or for loss or corruption of projects, samples, presets or other data, arising from its installation or use.</p>
+      </section>
+
+      <section class="use-note credits-note" id="credits" aria-labelledby="credits-title">
+        <h2 id="credits-title">Code and community credits</h2>
+        <p>With thanks to <a href="https://github.com/semierendonmez-commits">semierendonmez-commits</a> for <a href="https://github.com/semierendonmez-commits/bitbox-mk2-semi">bitbox-mk2-semi</a>, and to the <a href="https://github.com/kyrillleier-jpg/portkit-micro">portkit contributors</a> (MIT), whose work supplied code and ideas adapted for this release.</p>
+        <p>The Fidelity and filter work draws on <a href="https://github.com/j3threejay/blackbox-mod">blackbox-mod by Justin Joe</a> (MIT); the state-variable filter follows <a href="https://github.com/pichenettes/stmlib">Emilie Gillet’s stmlib</a> (MIT). See the <a href="THIRD_PARTY_NOTICES.txt">full notices and import details</a>.</p>
+        <p>The original 1010music firmware is not distributed here and is not covered by those licenses. Please share this patcher link rather than patched firmware files.</p>
       </section>
 
       <section class="technical-details" aria-label="Checksums and compatibility">
@@ -206,7 +234,7 @@
             <p>Only the exact official <strong>bitbox mkII 2.3.4</strong> image is accepted. Other versions, models, ZIP archives and already patched files are rejected. Both hashes must match before a download is offered.</p>
             <dl class="hash-list">
               <div><dt>Original · 2.3.4 · SHA-256</dt><dd id="source-hash">35ab7995ad0eca8484f3b28bc76389f10b2037dbb21a4a394e950d9329073e86</dd></div>
-              <div><dt>Patched · 2.3.4+c2 · SHA-256</dt><dd id="target-hash">8bcb28eb58be54147458dcf247b8f35bb3f15932bdc6bcf027c8da128283f895</dd></div>
+              <div><dt>Patched · 2.3.4+c3 · SHA-256</dt><dd id="target-hash">89b993d89db865a8a5dfd46f64ca337edff6cde66e1f2620e42bc984639d747b</dd></div>
             </dl>
             <p class="small-copy">The patcher uses your browser’s SHA-256 implementation. Use an HTTPS address or a local preview server if your browser cannot verify files from a downloaded page.</p>
           </div>
@@ -217,7 +245,7 @@
     <footer class="site-footer">
       <p>Independent customization. Not an official 1010music release.</p>
       <p><a href="THIRD_PARTY_NOTICES.txt">Code credits &amp; licenses</a></p>
-      <p>For bitbox mkII · 2.3.4 → 2.3.4+c2</p>
+      <p>For bitbox mkII · 2.3.4 → 2.3.4+c3</p>
     </footer>
   </div>
 </body>

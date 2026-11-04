@@ -225,3 +225,7 @@ details[open] summary > span { transform: rotate(45deg); }
 .paper-choices a { padding:6px 12px; border:1px solid #b9c7bb; border-radius:5px; font-size:12px; font-weight:600; text-decoration:none; }
 .paper-choices a:hover { background:var(--green-light); }
 @media(max-width:650px) { .release-grid { grid-template-columns:1fr; } .release-grid article { padding:16px; } }
+
+.catalog-intro { max-width:780px; margin:0 0 18px; color:var(--muted); font-size:14px; line-height:1.65; }
+.latest-release > .eyebrow { color:var(--green); }
+.credits-note { margin-top:32px; }
