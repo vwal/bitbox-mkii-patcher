@@ -1,4 +1,10 @@
-Release 2.3.4+c3 includes adaptations credited below. Thanks to semierendonmez-commits (https://github.com/semierendonmez-commits) and bitbox-mk2-semi, the portkit contributors, Justin Joe's blackbox-mod for Fidelity/filter work, and Emilie Gillet's stmlib for the state-variable filter. The local Breakcut/fill mapping is not the donor's GEN sequencer; GEN, Airwindows processors, themes, and the donor's BL encoder were not imported. The 1010music firmware is not included in the public patch distribution and is not covered by these licenses. Share the patcher and build instructions, not patched firmware images.
+Release 2.3.4+c4 includes the G4 adaptations identified below. The GEN-DONOR-LICENSE.txt and GEN-APACHE-2.0.txt notices accompany this release. The stock 1010music firmware is supplied separately by 1010music.
+
+The fourth release draws on the delay modulation, Codec loss, master parallel distortion and synced Slicer Tape work in semierendonmez-commits/bitbox-mk2-semi at b7dfa9ab815342914ade82585756bd701b0c99d7 (MIT). The delay and master DSP build on the Portkit effects credited below. G4 uses local Slicer fragment bounds and read handling, preset integration, status-strip rendering and FX control pages. See GEN-DONOR-LICENSE.txt for the donor license.
+
+G3 adapts the ENV, RAND, Lorenz CHAOS and coupled-node NET equations from semierendonmez-commits/bitbox-mk2-semi at b7dfa9ab815342914ade82585756bd701b0c99d7 under the MIT license. The GEN status strip was inspired by that revision's overlay. G3's fixed per-pad source storage, note-edge detection, queued routing, preset codec additions, native-canvas drawing, and verified keyed GEN event dispatch are local integrations. See GEN-DONOR-LICENSE.txt and the GEN attribution below.
+
+Release 2.3.4+c3 includes adaptations credited below. Thanks to semierendonmez-commits (https://github.com/semierendonmez-commits) and bitbox-mk2-semi, the portkit contributors, Justin Joe's blackbox-mod for Fidelity/filter work, and Emilie Gillet's stmlib for the state-variable filter. The +c3 release used a local Breakcut/fill mapping. The fourth release adds the separate donor-derived GEN sequencer credited below. Airwindows processors, themes and the donor's BL encoder were outside these imports. The 1010music firmware is not included in the public patch distribution and is not covered by these licenses. Share the patcher and build instructions, not patched firmware images.
 
 M6 adapts KEY-source exposure, Slice Sync Grid and shared CV scale/root ideas from bitbox-mk2-semi (MIT, portkit contributors and semierendonmez-commits), pinned commit b7dfa9ab815342914ade82585756bd701b0c99d7. Send modulation uses this project's queued source binding rather than the donor's temporary pad-copy approach. The CV subpage, raw-gate preservation, held-CV refresh, send recording/monitor integration and bounded state layout are local integrations. The existing Portkit MIT notice below applies to adaptations.
 
@@ -109,3 +115,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+GEN in G1
+=========
+Adapted from src/gen.c at https://github.com/semierendonmez-commits/bitbox-mk2-semi/tree/b7dfa9ab815342914ade82585756bd701b0c99d7 . See GEN-DONOR-LICENSE.txt (MIT, portkit contributors). The BBCut, Acid and Turing sections originate in the author's Apache-2.0 OpenTracker fork (https://github.com/semierendonmez-commits/polyend-tracker-re-semi). See GEN-APACHE-2.0.txt. Upstream credits Nick Collins / BBenCut, TB-3PO, and Music Thing Turing Machine. G1 adapts storage, queue scheduling, lifecycle, native parameter registration and pad/Tools screens for U3.

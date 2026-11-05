@@ -1,3 +1,19 @@
+# Bitbox MkII firmware 2.3.4+c4
+
+Released November 5, 2026. Apply this cumulative patch directly to official Bitbox MkII 2.3.4.
+
+## New in 2.3.4+c4
+
+- **Per-pad GEN sequencer.** Run a different pattern on each of the 16 pads, all following the internal or MIDI clock. Nine algorithms cover Euclid, Breakcut, Call+Resp, Evolve, Drummap, Random, Acid, Turing and Learn. Dial in timing, probability, velocity and step conditions, route a response to another pad, or teach Learn by playing the grid. Select a pad → INFO twice → Gen (Granular uses Cnf). Enable Run in Tools → Mstr → Section → GEN Run.
+- **GEN pattern and playhead.** The Pads status strip shows the selected generator’s hits, rests and current step, plus a row of activity indicators for all 16 pads. A pad with GEN off clears the strip. Generated notes use their programmed step, velocity and gate length.
+- **Pitch alongside Sample Speed.** All pads can use native Pitch, including the one using 50–200% Sample Speed. The full Speed range works at high positive Pitch. One eligible forward Sample voice can stretch at a time. The first eligible voice to request Speed gets the slot. A waiting voice keeps its chosen Pitch and plays at 100% Speed until restarted or deliberately adjusted after RETRY. Several pitched voices and effects alongside Speed can cause crackling, depending on the preset.
+- **Slicer Tape.** With Slicer → Pos → Sync On, Slice Fit → Tape plays a slice end to end in its synced duration, changing pitch with playback rate. Cut remains the default. Tape works independently of the Sample Speed voice.
+- **Four per-pad modulation sources.** ENV follows the pad’s ADSR, RAND holds a fresh value for each note, CHAOS gives evolving bipolar movement and NET gives slow movement from four coupled nodes. Select a modulation destination and press INFO. On Slice Seq, ENV/RAND step per note and CHAOS/NET step on rising zero crossings.
+- **Hold a Trigger pad to stop.** A tap on the 4×4 grid still plays or retriggers immediately. Keep one finger on the pad for three seconds to release its voices. MIDI, CV, GEN or another tap can play it again.
+- **Expanded FX1 delay.** FX1 → INFO → More adds modulation rate, depth and stereo phase, input Drive, Tone and Return dB (±12 dB). Codec has frame Loss (0–30%) and Bandwidth (4–16 kHz) in place of Drive and Tone.
+- **Master Sweep modulation.** Tools → Mstr → Section → Sweep Mod accepts EXT1–8 or a tempo-synced triangle LFO (1/16 note to eight bars) with signed depth. It works with the compressor off.
+- **Parallel master distortion.** Tools → Mstr → Section → Dist Ctrl adds wet Tone, clean/wet Dist Mix (0–100%) and output Level (−24 to +12 dB) ahead of the master Sweep and compressor.
+
 # Bitbox MkII firmware 2.3.4+c3
 
 Released November 4, 2026. The third custom release includes all changes from +c (the first release, also called c1) and +c2. The browser patcher continues to accept only official MkII 2.3.4.
@@ -10,12 +26,12 @@ Released November 4, 2026. The third custom release includes all changes from +c
 - **Modulate all three sends.** Select FX1 Send, FX2 Send or FX3 Send and press INFO for LFO, CV, velocity, KEY or other native sources. Three slots per send share the stock total of twelve saved modulation routes per pad. Send modulation acts on the pad’s mixed audio. Voice-dependent sources use one active voice’s value. Recording preserves send levels and routes, and input monitoring uses them while recording stays dry.
 - **KEY tracking.** Note position becomes a modulation source: for example, higher notes can open a filter or increase a send. KEY is centered on MIDI note 60 and is separate from the existing PTCH controller source. Existing source selections and saved routes keep their meanings; KEY is appended after CC.
 - **CV scaling and pitch quantizing.** Set shared CV Scale from 0–400% and Offset from −100–100%, with immediate updates to held CV. Quantize CV pitch to one of eleven scales with a selectable C–B root. Defaults are 100%, 0%, Off and C. Scale/Offset apply to all eight EXT modulation sources; quantizing separately affects the native CV-pitch source. Raw gate detection, signal wake, MIDI notes and audio-input modulation stay unchanged.
-- **Slice duration grid.** With Slicer Sync On, choose Free, 1 bar, 1/2, 1/4, 1/8, 1/16 or 1/32. Slice durations round to whole grid units, with at least one unit. This controls duration; it does not stretch the audio to fill that duration. Free preserves native timing and Sync Off bypasses the grid.
+- **Slice duration grid.** With Slicer Sync On, choose Free, 1 bar, 1/2, 1/4, 1/8, 1/16 or 1/32. Slice durations round to whole grid units, with at least one unit. The grid sets duration. In +c4, Slice Fit lets you choose Cut or Tape for playback. Free preserves native timing and Sync Off bypasses the grid.
 - **Phone, ADPCM and µ-law.** Three more manual Fidelity choices: Phone for 8 kHz telephone-style µ-law color, ADPCM for adaptive 4-bit color at 22.05 kHz, and u-Law at 16 kHz. Available on Sample, Clip, Slicer and Granular pads. Earlier Fidelity settings retain their saved values.
 - **FX returns where you need them.** Send delay and reverb returns to Out1/2 or the physical FX1/2 pair, together or independently. Dly1 Rvb2 splits delay to mono FX1 and reverb to mono FX2. FX3 has its own output selector. Dry pad assignments remain separate from return routing.
 - **Compress either output pair.** Choose Off, Out1/2, FX1/2 or Both. Threshold, Ratio, Attack, Release, Gain and parallel Mix are shared; the two stereo pairs have independent compressor histories. The Main and Mstr controls edit the same setting. Master distortion and Sweep still process Out1/2.
 - **Breakcut and periodic fills.** Breakcut adds changing sixteenth-note cuts and repeats. Fill every chooses Always or the final bar of each 2-, 4-, 8- or 16-bar phrase, then normal playback resumes. Periodic timing works with all Live Flip modes on quantized, synchronized Clips. The underlying musical clock keeps its phase.
-- **Live retry and counter reset.** Return active Speed to 100% and zero its modulation amounts, or return all active Pitch operations to neutral, to release the reservation. A blocked control shows RETRY when available: restart, or return it to neutral and adjust again. Waiting voices never start stretching automatically. One Sample voice can use Speed, or multiple native Pitch voices can play. Speed and Pitch cannot operate together, even on the same pad. Nonzero modulation amounts retain their Speed or Pitch reservation; note transposition can also retain Pitch. Double-tap the bar:beat counter to renumber the next bar as 1:1 without moving playback or clock phase.
+- **Live retry and counter reset.** A waiting Sample voice stays at 100% Speed until restarted or deliberately adjusted from neutral after RETRY. Double-tap the bar:beat counter to renumber the next bar as 1:1 while playback and clock phase continue.
 - **A quieter-looking screen saver.** Optionally show ten edge-to-edge lines in shades of dark blue, purple and white on black. One line changes every half-second. Off keeps the black-screen saver. The normal inactivity timeout and wake rules still apply. Both the screen saver and its graphic are disabled by default.
 - **Reset Tools or FX settings.** RESET opens a confirmation page with separate Tools and FX choices. Tools restores global settings and saves them immediately. FX restores FX1/FX2/FX3 settings; save the preset to retain that reset. Both preserve pad assignments, pad parameters and modulation. Memory consolidation also leaves room for these additions without increasing the internal state reservation.
 
@@ -42,7 +58,7 @@ Released November 3, 2026. The second custom release is based on T7 and displays
 
 - Vertical waveform zoom from 25–3200%, with two-finger reset and horizontal fit.
 - An optional screen saver with selectable timeout and MIDI/CV-trigger wake.
-- Pitch-preserving Sample Speed from 50–200% with LFO/CV modulation. Multiple native Pitch voices or one exclusive Speed voice can be active.
+- Pitch-preserving Sample Speed from 50–200% with LFO/CV modulation. In +c4 one eligible Sample voice can stretch while native Pitch works on every pad.
 - Double-tap reset on numeric dials, preserving modulation assignments.
 
-[Detailed first-release changelog](releases/2.3.4+c/CHANGELOG.md)
+[Features since stock firmware](FEATURE_LISTS.md)
