@@ -1,67 +1,254 @@
-# Bitbox MkII custom firmware feature lists
+# Bitbox MkII features since stock 2.3.4
 
-Apply **2.3.4+c4** directly to official **2.3.4**.
+> Local +c5 preparation draft. F10 is being tested. The patcher and PDF guides still target +c4.
 
-## New features in 2.3.4+c4
+## Features by area
 
-- **Per-pad GEN sequencer.** Run a different pattern on each of the 16 pads, all following the internal or MIDI clock. Nine algorithms cover Euclid, Breakcut, Call+Resp, Evolve, Drummap, Random, Acid, Turing and Learn. Dial in timing, probability, velocity and step conditions, route a response to another pad, or teach Learn by playing the grid. Select a pad → INFO twice → Gen (Granular uses Cnf). Enable Run in Tools → Mstr → Section → GEN Run.
-- **GEN pattern and playhead.** The Pads status strip shows the selected generator’s hits, rests and current step, plus a row of activity indicators for all 16 pads. A pad with GEN off clears the strip. Generated notes use their programmed step, velocity and gate length.
-- **Pitch alongside Sample Speed.** All pads can use native Pitch, including the one using 50–200% Sample Speed. The full Speed range works at high positive Pitch. One eligible forward Sample voice can stretch at a time. The first eligible voice to request Speed gets the slot. A waiting voice keeps its chosen Pitch and plays at 100% Speed until restarted or deliberately adjusted after RETRY. Several pitched voices and effects alongside Speed can cause crackling, depending on the preset.
-- **Slicer Tape.** With Slicer → Pos → Sync On, Slice Fit → Tape plays a slice end to end in its synced duration, changing pitch with playback rate. Cut remains the default. Tape works independently of the Sample Speed voice.
-- **Four per-pad modulation sources.** ENV follows the pad’s ADSR, RAND holds a fresh value for each note, CHAOS gives evolving bipolar movement and NET gives slow movement from four coupled nodes. Select a modulation destination and press INFO. On Slice Seq, ENV/RAND step per note and CHAOS/NET step on rising zero crossings.
-- **Hold a Trigger pad to stop.** A tap on the 4×4 grid still plays or retriggers immediately. Keep one finger on the pad for three seconds to release its voices. MIDI, CV, GEN or another tap can play it again.
-- **Expanded FX1 delay.** FX1 → INFO → More adds modulation rate, depth and stereo phase, input Drive, Tone and Return dB (±12 dB). Codec has frame Loss (0–30%) and Bandwidth (4–16 kHz) in place of Drive and Tone.
-- **Master Sweep modulation.** Tools → Mstr → Section → Sweep Mod accepts EXT1–8 or a tempo-synced triangle LFO (1/16 note to eight bars) with signed depth. It works with the compressor off.
-- **Parallel master distortion.** Tools → Mstr → Section → Dist Ctrl adds wet Tone, clean/wet Dist Mix (0–100%) and output Level (−24 to +12 dB) ahead of the master Sweep and compressor.
+### Playback & loop editing
 
-## New features since stock 2.3.4
+See the waveform, control time and shape a loop.
 
-Each entry shows the release in which it first appeared. +c is the first custom release, also labeled c1.
+#### See quiet and loud waveforms
 
-### +c (c1)
+Location: Waveform → two-finger gestures.
 
-- **Vertical waveform zoom** — Amplitude zoom 25-3200%, independent of horizontal time zoom. Stationary two-finger tap restores 100% amplitude and horizontal fit. Location: Waveform: two-finger vertical spread/pinch.
-- **Screen saver and signal wake** — Disabled by default; 1/2/3/5/10/15/30/60-minute timeouts. First physical input wakes only. Optional MIDI/CV-trigger/both wake preserves the triggering musical action; MIDI Clock and Active Sensing excluded. Location: Tools > Disp.
-- **Pitch-preserving Speed** — 50-200%, with select + INFO modulation. In the current +c4 release, one eligible forward Sample voice can stretch while all pads can play at their chosen Pitch. Location: Sample > LFO/Spd > SPEED.
-- **Double-tap numeric dial reset** — Resets the base value without altering assigned modulation. Location: Supported numeric parameter dials.
-- **Shorter navigation labels** — MIDI In renamed MIDI; Display shortened to Disp; Screen saver shortened to Scrn saver. Location: Tools > MIDI / Disp.
+Zoom amplitude from 25–3200% with a vertical pinch or spread, independently of horizontal time zoom. A stationary two-finger tap restores 100% amplitude and fits the whole waveform horizontally.
 
-### +c2
+#### Change speed while keeping pitch
 
-- **Tone page and Fidelity modes** — Normal/HighQ retained; SP1200, SP-12, S950, MPC60, SP Raw and 16/12/10/8/6/4/2 kHz modes. All pad modes; manual mode selector. Configuration tab shortened to Cnf. Location: Pad > Tone > Fidelity.
-- **Drive and two filter controls** — Drive before filters with modulation; primary Slope 1 selectable 12/24 dB; independent 24 dB Filter 2 and Res 2 with modulation. Separate left/right encoder banks work correctly. Location: Pad > Tone.
-- **Clip Loop Fade** — 0-50 ms fades at loop edges, capped at a quarter of short loops. Location: Clip > Pos.
-- **Clip Shift, Play Len and Sync 1/32** — Shift -100 to +100 ms. Play Len Full or 1/4-32 bars. Added 1/32 timed Sync. Play Len requires timed Sync and Quant Size enabled. Location: Clip > Pos.
-- **Live Flip repeat modes** — Beat Rpt, 1/8 Rpt, 1/16 Rpt, Half Rpt and Rotate. Clocked playback edits, not another stretching engine. Location: Clip > Pos > Live Flip.
-- **Slice Mono fix** — After conversion from a polyphonic Sample, Mono is honored; a new slice cuts the preceding slice with Quant Size None too. Location: Slicer with Trigger, Mono and Play Through.
-- **Reverb types and main controls** — Plate retained; Room/Hall/Chamber added, with Size, Diffusion, Width and Level. Native Decay/Predelay/Damping modulation remains. Location: FX2 > INFO.
-- **Compressor controls and parallel mix** — Threshold, Ratio, Gain, Mix, Attack and Release using the original compressor algorithm. Location: Tools > Comp / Mstr > Comp env.
-- **Master distortion and Sweep** — Soft/Hard/Fold/Tube distortion and Drive, plus bipolar low-pass/high-pass Sweep. Main Out1/2 only, before optional compression. Location: Tools > Mstr > Section > Master FX.
-- **Preserved recording sends and wet monitoring** — FX1/FX2 send levels survive recording. Input monitors through the pad’s FX sends; recorded WAV stays dry apart from input gain. Location: Recording / pad Pos sends.
-- **MIDI monitor** — 32-event history, 7 visible rows, input group/channel/time/message, channel filter, Freeze/Resume, encoder scrolling, Clear, separate Clock/Active Sensing indicators. Location: Tools > MIDI > Monitor.
-- **Empty-pad Speed navigation fix** — Blank pads expose LFO/Spd and the Speed parameter at 100%. Location: Blank pad > INFO > INFO > LFO/Spd.
+Location: Sample → LFO/Spd → SPEED.
 
-### +c3
+Set 50–200% Speed on an eligible forward Sample voice; select the dial and press INFO for modulation. Native Pitch works on all pads, including the stretched pad, and Speed retains its full range at high positive Pitch.
 
-- **Memory consolidation** — Moves dial-reset workspace into reserved SDRAM; compacts the voice ledger, Speed routing and status cache. Location: Internal.
-- **Detailed reverb second page** — Bass x, Xover, Mod Rate, Mod Dpth, Early, Hi Cut and Lo Cut. FX2 also repeats Level; FX3 uses that square for FX3 Out. Main preserves the tail. Location: FX2 or FX3 > Room/Hall/Chamber > More.
-- **Phone, ADPCM and u-Law Fidelity** — Phone: 8 kHz telephone-band mu-law. ADPCM: adaptive 4-bit IMA at 22.05 kHz. u-Law: 16 kHz. Earlier saved selections preserved. Location: Pad > Tone > Fidelity.
-- **Tape, BBD and Codec delay** — Digital retains original sound. Tape adds saturation/loss/wow/flutter; BBD adds dark, drifting sample-held repeats; Codec runs 16 kHz 4-bit IMA ADPCM in feedback. Location: FX1 > INFO > Type.
-- **Flutter depth** — 0-100% on every delay type. Zero preserves the existing sound, including Tape's built-in flutter. Location: FX1 > More.
-- **FX return output routing** — Out1/2, Dly FX1/2, Rvb FX1/2, FX1/2, Dly1 Rvb2. Routes wet returns independently from dry pad output assignments; mono choices average stereo wet channels. Location: Tools > Rec > FX Out.
-- **Optional line screen saver** — Ten edge-to-edge lines on black, in shades of dark blue through purple to white. One line changes every half-second. Off preserves black-screen saver; graphic disabled by default. Location: Tools > Disp > Saver gfx.
-- **Release and retry Speed while playing** — Returning Speed to 100% with zero modulation depth releases the slot after handoff to native playback. RETRY invites a restart or a fresh adjustment from neutral. A waiting voice keeps its current timing until then. Location: Sample > LFO/Spd > Speed.
-- **Counter reset on next bar** — A star shows the pending reset. Renumbers the next bar as 1:1 without moving audio, synchronized clips, clock phase or fill timing. Location: Top-left bar:beat counter: double-tap.
-- **Compressor bus selection** — Off, Out1/2, FX1/2 or Both. Shared controls, independent histories/detectors for the two stereo pairs. Main and Mstr are two views of the same setting. Location: Tools > Main / Mstr > Comp env.
-- **Breakcut and periodic fills** — Changing sixteenth-note cuts/repeats. Always or final bar of each 2/4/8/16-bar phrase. Applies to all Live Flip modes; quantized timed Sync required. Location: Clip > Pos > Live Flip / Fill every.
-- **Separate Tools and FX RESET** — Choose Tools or FX, then confirm. Tools restores and saves globals. FX restores FX1/FX2/FX3 scalar settings in the current preset, which must be saved to persist. Both preserve pads, pad parameters, sends and modulation routes. Location: Tools > Main > RESET.
-- **FX3 independent second reverb** — Second Plate/Room/Hall/Chamber processor with independent settings/tail and per-pad FX3 Send. FX3 Out: Out1/2, FX1/2, mono FX1 or mono FX2. Tap selected grid cell again to return to FX2. Location: Pads: tap selected FX2 again, then INFO.
-- **Modulatable FX1/FX2/FX3 sends** — Three modulation slots per send within the 12-route-per-pad total. Additive modulation clamps 0-100%. Sends process summed pad audio; voice sources use last active native-list voice, not guaranteed newest-note priority. Recording preserves all send levels and routes. Location: Pad > Pos > Send > select + INFO.
-- **KEY tracking** — Native note-position source centered on MIDI note 60. Distinct from PTCH. Available to supported native and custom destinations; sends follow pad-level polyphony rules. Location: Modulation source selector after CC.
-- **Slice Sync Grid** — Free, 1 bar, 1/2, 1/4, 1/8, 1/16 or 1/32. Rounds scheduled slice duration to whole grid units, minimum one. The +c4 Slice Fit setting chooses Cut or Tape playback. Saved per pad. Location: Slicer > Pos > Sync Grid with Sync On.
-- **CV scale and offset** — Shared across eight EXT modulation sources, excluding audio IN1/IN2. Scale 0-400%, Offset -100 to +100%, defaults 100% and 0%. Held CV updates immediately, raw gate/signal-wake behavior preserved. Location: Tools > Rec > CV In.
-- **CV pitch quantizer** — Off or eleven scales, C-B root; defaults Off/C. Quantizes the native CV-pitch source, separately from general EXT scale/offset, not MIDI notes or final mixed pitch. Nearest note, ties lower. Location: Tools > Rec > CV In > Quantize / Root.
+One voice can stretch at a time. A waiting Sample voice keeps its chosen Pitch and plays at 100% Speed. Restart it, or return Speed to neutral and adjust again after RETRY. An active Speed modulation route keeps its reservation through 100% crossings.
 
-### +c4
+#### Fit slices to the beat
 
-See [New features in 2.3.4+c4](#new-features-in-234c4) above.
+Location: Slicer → Pos → Sync / Sync Grid / Slice Fit.
+
+With Sync On, set Sync Grid to Free, 1 bar, 1/2, 1/4, 1/8, 1/16 or 1/32. Durations round to whole grid units. Cut keeps the native behavior; Tape changes pitch and rate to fit the slice end to end.
+
+[+c5, in testing] Smooth fits eligible slices without changing pitch, at roughly 50–200% fitted rates. It shares the single stretch slot with Sample Speed. Tape remains independent of that slot.
+
+The Slice Mono fix makes a new slice cut the previous one after conversion from a polyphonic Sample, including Trigger / Mono / Play Through with Quant Size None.
+
+#### Edit loop timing and play fills
+
+Location: Clip → Pos.
+
+Use Loop Fade (0–50 ms), Shift (−100 to +100 ms), Play Len (Full or ¼–32 bars) and the added 1/32 Sync division.
+
+Live Flip offers Beat Rpt, 1/8 Rpt, 1/16 Rpt, Half Rpt, Rotate and changing Breakcut patterns. Run them continuously or in the last bar of a 2-, 4-, 8- or 16-bar phrase. Play Len and Live Flip require Quant Size and timed Sync; playback rejoins the current beat when the effect ends.
+
+### Tone & effects
+
+Sampler color, filters, delay and two independent reverbs.
+
+#### Add sampler character
+
+Location: Pad → Tone → Fidelity.
+
+Keep Normal or HighQ, or choose SP1200, SP-12, S950, MPC60 or SP Raw. 12-bit fixed-rate crunch runs at 16, 12, 10, 8, 6, 4 or 2 kHz.
+
+Phone adds 8 kHz telephone-band µ-law color, ADPCM adds adaptive 4-bit color at 22.05 kHz, and u-Law runs at 16 kHz. Fidelity is a manual selector, available on Sample, Clip, Slicer and Granular pads.
+
+#### Drive and filter each pad
+
+Location: Pad → Tone.
+
+Add pre-filter Drive from 0–100%. Slope 1 switches the primary filter between 12 and 24 dB/octave. The independent 24 dB Filter 2 sweeps from low-pass to high-pass and has its own Res 2.
+
+Select Drive, Filter 2 or Res 2 and press INFO for LFO/CV modulation. Tone restores the same dial and encoder bank when you return from the modulation editor.
+
+#### Four delay characters
+
+Location: FX1 → INFO → Type / More.
+
+Choose Digital, Tape, BBD or Codec. Tape adds saturation, frequency loss, wow and flutter; BBD gives dark, drifting repeats; Codec builds up 16 kHz, 4-bit ADPCM color.
+
+More adds Flutter (0–100%), modulation rate, depth and stereo phase, Drive, Tone and Return dB (±12 dB). Codec replaces Drive and Tone with frame Loss (0–30%) and Bandwidth (4–16 kHz). Flutter at zero retains each type’s base sound, including Tape’s built-in movement.
+
+#### Two separate reverb tails
+
+Location: FX2 / FX3 → INFO → Type / More.
+
+Room, Hall and Chamber join Plate. The added types offer Size, Diffusion and Width; their More page adds Bass x, Xover, Mod Rate, Mod Dpth, Early, Hi Cut and Lo Cut. All types have Level. Switching control pages preserves the tail.
+
+Tap the selected FX2 cell again to switch to FX3, then press INFO. FX3 is an independent second reverb with its own settings and tail. Tap the selected cell again to return to FX2.
+
+#### Send, blend and route
+
+Location: Pad → Pos · Tools → Rec → FX Out.
+
+Each pad has FX1, FX2 and FX3 sends, all modulatable through select → INFO. Route FX1/FX2 returns to Out1/2 or the physical FX1/2 pair, together or separately; Dly1 Rvb2 splits them between the two mono FX jacks. FX3 has its own Out1/2, FX1/2, mono FX1 or mono FX2 selector.
+
+[+c5, in testing] Dry Level, after FX3 Send on Pos, defaults to 100% and trims the pad’s direct sound down to 0% while all three sends remain active. Use it for wet-only playback, or modulate it through INFO. The sends and return levels set the wet balance; the effects run in parallel.
+
+### Recording & resampling
+
+Capture a performance, print its sound and keep control of the take.
+
+#### Overdub a pad or a performance — +c5, in testing
+
+Location: Destination pad → INFO twice → Cnf → Dub source.
+
+Manual records the stereo input plus the live musical pads you play. Leave the recorder for Pads to start and stop sounds; playback remains under your control.
+
+Choose Pad 1–16 for a determined source. Recording restarts that pad, stops it with the take and ignores taps on other musical pads. Numbering runs left to right from the top row. Eligible forward Sample sources with Pre also offer One pass.
+
+Use Rec Input → In 1/2 for accompaniment and Length → Custom for a take you end manually. Recording creates a new WAV on the destination. Empty or self-referencing numbered sources show an explanation and leave Rec available.
+
+#### Choose what the backing contributes — +c5, in testing
+
+Location: Destination pad → Cnf → Dub tap.
+
+Pre follows live timing, Pitch, Speed, level, pan and envelope, before Fidelity, Drive, filters and Dry Level. Post pad includes those processes and Dry Level. Post+FX also prints the shared delay and reverb returns.
+
+All three include the live stereo input. Shared returns can contain other pads’ tails. Post+FX is captured before master processing; use Resam to print the native resampling mix. For an isolated wet take, stop other sources and let their tails decay.
+
+#### Record, edit and return — +c5, in testing
+
+Location: Recorder → Rec Input / live Gain · Pads → destination.
+
+With Resam, capture the native mix while playing or editing other pads. Tap the recording destination to stop; the next INFO opens that pad. To reopen an ongoing take without stopping it, select its destination with a left-hand encoder and press INFO.
+
+The active recorder retains Stop, timers, meters and Input Gain or Resam Gain. Either right-hand encoder adjusts the native global gain (−96 to +20 dB). Input Gain leaves the overdub backing level unchanged; Resam Gain changes the recorded mix without changing playback volume.
+
+FX sends, their modulation and Dry Level survive recording. During a take, input-monitor effects stay tied to the destination while you browse other pads. Stop continues to honor recording quantization. For clean playback of a printed take, restore destination Dry Level to 100% and lower sends if needed.
+
+### Modulation & GEN
+
+Connect controls, or let each pad generate its own rhythm.
+
+#### More sources and destinations
+
+Location: Select a supported parameter → INFO.
+
+Use native sources such as LFO, CV and velocity alongside KEY note tracking (centered on MIDI note 60), ENV from the pad’s ADSR, per-note RAND, evolving CHAOS and slow coupled NET movement.
+
+Custom destinations include Sample Speed, Drive, Filter 2, Res 2 and all three FX sends. [+c5, in testing] Dry Level joins them. Up to three slots per destination share the existing 12-route total per pad. Sends and Dry act on the pad mix; voice-dependent sources use one active voice’s value.
+
+#### A generator on every pad
+
+Location: Pad → INFO twice → Gen · Tools → Mstr → GEN Run.
+
+Run a different clocked pattern on each of the 16 pads. Choose Euclid, Breakcut, Call+Resp, Evolve, Drummap, Random, Acid, Turing or Learn. Set timing, probability, velocity and step conditions, send a response to another pad, or teach Learn by playing the grid.
+
+Enable Run under Tools → Mstr → Section → GEN Run. Granular pads expose generator settings under Cnf. Patterns follow the internal or MIDI clock.
+
+#### See the rhythm as it plays
+
+Location: Pads → status strip.
+
+The selected generator shows hits, rests and its current step. A separate row of activity dots covers all 16 pads. Selecting a pad with GEN off clears its pattern display. Generated notes follow their programmed timing, velocity and gate length.
+
+### Master processing
+
+Shape the whole mix or compress either output pair.
+
+#### Compressor controls and parallel Mix
+
+Location: Tools → Comp / Mstr → Comp env.
+
+Expose the stock compressor’s Threshold, Ratio, Gain, Attack, Release and Mix. The bus selector offers Off, Out1/2, FX1/2 or Both, with independent compressor histories for the two stereo pairs.
+
+Main and Mstr show the same Compressor setting. Mix blends compressed and clean signal for parallel compression.
+
+#### Distortion and a moving sweep filter
+
+Location: Tools → Mstr → Master FX / Dist Ctrl / Sweep Mod.
+
+Choose Soft, Hard, Fold or Tube distortion with up to +24 dB Drive. Dist Ctrl adds wet Tone, clean/wet Dist Mix and output Level (−24 to +12 dB).
+
+Sweep moves from low-pass through neutral to high-pass. Modulate it with EXT1–8 or a clocked triangle LFO from 1/16 note to eight bars, using signed depth. Distortion and Sweep process Out1/2 before the optional compressor; Sweep modulation also works with compression off.
+
+### MIDI & CV utilities
+
+Inspect incoming messages and adapt control voltages.
+
+#### See what MIDI is arriving
+
+Location: Tools → MIDI → Monitor.
+
+Inspect a timestamped 32-event history of notes, CCs, program changes, pressure, pitch bend and transport. Freeze or resume, scroll, filter by channel and clear the log. MIDI Clock and Active Sensing have separate activity indicators.
+
+#### Scale, offset and quantize CV
+
+Location: Tools → Rec → CV In.
+
+Set shared CV Scale (0–400%) and Offset (−100 to +100%) for all eight EXT sources, with immediate updates to held CV. Defaults are 100% and zero.
+
+The separate CV pitch quantizer offers eleven scales and a C–B root, defaulting to Off/C. It affects CV pitch, leaving MIDI notes, raw gates, signal wake and audio-input modulation unchanged.
+
+### Display & everyday controls
+
+Find a setting, reset a value or let the screen rest.
+
+#### Screen saver and signal wake
+
+Location: Tools → Disp.
+
+Choose disabled (default) or 1, 2, 3, 5, 10, 15, 30 or 60 minutes. Use a black screen or optional moving lines in dark blue, purple and white. The graphic is also off by default.
+
+The first touch or physical control change wakes only. Optional MIDI, CV-trigger or combined signal wake passes the musical event through. MIDI Clock and Active Sensing do not wake the screen.
+
+#### Reset a value or stop a long sample
+
+Location: Numeric dials · Pads / Waveform → Play.
+
+Double-tap a numeric dial to restore its base value while keeping modulation assignments. On a Trigger pad, hold one finger on the grid pad for three seconds to stop its voices; the initial touch still retriggers normally.
+
+[+c5, in testing] The same three-second stop works on the waveform detail Play button. A fresh tap, MIDI, CV or GEN can start the sound again.
+
+#### Reset the counter or shared settings
+
+Location: Counter · Tools → Main → RESET.
+
+Double-tap the bar:beat counter to renumber the next bar as 1:1 without moving playback or clock phase. RESET offers separate confirmed Tools and FX resets; both preserve pad assignments, pad parameters and modulation. Save the preset to retain an FX reset.
+
+[+c5, in testing] A Tools reset preserves the screen-saver timeout, graphic and signal-wake preferences. Shorter labels—MIDI, Disp, Scrn saver and Cnf—keep navigation readable. Blank pads also expose LFO/Spd and Speed.
+
+## What did each release include?
+
+### 2.3.4+c5 — In testing · based on F10
+
+- Slicer Smooth fit, sharing the single stretch slot with Sample Speed; native Pitch remains available on all pads.
+- Live overdubbing with Manual or numbered sources, Pre / Post pad / Post+FX capture, and One pass for eligible Sample sources.
+- Recording and Resam navigation, Stop from Pads, live Input Gain / Resam Gain, stable destination monitor sends and readable source-error feedback.
+- Modulatable per-pad Dry Level for blending direct sound with parallel FX sends, including wet-only playback.
+- Three-second Trigger Stop on the waveform Play button; Tools reset preserves screen-saver preferences.
+- Flash reclamation and recording-state fixes supporting these additions.
+
+### 2.3.4+c4 — Published · fourth custom release
+
+- Per-pad GEN with nine algorithms, pattern/playhead display and activity dots for every generator.
+- Native Pitch alongside one Sample Speed voice, including the full Speed range at high positive Pitch; removed the earlier Pitch/Speed mutual exclusion.
+- Slicer Tape fit and three-second hold-to-stop on Trigger grid pads.
+- ENV, CHAOS, RAND and NET modulation sources.
+- Expanded delay modulation, Drive, Tone and return controls; Codec Loss and Bandwidth.
+- Master Sweep modulation and parallel distortion Tone, Mix and Level.
+
+### 2.3.4+c3 — Third custom release
+
+- Tape, BBD and Codec delay, adjustable Flutter, deeper reverb controls and the independent FX3 reverb.
+- FX return routing and compressor output-bus selection.
+- Modulatable FX1/FX2/FX3 sends, KEY tracking, CV scale/offset and CV pitch quantizing.
+- Slice Sync Grid, Breakcut and periodic fills, live Speed release/retry and next-bar counter renumbering.
+- Phone, ADPCM and u-Law Fidelity modes.
+- Optional line screen saver, separate Tools/FX reset choices and memory consolidation.
+
+### 2.3.4+c2 — Second custom release
+
+- Tone page with sampler-inspired Fidelity and fixed-rate crunch, Drive, primary 12/24 dB slope and independent Filter 2 / Res 2.
+- Clip Loop Fade, Shift, Play Len, Sync 1/32 and five Live Flip repeat modes.
+- Room, Hall and Chamber reverb; compressor controls and parallel Mix; master distortion and Sweep.
+- FX sends preserved through recording and live input monitoring through sends.
+- MIDI input monitor, Slice Mono fix, blank-pad Speed access and Tone navigation fixes.
+
+### 2.3.4+c (c1) — First custom release
+
+- Independent vertical waveform zoom, including zooming out, and two-finger reset to 100% amplitude plus horizontal fit.
+- Optional screen saver with selectable timeout and MIDI/CV-trigger wake.
+- Pitch-preserving 50–200% Sample Speed with LFO/CV modulation. This first release kept Speed exclusive with non-neutral Pitch; +c4 removed that restriction.
+- Double-tap reset for numeric dials without clearing modulation; compact Tools labels and the custom version display.
+

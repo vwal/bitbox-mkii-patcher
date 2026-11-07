@@ -229,3 +229,53 @@ details[open] summary > span { transform: rotate(45deg); }
 .catalog-intro { max-width:780px; margin:0 0 18px; color:var(--muted); font-size:14px; line-height:1.65; }
 .latest-release > .eyebrow { color:var(--green); }
 .credits-note { margin-top:32px; }
+
+/* Feature catalog and unpublished +c5 preview. */
+.preview-notice { margin-top:24px; padding:16px 20px; border:1px solid #d5b798; border-left:4px solid var(--orange); border-radius:6px; background:var(--orange-light); }
+.preview-notice > strong { font-size:14px; color:var(--orange); }
+.preview-notice p { margin:5px 0 0; color:var(--ink); font-size:12px; line-height:1.7; max-width:90ch; }
+.feature-catalog { margin-top:48px; padding-top:28px; border-top:1px solid var(--line); scroll-margin-top:20px; }
+.feature-catalog > h2 { margin:0 0 14px; font-size:clamp(28px,4vw,36px); letter-spacing:-1px; }
+.feature-nav { display:flex; flex-wrap:wrap; gap:8px; margin:22px 0 30px; }
+.feature-nav a { display:inline-flex; align-items:center; min-height:40px; padding:8px 13px; border:1px solid #b9c7bb; border-radius:5px; font-size:12px; font-weight:600; text-decoration:none; background:var(--card); }
+.feature-nav a:hover { background:var(--green-light); }
+.feature-group { padding-top:28px; margin-top:28px; border-top:1px solid var(--line); scroll-margin-top:20px; }
+.feature-group-heading { display:flex; align-items:flex-start; gap:14px; margin-bottom:18px; }
+.group-number { padding-top:4px; color:var(--orange); font:12px/1.7 ui-monospace,SFMono-Regular,Consolas,monospace; }
+.feature-group h3 { margin:0; font-size:24px; line-height:1.25; letter-spacing:-.65px; font-weight:650; }
+.feature-group-heading p { margin:6px 0 0; font-size:13px; color:var(--muted); }
+.feature-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+.feature-grid article { padding:22px; border:1px solid var(--line); border-radius:8px; background:var(--card); min-width:0; }
+.feature-grid article:last-child:nth-child(odd) { grid-column:1/-1; }
+.feature-grid h4 { margin:0 0 10px; color:var(--ink); font-size:19px; line-height:1.3; letter-spacing:-.3px; font-weight:650; }
+.feature-grid p { margin:10px 0 0; font-size:13px; line-height:1.75; color:var(--muted); max-width:95ch; }
+.feature-grid p strong { color:var(--ink); font-weight:600; }
+.feature-grid .control-path { margin:0 0 9px; color:var(--orange); font-size:10px; font-weight:650; line-height:1.6; letter-spacing:.05em; text-transform:uppercase; }
+.feature-badge { display:inline-block; padding:2px 7px; border-radius:4px; background:var(--green-light); color:var(--green); font-size:10px; line-height:1.6; font-weight:700; white-space:nowrap; vertical-align:baseline; }
+.feature-grid article > .feature-badge { margin:0 0 9px; }
+.feature-grid .upcoming-feature { border-top:3px solid #789281; padding-top:20px; }
+.playback-note { margin:16px 0 0; padding:16px 20px; background:var(--green-light); border-radius:6px; color:var(--muted); font-size:12px; line-height:1.75; }
+.playback-note strong { color:var(--green); }
+.release-history { margin-top:40px; }
+.release-history details { scroll-margin-top:20px; }
+.release-history summary { gap:20px; align-items:center; padding:24px 0; }
+.release-history summary h2 { font-size:22px; }
+.release-history summary > span { font-size:24px; flex-shrink:0; }
+.history-content { padding-bottom:24px; }
+.history-intro { max-width:80ch; margin:0 0 22px; font-size:13px; color:var(--muted); }
+.history-content section { display:grid; grid-template-columns:130px minmax(0,1fr); column-gap:26px; border-top:1px solid var(--line); padding:22px 0; scroll-margin-top:20px; }
+.history-content h3 { margin:0 0 4px; font-size:17px; color:var(--green); }
+.history-content .history-status { margin:0; color:var(--muted); font-size:11px; }
+.history-content ul { grid-column:2; margin:0; padding-left:18px; color:var(--muted); font-size:13px; line-height:1.75; }
+.history-content li + li { margin-top:6px; }
+@media (max-width:650px) {
+  .feature-grid { grid-template-columns:1fr; }
+  .feature-grid article { padding:18px; }
+  .feature-grid .upcoming-feature { padding-top:16px; }
+  .feature-group h3 { font-size:22px; }
+  .feature-nav { gap:7px; }
+  .feature-nav a { padding:8px 10px; }
+  .release-history summary h2 { font-size:19px; }
+  .history-content section { display:block; }
+  .history-content .history-status { margin-bottom:10px; }
+}
