@@ -253,7 +253,7 @@ details[open] summary > span { transform: rotate(45deg); }
 .feature-grid .control-path { margin:0 0 9px; color:var(--orange); font-size:10px; font-weight:650; line-height:1.6; letter-spacing:.05em; text-transform:uppercase; }
 .feature-badge { display:inline-block; padding:2px 7px; border-radius:4px; background:var(--green-light); color:var(--green); font-size:10px; line-height:1.6; font-weight:700; white-space:nowrap; vertical-align:baseline; }
 .feature-grid article > .feature-badge { margin:0 0 9px; }
-.feature-grid .upcoming-feature { border-top:3px solid #789281; padding-top:20px; }
+.feature-grid .new-feature { border-top:3px solid #789281; padding-top:20px; }
 .playback-note { margin:16px 0 0; padding:16px 20px; background:var(--green-light); border-radius:6px; color:var(--muted); font-size:12px; line-height:1.75; }
 .playback-note strong { color:var(--green); }
 .release-history { margin-top:40px; }
@@ -271,7 +271,7 @@ details[open] summary > span { transform: rotate(45deg); }
 @media (max-width:650px) {
   .feature-grid { grid-template-columns:1fr; }
   .feature-grid article { padding:18px; }
-  .feature-grid .upcoming-feature { padding-top:16px; }
+  .feature-grid .new-feature { padding-top:16px; }
   .feature-group h3 { font-size:22px; }
   .feature-nav { gap:7px; }
   .feature-nav a { padding:8px 10px; }

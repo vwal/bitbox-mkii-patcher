@@ -1,6 +1,6 @@
 # Bitbox MkII features since stock 2.3.4
 
-> Local +c5 preparation draft. F10 is being tested. The patcher and PDF guides still target +c4.
+Released November 6, 2026. All additions below are included in **2.3.4+c5**. Apply the cumulative patch to official 2.3.4.
 
 ## Features by area
 
@@ -12,7 +12,7 @@ See the waveform, control time and shape a loop.
 
 Location: Waveform → two-finger gestures.
 
-Zoom amplitude from 25–3200% with a vertical pinch or spread, independently of horizontal time zoom. A stationary two-finger tap restores 100% amplitude and the stock horizontal zoom-out level. Long samples may still extend beyond the screen.
+Zoom amplitude from 25–3200% with a vertical pinch or spread, independently of horizontal time zoom. New in +c5: horizontal pinch zooms out **4× farther than stock**. A stationary two-finger tap still restores 100% amplitude and the stock horizontal zoom-out level. Long samples may still extend beyond the screen. LStr / LEnd labels and fitted marker values keep long positions readable.
 
 #### Change speed while keeping pitch
 
@@ -22,13 +22,15 @@ Set 50–200% Speed on an eligible forward Sample voice; select the dial and pre
 
 One voice can stretch at a time. A waiting Sample voice keeps its chosen Pitch and plays at 100% Speed. Restart it, or return Speed to neutral and adjust again after RETRY. An active Speed modulation route keeps its reservation through 100% crossings.
 
+New in +c5: more efficient Speed rendering reduces processing overhead. Supported forward-looped Samples stretch before LoopStart as well as within the loop. Sample Speed and Slicer Smooth share one active stretch voice; native Pitch stays unrestricted.
+
 #### Fit slices to the beat
 
 Location: Slicer → Pos → Sync / Sync Grid / Slice Fit.
 
 With Sync On, set Sync Grid to Free, 1 bar, 1/2, 1/4, 1/8, 1/16 or 1/32. Durations round to whole grid units. Cut keeps the native behavior; Tape changes pitch and rate to fit the slice end to end.
 
-[+c5, in testing] Smooth fits eligible slices without changing pitch, at roughly 50–200% fitted rates. It shares the single stretch slot with Sample Speed. Tape remains independent of that slot.
+[New in +c5] Smooth fits eligible slices without changing pitch, at roughly 50–200% fitted rates. It shares the single stretch slot with Sample Speed. Tape remains independent of that slot.
 
 The Slice Mono fix makes a new slice cut the previous one after conversion from a polyphonic Sample, including Trigger / Mono / Play Through with Quant Size None.
 
@@ -82,13 +84,13 @@ Location: Pad → Pos · Tools → Rec → FX Out.
 
 Each pad has FX1, FX2 and FX3 sends, all modulatable through select → INFO. Route FX1/FX2 returns to Out1/2 or the physical FX1/2 pair, together or separately; Dly1 Rvb2 splits them between the two mono FX jacks. FX3 has its own Out1/2, FX1/2, mono FX1 or mono FX2 selector.
 
-[+c5, in testing] Dry Level, after FX3 Send on Pos, defaults to 100% and trims the pad’s direct sound down to 0% while all three sends remain active. Use it for wet-only playback, or modulate it through INFO. The sends and return levels set the wet balance; the effects run in parallel.
+[New in +c5] Dry Level, after FX3 Send on Pos, defaults to 100% and trims the pad’s direct sound down to 0% while all three sends remain active. Use it for wet-only playback, or modulate it through INFO. The sends and return levels set the wet balance; the effects run in parallel.
 
 ### Recording & resampling
 
 Capture a performance, print its sound and keep control of the take.
 
-#### Overdub a pad or a performance — +c5, in testing
+#### Overdub a pad or a performance — New in +c5
 
 Location: Destination pad → INFO twice → Cnf → Dub source.
 
@@ -98,7 +100,7 @@ Choose Pad 1–16 for a determined source. Recording restarts that pad, stops it
 
 Use Rec Input → In 1/2 for accompaniment and Length → Custom for a take you end manually. Recording creates a new WAV on the destination. Empty or self-referencing numbered sources show an explanation and leave Rec available.
 
-#### Choose what the backing contributes — +c5, in testing
+#### Choose what the backing contributes — New in +c5
 
 Location: Destination pad → Cnf → Dub tap.
 
@@ -106,7 +108,7 @@ Pre follows live timing, Pitch, Speed, level, pan and envelope, before Fidelity,
 
 All three include the live stereo input. Shared returns can contain other pads’ tails. Post+FX is captured before master processing; use Resam to print the native resampling mix. For an isolated wet take, stop other sources and let their tails decay.
 
-#### Record, edit and return — +c5, in testing
+#### Record, edit and return — New in +c5
 
 Location: Recorder → Rec Input / live Gain · Pads → destination.
 
@@ -126,7 +128,7 @@ Location: Select a supported parameter → INFO.
 
 Use native sources such as LFO, CV and velocity alongside KEY note tracking (centered on MIDI note 60), ENV from the pad’s ADSR, per-note RAND, evolving CHAOS and slow coupled NET movement.
 
-Custom destinations include Sample Speed, Drive, Filter 2, Res 2 and all three FX sends. [+c5, in testing] Dry Level joins them. Up to three slots per destination share the existing 12-route total per pad. Sends and Dry act on the pad mix; voice-dependent sources use one active voice’s value.
+Custom destinations include Sample Speed, Drive, Filter 2, Res 2 and all three FX sends. [New in +c5] Dry Level joins them. Up to three slots per destination share the existing 12-route total per pad. Sends and Dry act on the pad mix; voice-dependent sources use one active voice’s value.
 
 #### A generator on every pad
 
@@ -198,7 +200,7 @@ Location: Numeric dials · Pads / Waveform → Play.
 
 Double-tap a numeric dial to restore its base value while keeping modulation assignments. On a Trigger pad, hold one finger on the grid pad for three seconds to stop its voices; the initial touch still retriggers normally.
 
-[+c5, in testing] The same three-second stop works on the waveform detail Play button. A fresh tap, MIDI, CV or GEN can start the sound again.
+[New in +c5] The same three-second stop works on the waveform detail Play button. A fresh tap, MIDI, CV or GEN can start the sound again.
 
 #### Reset the counter or shared settings
 
@@ -206,17 +208,19 @@ Location: Counter · Tools → Main → RESET.
 
 Double-tap the bar:beat counter to renumber the next bar as 1:1 without moving playback or clock phase. RESET offers separate confirmed Tools and FX resets; both preserve pad assignments, pad parameters and modulation. Save the preset to retain an FX reset.
 
-[+c5, in testing] A Tools reset preserves the screen-saver timeout, graphic and signal-wake preferences. Shorter labels—MIDI, Disp, Scrn saver and Cnf—keep navigation readable. Blank pads also expose LFO/Spd and Speed.
+[New in +c5] A Tools reset preserves the screen-saver timeout, graphic and signal-wake preferences. Shorter labels—MIDI, Disp, Scrn saver and Cnf—keep navigation readable. Blank pads also expose LFO/Spd and Speed.
 
 ## What did each release include?
 
-### 2.3.4+c5 — In testing · based on F10
+### 2.3.4+c5 — Published November 6, 2026
 
 - Slicer Smooth fit, sharing the single stretch slot with Sample Speed; native Pitch remains available on all pads.
 - Live overdubbing with Manual or numbered sources, Pre / Post pad / Post+FX capture, and One pass for eligible Sample sources.
 - Recording and Resam navigation, Stop from Pads, live Input Gain / Resam Gain, stable destination monitor sends and readable source-error feedback.
 - Modulatable per-pad Dry Level for blending direct sound with parallel FX sends, including wet-only playback.
 - Three-second Trigger Stop on the waveform Play button; Tools reset preserves screen-saver preferences.
+- More efficient Speed rendering and a fix for Speed before LoopStart, with one active stretch voice.
+- 4× wider horizontal waveform zoom-out, unchanged two-finger reset and readable LStr / LEnd values.
 - Flash reclamation and recording-state fixes supporting these additions.
 
 ### 2.3.4+c4 — Published · fourth custom release

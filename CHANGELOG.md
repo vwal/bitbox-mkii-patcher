@@ -1,3 +1,18 @@
+# Bitbox MkII firmware 2.3.4+c5
+
+Released November 6, 2026. Apply this cumulative patch directly to official Bitbox MkII 2.3.4.
+
+## New in 2.3.4+c5
+
+- **Slicer Smooth.** Fit synced slices to their duration without changing pitch, at roughly 50–200% fitted rates. Smooth and Sample Speed share one active stretch voice. Tape remains independent; native Pitch is unrestricted.
+- **Live overdubbing.** Record stereo input with a chosen backing pad or the live pads you play in Manual mode. Choose Pre, Post pad or Post+FX, with optional shared delay/reverb returns. Numbered sources start and stop with the take. Eligible forward Sample sources offer One pass.
+- **Recording and resampling controls.** Leave the recorder to play or edit other pads, return with Stop and meters intact, or stop by tapping the recording destination. INFO then opens the correct destination. Input Gain / Resam Gain can be changed during the take; destination monitor sends stay attached while browsing.
+- **Wet-only playback and modulation.** Pos → Dry Level adjusts each pad's direct signal from 100% to 0%, independently of its three parallel sends. Select → INFO adds modulation. Recording preserves Dry Level, send levels and their routes.
+- **More efficient Sample Speed.** Reduced copying and interpolation overhead while retaining the renderer's sound. A single shared stretch slot prevents concurrent stretching; Pitch remains available everywhere.
+- **Speed before the loop.** Forward-looped Samples now stretch their intro before LoopStart and continue smoothly into the loop.
+- **Wider waveform overview.** Horizontal pinch zooms out four times farther than stock. The two-finger reset still restores stock horizontal zoom-out and 100% vertical amplitude. LStr / LEnd labels and fitted numeric values keep long marker positions readable.
+- **Small workflow fixes.** Three-second Trigger Stop now also works on the waveform Play button. Tools reset preserves screen-saver timeout, graphics and signal-wake settings. Empty/self-referencing overdub sources show an explanation instead of exiting the recorder.
+
 # Bitbox MkII firmware 2.3.4+c4
 
 Released November 5, 2026. Apply this cumulative patch directly to official Bitbox MkII 2.3.4.
@@ -6,7 +21,7 @@ Released November 5, 2026. Apply this cumulative patch directly to official Bitb
 
 - **Per-pad GEN sequencer.** Run a different pattern on each of the 16 pads, all following the internal or MIDI clock. Nine algorithms cover Euclid, Breakcut, Call+Resp, Evolve, Drummap, Random, Acid, Turing and Learn. Dial in timing, probability, velocity and step conditions, route a response to another pad, or teach Learn by playing the grid. Select a pad → INFO twice → Gen (Granular uses Cnf). Enable Run in Tools → Mstr → Section → GEN Run.
 - **GEN pattern and playhead.** The Pads status strip shows the selected generator’s hits, rests and current step, plus a row of activity indicators for all 16 pads. A pad with GEN off clears the strip. Generated notes use their programmed step, velocity and gate length.
-- **Pitch alongside Sample Speed.** All pads can use native Pitch, including the one using 50–200% Sample Speed. The full Speed range works at high positive Pitch. One eligible forward Sample voice can stretch at a time. The first eligible voice to request Speed gets the slot. A waiting voice keeps its chosen Pitch and plays at 100% Speed until restarted or deliberately adjusted after RETRY. Several pitched voices and effects alongside Speed can cause crackling, depending on the preset.
+- **Pitch alongside Sample Speed.** All pads can use native Pitch, including the one using 50–200% Sample Speed. The full Speed range works at high positive Pitch. One eligible forward Sample voice can stretch at a time. The first eligible voice to request Speed gets the slot. A waiting voice keeps its chosen Pitch and plays at 100% Speed until restarted or deliberately adjusted after RETRY.
 - **Slicer Tape.** With Slicer → Pos → Sync On, Slice Fit → Tape plays a slice end to end in its synced duration, changing pitch with playback rate. Cut remains the default. Tape works independently of the Sample Speed voice.
 - **Four per-pad modulation sources.** ENV follows the pad’s ADSR, RAND holds a fresh value for each note, CHAOS gives evolving bipolar movement and NET gives slow movement from four coupled nodes. Select a modulation destination and press INFO. On Slice Seq, ENV/RAND step per note and CHAOS/NET step on rising zero crossings.
 - **Hold a Trigger pad to stop.** A tap on the 4×4 grid still plays or retriggers immediately. Keep one finger on the pad for three seconds to release its voices. MIDI, CV, GEN or another tap can play it again.
