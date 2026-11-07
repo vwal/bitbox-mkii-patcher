@@ -17,8 +17,8 @@
       sha256: "35ab7995ad0eca8484f3b28bc76389f10b2037dbb21a4a394e950d9329073e86",
     }),
     target: Object.freeze({
-      size: 786400,
-      sha256: "34d46a67ae411e3820547cf5b0b59488c72d6be9edb8c4b2912ff31a72a0356f",
+      size: 786280,
+      sha256: "6dc040d6e85ca608619f4fdddf08355245e69fdfe1bcaacd89daa1d8fe14c428",
       version: "2.3.4+c6",
       filename: "BITBOXMK2.bin",
     }),

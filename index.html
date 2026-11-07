@@ -8,11 +8,11 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; frame-src https://www.youtube-nocookie.com; object-src 'none'; base-uri 'none'; form-action 'none'">
   <title>bitbox mkII · 2.3.4+c6 patcher</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="styles.css?v=c6">
-  <script defer src="patch-data.js?v=c6"></script>
-  <script defer src="engine.js?v=c6"></script>
-  <script defer src="app.js?v=c6"></script>
-  <script defer src="video.js?v=c6"></script>
+  <link rel="stylesheet" href="styles.css?v=c6r2">
+  <script defer src="patch-data.js?v=c6r2"></script>
+  <script defer src="engine.js?v=c6r2"></script>
+  <script defer src="app.js?v=c6r2"></script>
+  <script defer src="video.js?v=c6r2"></script>
 </head>
 <body>
   <a class="skip-link" href="#patcher">Skip to patcher</a>
@@ -34,7 +34,7 @@
         <div class="version-path" aria-label="Official version 2.3.4 becomes customized version 2.3.4 plus c6">
           <span><small>OFFICIAL</small><strong>2.3.4</strong></span>
           <span class="version-arrow" aria-hidden="true">→</span>
-          <span><small>LATEST RELEASE</small><strong>2.3.4+c6</strong></span>
+          <span><small>LATEST RELEASE · r2</small><strong>2.3.4+c6</strong></span>
         </div>
       </section>
 
@@ -45,6 +45,7 @@
             <h2 id="patch-title">Make your +c6 firmware</h2>
           </div>
           <p class="card-copy">Download <a href="https://1010music.com/wp-content/uploads/2024/05/BITBOXMK2234.zip" target="_blank" rel="noopener noreferrer">official bitbox mkII 2.3.4</a>, extract the archive, then choose its <code>BITBOXMK2.bin</code> file below. Start from this official file even if your module already runs a custom release or a test build.</p>
+          <p class="small-copy"><strong>UI maintenance revision r2 · November 7, 2026.</strong> Corrected Clock HOME navigation, the Rec tab caption and the SD-card free-space readout. The displayed version remains 2.3.4+c6. <a href="#release-six">See the revision details.</a></p>
           <p class="backup-reminder"><strong>Before reflashing:</strong> back up your entire microSD card—including projects, samples and presets—to another drive.</p>
 
           <div class="file-zone" id="file-zone">
@@ -94,7 +95,8 @@
             <p class="eyebrow">AT THE MODULE</p>
             <h2 id="guide-title">Find a control.</h2>
             <div class="paper-choices"><h3>Reference guide</h3><p>Complete +c6 guide: features, navigation, installation and recovery</p><div><a href="bitbox-mkii-2.3.4c6-reference.pdf" download aria-label="Download US Letter reference guide">US Letter ↓</a><a href="bitbox-mkii-2.3.4c6-reference-a4.pdf" download aria-label="Download A4 reference guide">A4 ↓</a></div></div>
-            <div class="paper-choices"><h3>Quick reference card</h3><p>Updated +c6 card · US Letter or A4</p><div><a href="bitbox-mkii-2.3.4c6-quick-card.pdf" download aria-label="Download US Letter quick reference card">US Letter ↓</a><a href="bitbox-mkii-2.3.4c6-quick-card-a4.pdf" download aria-label="Download A4 quick reference card">A4 ↓</a></div></div>
+            <div class="paper-choices"><h3>Quick reference card</h3><p>+c6 card · US Letter or A4</p><div><a href="bitbox-mkii-2.3.4c6-quick-card.pdf" download aria-label="Download US Letter quick reference card">US Letter ↓</a><a href="bitbox-mkii-2.3.4c6-quick-card-a4.pdf" download aria-label="Download A4 quick reference card">A4 ↓</a></div></div>
+            <p class="small-copy">The guides and quick cards include the <a href="#release-six">r2 UI corrections</a>. The firmware still displays 2.3.4+c6.</p>
           </section>
           <section class="support-note" aria-labelledby="support-title">
             <h2 id="support-title">Enjoying the extra control?</h2>
@@ -267,7 +269,7 @@
               <span class="feature-badge">New in +c6</span>
               <h4>Resume or reset musical time</h4>
               <p><strong>Run</strong> resumes from the held position. <strong>Stop</strong> freezes musical time and preserves that position. <strong>Reset</strong> returns musical time to the beginning while keeping the current running or stopped state.</p>
-              <p>The buttons use green for Run, red for Stop and the native cyan-blue accent for Reset. <strong>HOME or Back returns to Tools Main</strong>; HOME from Main keeps its usual behavior.</p>
+              <p>The buttons use green for Run, red for Stop and the native cyan-blue accent for Reset. <strong>HOME returns to the main Menu; Back returns to Tools Main.</strong></p>
               <p>GEN releases held gates and cancels unfinished rolls at Stop. Continue resumes future steps without replaying a partial step; Reset prepares the beginning. GEN’s own Run setting stays independent.</p>
               <p>The existing counter double-tap still only renumbers the next bar. Clock Reset is the separate musical reset. Native actions such as certain quantized launches can still start transport.</p>
             </article>
@@ -332,7 +334,7 @@
               <p class="control-path">Counter · Tools → Main → RESET</p>
               <h4>Reset the counter or shared settings</h4>
               <p><strong>Double-tap the bar:beat counter</strong> to renumber the next bar as 1:1 without moving playback or clock phase. RESET offers separate confirmed <strong>Tools</strong> and <strong>FX</strong> resets; both preserve pad assignments, pad parameters and modulation. Save the preset to retain an FX reset.</p>
-              <p><span class="feature-badge">New in +c6</span> A Tools reset preserves <strong>all five Display preferences</strong>: Brightness, Flip UI, screen-saver timeout, graphic and signal wake. Tools Reset restores the saved internal tempo to 120.0 BPM and clears the CV/CC transport assignments. The inactive header square left of RESET is now gray. Shorter labels—<strong>MIDI, Disp, Scrn saver and Cnf</strong>—keep navigation readable. Blank pads also expose LFO/Spd and Speed.</p>
+              <p><span class="feature-badge">New in +c6</span> A Tools reset preserves <strong>all five Display preferences</strong>: Brightness, Flip UI, screen-saver timeout, graphic and signal wake. Tools Reset restores the saved internal tempo to 120.0 BPM and clears the CV/CC transport assignments. The native SD-card free-space readout is visible in the gray header on <strong>Main</strong> and <strong>Rec → CV In</strong>. Shorter labels—<strong>MIDI, Disp, Scrn saver and Cnf</strong>—keep navigation readable. Blank pads also expose LFO/Spd and Speed.</p>
             </article>
           </div>
         </section>
@@ -342,17 +344,18 @@
         <details id="release-history">
           <summary><h2>What did each release include?</h2><span aria-hidden="true">+</span></summary>
           <div class="history-content">
-            <p class="history-intro">Each release includes the earlier additions. +c is the first custom release, also called c1. The latest release is +c6, published November 7, 2026.</p>
+            <p class="history-intro">Each release includes the earlier additions. +c is the first custom release, also called c1. The latest release is +c6, with UI maintenance revision r2 published November 7, 2026. The displayed firmware version remains 2.3.4+c6.</p>
             <section id="release-six" aria-labelledby="release-six-title">
-              <div class="history-meta"><h3 id="release-six-title">2.3.4+c6</h3><p class="history-status">Published · November 7, 2026</p></div>
+              <div class="history-meta"><h3 id="release-six-title">2.3.4+c6</h3><p class="history-status">Revision r2 · November 7, 2026</p></div>
               <ul>
+                <li><strong>r2 UI fixes:</strong> Clock HOME uses the normal main Menu; Back still returns to Tools Main. Tools → Rec → CV In keeps the bottom tab labelled Rec. The native SD-card free-space readout is restored in the second gray header box on Main and CV In.</li>
                 <li>Editable 40.0–300.0 internal BPM on Tools → Main, with faster adjustment for quick encoder turns and a three-second hold to restore 120.0 BPM.</li>
-                <li>A separate Clock screen with colored Run / Stop / Reset controls: resume held musical time, preserve position at Stop, or reset while keeping run state. HOME returns to Tools Main.</li>
+                <li>A separate Clock screen with colored Run / Stop / Reset controls: resume held musical time, preserve position at Stop, or reset while keeping run state. HOME returns to the main Menu; Back returns to Tools Main.</li>
                 <li>Hold the last external tempo and phase when the final external clock source times out; inherited tempo remains temporary until explicitly edited.</li>
                 <li>Assignable Run CV and Reset CV on EXT1–4, plus Reset CC 0–119 with a selectable MIDI channel; all assignments default Off.</li>
                 <li>Standard MIDI Start / Continue / Stop, GEN pause/resume cleanup and transport guards while recording.</li>
                 <li>Pad mutes now save with presets and restore on load; older presets default to unmuted.</li>
-                <li>Brightness and Flip UI moved to Disp, Gfx moved to a header button, and all five Display preferences preserved by Tools Reset. The inactive Main header square is gray.</li>
+                <li>Brightness and Flip UI moved to Disp, Gfx moved to a header button, and all five Display preferences preserved by Tools Reset. The native SD-card free-space readout is visible in the gray header.</li>
               </ul>
             </section>
             <section id="release-five" aria-labelledby="release-five-title">
@@ -488,7 +491,7 @@
             <p>Only the exact official <strong>bitbox mkII 2.3.4</strong> image is accepted. Other versions, models, ZIP archives and already patched files are rejected. Both hashes must match before a download is offered.</p>
             <dl class="hash-list">
               <div><dt>Original · 2.3.4 · SHA-256</dt><dd id="source-hash">35ab7995ad0eca8484f3b28bc76389f10b2037dbb21a4a394e950d9329073e86</dd></div>
-              <div><dt>Patched · 2.3.4+c6 · SHA-256</dt><dd id="target-hash">34d46a67ae411e3820547cf5b0b59488c72d6be9edb8c4b2912ff31a72a0356f</dd></div>
+              <div><dt>Patched · 2.3.4+c6 · SHA-256</dt><dd id="target-hash">6dc040d6e85ca608619f4fdddf08355245e69fdfe1bcaacd89daa1d8fe14c428</dd></div>
             </dl>
             <p class="small-copy">The patcher uses your browser’s SHA-256 implementation. Use an HTTPS address or a local preview server if your browser cannot verify files from a downloaded page.</p>
           </div>

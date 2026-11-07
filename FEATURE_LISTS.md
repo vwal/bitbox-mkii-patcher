@@ -1,6 +1,6 @@
 # Bitbox MkII features since stock 2.3.4
 
-Released November 7, 2026. All additions below are included in **2.3.4+c6**. Apply the cumulative patch directly to official MkII 2.3.4.
+Updated for UI maintenance revision **r2**, November 7, 2026. The displayed version stays **2.3.4+c6**. All additions below are included in **2.3.4+c6**. Apply the cumulative patch directly to official MkII 2.3.4.
 
 ## Playback & loop editing
 
@@ -172,7 +172,7 @@ Tools → Main → Clock → Run / Stop / Reset
 
 Run resumes from the held position. Stop freezes musical time and preserves that position. Reset returns musical time to the beginning while keeping the current running or stopped state.
 
-The buttons use green for Run, red for Stop and the native cyan-blue accent for Reset. HOME or Back returns to Tools Main; HOME from Main keeps its usual behavior.
+The buttons use green for Run, red for Stop and the native cyan-blue accent for Reset. HOME returns to the main Menu; Back returns to Tools Main.
 
 GEN releases held gates and cancels unfinished rolls at Stop. Continue resumes future steps without replaying a partial step; Reset prepares the beginning. GEN’s own Run setting stays independent.
 
@@ -207,6 +207,8 @@ Inspect a timestamped 32-event history of notes, CCs, program changes, pressure,
 ### Scale, offset and quantize CV
 
 Tools → Rec → CV In
+
+The bottom tab stays labelled Rec. The native SD-card free-space readout remains visible in the second gray header box here and on Tools Main.
 
 Set shared CV Scale (0–400%) and Offset (−100 to +100%) for all eight EXT sources, with immediate updates to held CV. Defaults are 100% and zero.
 
@@ -246,7 +248,7 @@ Counter · Tools → Main → RESET
 
 Double-tap the bar:beat counter to renumber the next bar as 1:1 without moving playback or clock phase. RESET offers separate confirmed Tools and FX resets; both preserve pad assignments, pad parameters and modulation. Save the preset to retain an FX reset.
 
-New in +c6 A Tools reset preserves all five Display preferences: Brightness, Flip UI, screen-saver timeout, graphic and signal wake. Tools Reset restores the saved internal tempo to 120.0 BPM and clears the CV/CC transport assignments. The inactive header square left of RESET is now gray. Shorter labels—MIDI, Disp, Scrn saver and Cnf—keep navigation readable. Blank pads also expose LFO/Spd and Speed.
+New in +c6 A Tools reset preserves all five Display preferences: Brightness, Flip UI, screen-saver timeout, graphic and signal wake. Tools Reset restores the saved internal tempo to 120.0 BPM and clears the CV/CC transport assignments. The native SD-card free-space readout is visible in the gray header on Main and Rec → CV In. Shorter labels—MIDI, Disp, Scrn saver and Cnf—keep navigation readable. Blank pads also expose LFO/Spd and Speed.
 
 ## Release history
 

@@ -43,15 +43,25 @@ filename must match exactly. With the unit powered off, insert the card, hold
 Allow about 30 seconds and leave power on until the automatic reboot. Confirm
 **2.3.4** in the lower-right corner of the Menu screen.
 
+## UI maintenance revision r2 — November 7, 2026
+
+The firmware still displays **2.3.4+c6**. This revision corrects three UI details:
+
+- **Clock navigation:** HOME returns to the main Menu. The on-screen Back button returns to Tools Main.
+- **Rec tab caption:** Tools → Rec → CV In keeps **Rec** in the bottom tab bar.
+- **SD-card free-space readout:** the native readout is visible in the second gray header box on Tools Main and CV In.
+
+All existing features are retained. The reference guides and quick cards include these r2 navigation corrections.
+
 ## New in 2.3.4+c6
 
 - **Internal tempo on Main.** Set 40.0–300.0 BPM with speed-sensitive encoder adjustment: quick turns move faster, slow turns retain fine control. Hold Int BPM for three seconds to restore and save 120.0 BPM.
-- **Clock transport controls.** Run resumes held musical time, Stop preserves position, and Reset returns to the beginning while keeping the running or stopped state. The buttons are green, red and native cyan-blue; HOME or Back returns to Tools Main.
+- **Clock transport controls.** Run resumes held musical time, Stop preserves position, and Reset returns to the beginning while keeping the running or stopped state. The buttons are green, red and native cyan-blue; HOME returns to the main Menu; Back returns to Tools Main.
 - **Hold the external tempo.** When the final external clock source times out, internal playback keeps its last tempo and phase. The inherited tempo remains temporary until you explicitly edit Int BPM; reboot uses the saved tempo.
 - **CV and MIDI transport.** Assign Run CV and Reset CV to Off or EXT1–4. Reset CC 0–119 with a selectable MIDI channel adds reset while running. Standard MIDI Start / Continue / Stop remains compatible; CV and CC assignments default Off.
 - **GEN and recording behavior.** Stop releases GEN's held gates and cancels unfinished rolls; Continue resumes future steps. Transport commands are ignored while a recording is armed or active or the final overdub FX write is pending. Use the recorder's normal Stop first.
 - **Saved pad mutes.** Set the native Mixer mutes, then Save the preset. Loading it restores the mute states. Older presets load unmuted. Copying preserves mute; clearing/unloading, replacing the WAV or recording a new take clears it. Mute edits are not saved automatically.
-- **Display and navigation.** Brightness and Flip UI move to Disp, Gfx becomes a header button, and Tools Reset preserves all five Display preferences. The inactive Main header square left of RESET is gray.
+- **Display and navigation.** Brightness and Flip UI move to Disp, Gfx becomes a header button, and Tools Reset preserves all five Display preferences. The native SD-card free-space readout is visible in the gray header on Main and Rec → CV In.
 
 Clock Stop does not mute all playing audio. Pitch and Sample Speed remain independent of BPM. A long hold of Int BPM resets the internal/fallback tempo, not transport or an active external clock.
 
@@ -90,7 +100,7 @@ The direct Watch on YouTube link is always available.
 | Image | Bytes | SHA-256 |
 | --- | ---: | --- |
 | Official 2.3.4 | 674,896 | `35ab7995ad0eca8484f3b28bc76389f10b2037dbb21a4a394e950d9329073e86` |
-| Customized 2.3.4+c6 | 786,400 | `34d46a67ae411e3820547cf5b0b59488c72d6be9edb8c4b2912ff31a72a0356f` |
+| Customized 2.3.4+c6 | 786,280 | `6dc040d6e85ca608619f4fdddf08355245e69fdfe1bcaacd89daa1d8fe14c428` |
 
 ## Hosting
 
