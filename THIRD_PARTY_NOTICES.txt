@@ -1,4 +1,4 @@
-Release 2.3.4+c5 retains the adaptations and licenses credited below. The fifth release adds local Slicer Smooth, overdub/recording, Dry Level, waveform and Speed-rendering integration. The original 1010music firmware remains separate.
+Release 2.3.4+c6 retains the adaptations and licenses credited below. The sixth release adds local clock/transport controls, saved pad mutes and Display/UI refinements. No new third-party code was imported for this release. The original 1010music firmware remains separate.
 
 Release 2.3.4+c4 includes the G4 adaptations identified below. The GEN-DONOR-LICENSE.txt and GEN-APACHE-2.0.txt notices accompany this release. The stock 1010music firmware is supplied separately by 1010music.
 

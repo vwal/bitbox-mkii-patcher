@@ -230,10 +230,7 @@ details[open] summary > span { transform: rotate(45deg); }
 .latest-release > .eyebrow { color:var(--green); }
 .credits-note { margin-top:32px; }
 
-/* Feature catalog and unpublished +c5 preview. */
-.preview-notice { margin-top:24px; padding:16px 20px; border:1px solid #d5b798; border-left:4px solid var(--orange); border-radius:6px; background:var(--orange-light); }
-.preview-notice > strong { font-size:14px; color:var(--orange); }
-.preview-notice p { margin:5px 0 0; color:var(--ink); font-size:12px; line-height:1.7; max-width:90ch; }
+/* Feature catalog and release history. */
 .feature-catalog { margin-top:48px; padding-top:28px; border-top:1px solid var(--line); scroll-margin-top:20px; }
 .feature-catalog > h2 { margin:0 0 14px; font-size:clamp(28px,4vw,36px); letter-spacing:-1px; }
 .feature-nav { display:flex; flex-wrap:wrap; gap:8px; margin:22px 0 30px; }
@@ -279,3 +276,6 @@ details[open] summary > span { transform: rotate(45deg); }
   .history-content section { display:block; }
   .history-content .history-status { margin-bottom:10px; }
 }
+
+.earlier-badge { background:#eceee9; color:var(--muted); }
+input:disabled + span { cursor:default; }

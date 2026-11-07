@@ -3,11 +3,13 @@
 [Open the patcher](https://vwal.github.io/bitbox-mkii-patcher/)
 
 An unofficial customization of 1010music Bitbox MkII firmware **2.3.4** to
-**2.3.4+c5**. This repository contains only the static website and a binary delta,
+**2.3.4+c6**. This repository contains only the static website and a binary delta,
 not the complete original or customized firmware.
 
 [Watch the first release (+c) video overview](https://youtu.be/OjgC4UoyOIA). The page also includes
 an optional player that loads only when requested. An updated video covering the later releases is coming soon.
+
+Released November 7, 2026. All earlier custom features are included.
 
 ## Use
 
@@ -19,13 +21,13 @@ an optional player that loads only when requested. An updated video covering the
 
 | Printable PDF | US Letter | A4 |
 | --- | --- | --- |
-| Firmware reference guide | [Download](bitbox-mkii-2.3.4c5-reference.pdf) | [Download](bitbox-mkii-2.3.4c5-reference-a4.pdf) |
-| Navigation card | [Download](bitbox-mkii-2.3.4c5-quick-card.pdf) | [Download](bitbox-mkii-2.3.4c5-quick-card-a4.pdf) |
+| Firmware reference guide | [Download](bitbox-mkii-2.3.4c6-reference.pdf) | [Download](bitbox-mkii-2.3.4c6-reference-a4.pdf) |
+| Navigation card | [Download](bitbox-mkii-2.3.4c6-quick-card.pdf) | [Download](bitbox-mkii-2.3.4c6-quick-card-a4.pdf) |
 
 For flashing, see the [official MkII manual](https://1010music.com/wp-content/uploads/2023/03/bitbox-mk2-2.0-user-manual-2023-03-01-clean.pdf).
 Copy the patched file to the card root. Power off, insert the card, hold INFO
 while powering on, and release INFO when the upgrade message appears. Allow
-about 30 seconds and wait for the automatic reboot. Confirm **2.3.4+c5** at the
+about 30 seconds and wait for the automatic reboot. Confirm **2.3.4+c6** at the
 lower-right of Menu (press HOME until it appears), or the top-right of Tools.
 
 The patcher verifies the entire original file with SHA-256 before applying any
@@ -41,7 +43,19 @@ filename must match exactly. With the unit powered off, insert the card, hold
 Allow about 30 seconds and leave power on until the automatic reboot. Confirm
 **2.3.4** in the lower-right corner of the Menu screen.
 
-## New in 2.3.4+c5
+## New in 2.3.4+c6
+
+- **Internal tempo on Main.** Set 40.0–300.0 BPM with speed-sensitive encoder adjustment: quick turns move faster, slow turns retain fine control. Hold Int BPM for three seconds to restore and save 120.0 BPM.
+- **Clock transport controls.** Run resumes held musical time, Stop preserves position, and Reset returns to the beginning while keeping the running or stopped state. The buttons are green, red and native cyan-blue; HOME or Back returns to Tools Main.
+- **Hold the external tempo.** When the final external clock source times out, internal playback keeps its last tempo and phase. The inherited tempo remains temporary until you explicitly edit Int BPM; reboot uses the saved tempo.
+- **CV and MIDI transport.** Assign Run CV and Reset CV to Off or EXT1–4. Reset CC 0–119 with a selectable MIDI channel adds reset while running. Standard MIDI Start / Continue / Stop remains compatible; CV and CC assignments default Off.
+- **GEN and recording behavior.** Stop releases GEN's held gates and cancels unfinished rolls; Continue resumes future steps. Transport commands are ignored while a recording is armed or active or the final overdub FX write is pending. Use the recorder's normal Stop first.
+- **Saved pad mutes.** Set the native Mixer mutes, then Save the preset. Loading it restores the mute states. Older presets load unmuted. Copying preserves mute; clearing/unloading, replacing the WAV or recording a new take clears it. Mute edits are not saved automatically.
+- **Display and navigation.** Brightness and Flip UI move to Disp, Gfx becomes a header button, and Tools Reset preserves all five Display preferences. The inactive Main header square left of RESET is gray.
+
+Clock Stop does not mute all playing audio. Pitch and Sample Speed remain independent of BPM. A long hold of Int BPM resets the internal/fallback tempo, not transport or an active external clock.
+
+## Previously added in 2.3.4+c5
 
 - **Slicer Smooth.** Fit synced slices to their duration without changing pitch, at roughly 50–200% fitted rates. Smooth and Sample Speed share one active stretch voice. Tape remains independent; native Pitch is unrestricted.
 - **Live overdubbing.** Record stereo input with a chosen backing pad or the live pads you play in Manual mode. Choose Pre, Post pad or Post+FX, with optional shared delay/reverb returns. Numbered sources start and stop with the take. Eligible forward Sample sources offer One pass.
@@ -54,7 +68,7 @@ Allow about 30 seconds and leave power on until the automatic reboot. Confirm
 
 ## All features and earlier releases
 
-See [features by area](FEATURE_LISTS.md) for the complete cumulative feature set and control locations. The website groups features by function and keeps “What did each release include?” collapsed by default. [CHANGELOG](CHANGELOG.md) records +c (c1), +c2, +c3, +c4 and +c5.
+See [features by area](FEATURE_LISTS.md) for the complete cumulative feature set and control locations. The website groups features by function and keeps “What did each release include?” collapsed by default. [CHANGELOG](CHANGELOG.md) records +c (c1) through +c6.
 
 ## Privacy
 
@@ -63,7 +77,7 @@ result is uploaded. The patcher itself has no analytics, cookies, third-party
 scripts or remote fonts. The page's Content Security Policy disables scripted
 network connections and form submission, with a specific frame allowance for
 the optional YouTube player. The host receives ordinary requests for website
-files; following the download or optional support link visits that external site.
+files; following an external link visits that service. External links do not receive your firmware from the patcher.
 
 The overview player contacts YouTube only after **Load video player** is pressed.
 It uses the youtube-nocookie.com privacy-enhanced host and sends the site origin
@@ -76,7 +90,7 @@ The direct Watch on YouTube link is always available.
 | Image | Bytes | SHA-256 |
 | --- | ---: | --- |
 | Official 2.3.4 | 674,896 | `35ab7995ad0eca8484f3b28bc76389f10b2037dbb21a4a394e950d9329073e86` |
-| Customized 2.3.4+c5 | 782,640 | `7982591990d476ca700ecb4b1d2190199fe054f3a5de5e468088ca99f974d53e` |
+| Customized 2.3.4+c6 | 786,400 | `34d46a67ae411e3820547cf5b0b59488c72d6be9edb8c4b2912ff31a72a0356f` |
 
 ## Hosting
 
@@ -84,6 +98,14 @@ GitHub Pages publishes the root of `main`. Keep `.nojekyll` alongside
 `index.html`. All website assets use relative URLs; no build step is needed.
 For local preview, run `python3 -m http.server 8080 --bind 127.0.0.1` and open
 `http://127.0.0.1:8080/`. Hosted use requires HTTPS for browser cryptography.
+
+## Community feedback
+
+**All feedback is welcome**: questions, experiences, suggestions and bug reports. The planned feature set is complete; further updates will focus on polish and fixes.
+
+[Join Galagzee Audio on Discord](https://discord.gg/gRsY3w4pHc) and visit **#bitbox2-custom-firmware** to share your feedback.
+
+I’m continuing MIDI and CV testing, and reports from different setups will help identify any remaining issues. For a bug report, include the firmware version, steps to reproduce it, and what you expected versus what happened. For MIDI or CV issues, also mention the connected gear and relevant clock or transport settings.
 
 ## From the author
 

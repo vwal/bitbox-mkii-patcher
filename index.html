@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Bitbox MkII 2.3.4+c5: waveform zoom, pitch-preserving playback, overdubbing, effects and more. Apply the patch entirely in your browser; no firmware upload.">
+  <meta name="description" content="Bitbox MkII 2.3.4+c6: internal tempo, CV/MIDI transport, saved pad mutes, waveform zoom, pitch-preserving playback, overdubbing and effects. Apply the patch entirely in your browser; no firmware upload.">
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; frame-src https://www.youtube-nocookie.com; object-src 'none'; base-uri 'none'; form-action 'none'">
-  <title>bitbox mkII · 2.3.4+c5 patcher</title>
+  <title>bitbox mkII · 2.3.4+c6 patcher</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="styles.css?v=c5">
-  <script defer src="patch-data.js?v=c5"></script>
-  <script defer src="engine.js?v=c5"></script>
-  <script defer src="app.js?v=c5"></script>
-  <script defer src="video.js?v=c5"></script>
+  <link rel="stylesheet" href="styles.css?v=c6">
+  <script defer src="patch-data.js?v=c6"></script>
+  <script defer src="engine.js?v=c6"></script>
+  <script defer src="app.js?v=c6"></script>
+  <script defer src="video.js?v=c6"></script>
 </head>
 <body>
   <a class="skip-link" href="#patcher">Skip to patcher</a>
@@ -29,12 +29,12 @@
       <section class="intro" aria-labelledby="page-title">
         <p class="eyebrow">UNOFFICIAL COMMUNITY PATCH · MKII ONLY</p>
         <h1 id="page-title">Custom firmware.<br>Patched in your browser.</h1>
-        <p class="intro-copy">Waveform zoom, pitch-preserving playback, sound shaping, live effects and recording tools for the Bitbox MkII. Browse the additions by feature, or open the release history to see when each arrived.</p>
-        <nav class="intro-links" aria-label="On this page"><a href="#features">Explore features</a><a href="#release-history">Release history</a><a href="#patcher">Patch firmware</a><a href="#guide-title">PDF guides</a><a href="#installation">Install &amp; recover</a></nav>
-        <div class="version-path" aria-label="Official version 2.3.4 becomes customized version 2.3.4 plus c5">
+        <p class="intro-copy">Waveform zoom, pitch-preserving playback, sound shaping, live effects, recording and clock controls for the Bitbox MkII. Browse the additions by feature, or open the release history to see when each arrived.</p>
+        <nav class="intro-links" aria-label="On this page"><a href="#features">Explore features</a><a href="#release-history">Release history</a><a href="#patcher">Patch firmware</a><a href="#guide-title">PDF guides</a><a href="#installation">Install &amp; recover</a><a href="#feedback">Feedback</a></nav>
+        <div class="version-path" aria-label="Official version 2.3.4 becomes customized version 2.3.4 plus c6">
           <span><small>OFFICIAL</small><strong>2.3.4</strong></span>
           <span class="version-arrow" aria-hidden="true">→</span>
-          <span><small>CURRENT DOWNLOAD</small><strong>2.3.4+c5</strong></span>
+          <span><small>LATEST RELEASE</small><strong>2.3.4+c6</strong></span>
         </div>
       </section>
 
@@ -42,7 +42,7 @@
         <section class="patch-card" id="patcher" aria-labelledby="patch-title">
           <div class="card-heading">
             <span class="section-number" aria-hidden="true">01—03</span>
-            <h2 id="patch-title">Make your +c5 firmware</h2>
+            <h2 id="patch-title">Make your +c6 firmware</h2>
           </div>
           <p class="card-copy">Download <a href="https://1010music.com/wp-content/uploads/2024/05/BITBOXMK2234.zip" target="_blank" rel="noopener noreferrer">official bitbox mkII 2.3.4</a>, extract the archive, then choose its <code>BITBOXMK2.bin</code> file below. Start from this official file even if your module already runs a custom release or a test build.</p>
           <p class="backup-reminder"><strong>Before reflashing:</strong> back up your entire microSD card—including projects, samples and presets—to another drive.</p>
@@ -68,14 +68,14 @@
           <ol class="progress-list" id="progress-list" aria-label="Patch verification progress">
             <li id="stage-input" data-state="pending"><span class="step-marker" aria-hidden="true">1</span><span><strong>Verify original</strong><small>Match the official 2.3.4 SHA-256</small></span><span class="step-state">Waiting</span></li>
             <li id="stage-patch" data-state="pending"><span class="step-marker" aria-hidden="true">2</span><span><strong>Apply customizations</strong><small>Build a separate file in browser memory</small></span><span class="step-state">Waiting</span></li>
-            <li id="stage-output" data-state="pending"><span class="step-marker" aria-hidden="true">3</span><span><strong>Verify result</strong><small>Match the exact 2.3.4+c5 SHA-256</small></span><span class="step-state">Waiting</span></li>
+            <li id="stage-output" data-state="pending"><span class="step-marker" aria-hidden="true">3</span><span><strong>Verify result</strong><small>Match the exact 2.3.4+c6 SHA-256</small></span><span class="step-state">Waiting</span></li>
           </ol>
 
           <button class="primary-button" id="apply-patch" type="button" disabled>Apply patch <span aria-hidden="true">→</span></button>
           <div class="download-result" id="download-result" hidden>
             <p><strong>Verified and ready.</strong> Your original file is unchanged.</p>
             <a class="download-button" id="download-file" download="BITBOXMK2.bin">Download BITBOXMK2.bin <span aria-hidden="true">↓</span></a>
-            <p class="download-note">The downloaded file identifies itself as <strong>2.3.4+c5</strong> in Tools. This page creates a file; it does not flash your module.</p>
+            <p class="download-note">The downloaded file identifies itself as <strong>2.3.4+c6</strong> in Tools. This page creates a file; it does not flash your module.</p>
             <p class="download-note">On your SD card, the patched file must be named exactly <code>BITBOXMK2.bin</code>. Remove any duplicate-download suffix such as <code>(1)</code> before copying it. <a href="#installation">See installation steps below.</a></p>
           </div>
 
@@ -93,8 +93,8 @@
           <section class="feature-summary" aria-labelledby="guide-title">
             <p class="eyebrow">AT THE MODULE</p>
             <h2 id="guide-title">Find a control.</h2>
-            <div class="paper-choices"><h3>Reference guide</h3><p>Complete +c5 guide: features, navigation, installation and recovery</p><div><a href="bitbox-mkii-2.3.4c5-reference.pdf" download aria-label="Download US Letter reference guide">US Letter ↓</a><a href="bitbox-mkii-2.3.4c5-reference-a4.pdf" download aria-label="Download A4 reference guide">A4 ↓</a></div></div>
-            <div class="paper-choices"><h3>Quick reference card</h3><p>Updated +c5 card · US Letter or A4</p><div><a href="bitbox-mkii-2.3.4c5-quick-card.pdf" download aria-label="Download US Letter quick reference card">US Letter ↓</a><a href="bitbox-mkii-2.3.4c5-quick-card-a4.pdf" download aria-label="Download A4 quick reference card">A4 ↓</a></div></div>
+            <div class="paper-choices"><h3>Reference guide</h3><p>Complete +c6 guide: features, navigation, installation and recovery</p><div><a href="bitbox-mkii-2.3.4c6-reference.pdf" download aria-label="Download US Letter reference guide">US Letter ↓</a><a href="bitbox-mkii-2.3.4c6-reference-a4.pdf" download aria-label="Download A4 reference guide">A4 ↓</a></div></div>
+            <div class="paper-choices"><h3>Quick reference card</h3><p>Updated +c6 card · US Letter or A4</p><div><a href="bitbox-mkii-2.3.4c6-quick-card.pdf" download aria-label="Download US Letter quick reference card">US Letter ↓</a><a href="bitbox-mkii-2.3.4c6-quick-card-a4.pdf" download aria-label="Download A4 quick reference card">A4 ↓</a></div></div>
           </section>
           <section class="support-note" aria-labelledby="support-title">
             <h2 id="support-title">Enjoying the extra control?</h2>
@@ -115,28 +115,28 @@
       <section class="feature-catalog" id="features" aria-labelledby="features-title">
         <p class="eyebrow">ALL ADDITIONS SINCE STOCK 2.3.4</p>
         <h2 id="features-title">Explore by feature.</h2>
-        <p class="catalog-intro">All additions since official 2.3.4, grouped by what you want to do. <span class="feature-badge">New in +c5</span> marks the latest features and improvements.</p>
-        <nav class="feature-nav" aria-label="Feature sets"><a href="#playback">Playback &amp; loop editing</a><a href="#tone-effects">Tone &amp; effects</a><a href="#recording">Recording &amp; resampling</a><a href="#modulation-gen">Modulation &amp; GEN</a><a href="#master">Master processing</a><a href="#midi-cv">MIDI &amp; CV utilities</a><a href="#display-workflow">Display &amp; everyday controls</a></nav>
+        <p class="catalog-intro">All additions since official 2.3.4, grouped by what you want to do. <span class="feature-badge">New in +c6</span> marks the latest clock, transport, saved-mute and Display additions.</p>
+        <nav class="feature-nav" aria-label="Feature sets"><a href="#playback">Playback &amp; loop editing</a><a href="#tone-effects">Tone &amp; effects</a><a href="#recording">Recording &amp; resampling</a><a href="#modulation-gen">Modulation &amp; GEN</a><a href="#master">Master processing</a><a href="#clock-transport">Clock &amp; transport</a><a href="#midi-cv">MIDI &amp; CV utilities</a><a href="#display-workflow">Display &amp; everyday controls</a></nav>
         <section class="feature-group" id="playback" aria-labelledby="playback-title">
           <div class="feature-group-heading"><span class="group-number" aria-hidden="true">01</span><div><h3 id="playback-title">Playback &amp; loop editing</h3><p>See the waveform, control time and shape a loop.</p></div></div>
           <div class="feature-grid">
             <article>
               <p class="control-path">Waveform → two-finger gestures</p>
               <h4>See quiet and loud waveforms</h4>
-              <p>Zoom amplitude from <strong>25–3200%</strong> with a vertical pinch or spread, independently of horizontal time zoom. <span class="feature-badge">New in +c5</span> Horizontal pinch now zooms out <strong>4× farther than stock</strong>. A stationary two-finger tap still restores 100% amplitude and the stock horizontal zoom-out level. Long samples may still extend beyond the screen. Loop markers use <strong>LStr / LEnd</strong>, with long values kept inside their fields.</p>
+              <p>Zoom amplitude from <strong>25–3200%</strong> with a vertical pinch or spread, independently of horizontal time zoom. <span class="feature-badge earlier-badge">Added in +c5</span> Horizontal pinch now zooms out <strong>4× farther than stock</strong>. A stationary two-finger tap still restores 100% amplitude and the stock horizontal zoom-out level. Long samples may still extend beyond the screen. Loop markers use <strong>LStr / LEnd</strong>, with long values kept inside their fields.</p>
             </article>
             <article>
               <p class="control-path">Sample → LFO/Spd → SPEED</p>
               <h4>Change speed while keeping pitch</h4>
               <p>Set <strong>50–200% Speed</strong> on an eligible forward Sample voice; select the dial and press INFO for modulation. Native Pitch works on all pads, including the stretched pad, and Speed retains its full range at high positive Pitch.</p>
               <p>One voice can stretch at a time. A waiting Sample voice keeps its chosen Pitch and plays at 100% Speed. Restart it, or return Speed to neutral and adjust again after RETRY. An active Speed modulation route keeps its reservation through 100% crossings.</p>
-              <p><span class="feature-badge">New in +c5</span> More efficient Speed rendering reduces processing overhead. On supported forward-looped Samples, Speed also works before LoopStart and continues into the loop.</p>
+              <p><span class="feature-badge earlier-badge">Added in +c5</span> More efficient Speed rendering reduces processing overhead. On supported forward-looped Samples, Speed also works before LoopStart and continues into the loop.</p>
             </article>
             <article>
               <p class="control-path">Slicer → Pos → Sync / Sync Grid / Slice Fit</p>
               <h4>Fit slices to the beat</h4>
               <p>With Sync On, set <strong>Sync Grid</strong> to Free, 1 bar, 1/2, 1/4, 1/8, 1/16 or 1/32. Durations round to whole grid units. <strong>Cut</strong> keeps the native behavior; <strong>Tape</strong> changes pitch and rate to fit the slice end to end.</p>
-              <p><span class="feature-badge">New in +c5</span> <strong>Smooth</strong> fits eligible slices without changing pitch, at roughly 50–200% fitted rates. It shares the single stretch slot with Sample Speed. Tape remains independent of that slot.</p>
+              <p><span class="feature-badge earlier-badge">Added in +c5</span> <strong>Smooth</strong> fits eligible slices without changing pitch, at roughly 50–200% fitted rates. It shares the single stretch slot with Sample Speed. Tape remains independent of that slot.</p>
               <p>The Slice Mono fix makes a new slice cut the previous one after conversion from a polyphonic Sample, including Trigger / Mono / Play Through with Quant Size None.</p>
             </article>
             <article>
@@ -179,31 +179,31 @@
               <p class="control-path">Pad → Pos · Tools → Rec → FX Out</p>
               <h4>Send, blend and route</h4>
               <p>Each pad has <strong>FX1, FX2 and FX3 sends</strong>, all modulatable through select → INFO. Route FX1/FX2 returns to Out1/2 or the physical FX1/2 pair, together or separately; Dly1 Rvb2 splits them between the two mono FX jacks. FX3 has its own Out1/2, FX1/2, mono FX1 or mono FX2 selector.</p>
-              <p><span class="feature-badge">New in +c5</span> <strong>Dry Level</strong>, after FX3 Send on Pos, defaults to 100% and trims the pad’s direct sound down to 0% while all three sends remain active. Use it for wet-only playback, or modulate it through INFO. The sends and return levels set the wet balance; the effects run in parallel.</p>
+              <p><span class="feature-badge earlier-badge">Added in +c5</span> <strong>Dry Level</strong>, after FX3 Send on Pos, defaults to 100% and trims the pad’s direct sound down to 0% while all three sends remain active. Use it for wet-only playback, or modulate it through INFO. The sends and return levels set the wet balance; the effects run in parallel.</p>
             </article>
           </div>
         </section>
         <section class="feature-group" id="recording" aria-labelledby="recording-title">
           <div class="feature-group-heading"><span class="group-number" aria-hidden="true">03</span><div><h3 id="recording-title">Recording &amp; resampling</h3><p>Capture a performance, print its sound and keep control of the take.</p></div></div>
           <div class="feature-grid">
-            <article class="new-feature">
+            <article>
               <p class="control-path">Destination pad → INFO twice → Cnf → Dub source</p>
-              <span class="feature-badge">New in +c5</span>
+              <span class="feature-badge earlier-badge">Added in +c5</span>
               <h4>Overdub a pad or a performance</h4>
               <p><strong>Manual</strong> records the stereo input plus the live musical pads you play. Leave the recorder for Pads to start and stop sounds; playback remains under your control.</p>
               <p>Choose <strong>Pad 1–16</strong> for a determined source. Recording restarts that pad, stops it with the take and ignores taps on other musical pads. Numbering runs left to right from the top row. Eligible forward Sample sources with Pre also offer <strong>One pass</strong>.</p>
               <p>Use <strong>Rec Input → In 1/2</strong> for accompaniment and Length → Custom for a take you end manually. Recording creates a new WAV on the destination. Empty or self-referencing numbered sources show an explanation and leave Rec available.</p>
             </article>
-            <article class="new-feature">
+            <article>
               <p class="control-path">Destination pad → Cnf → Dub tap</p>
-              <span class="feature-badge">New in +c5</span>
+              <span class="feature-badge earlier-badge">Added in +c5</span>
               <h4>Choose what the backing contributes</h4>
               <p><strong>Pre</strong> follows live timing, Pitch, Speed, level, pan and envelope, before Fidelity, Drive, filters and Dry Level. <strong>Post pad</strong> includes those processes and Dry Level. <strong>Post+FX</strong> also prints the shared delay and reverb returns.</p>
               <p>All three include the live stereo input. Shared returns can contain other pads’ tails. Post+FX is captured before master processing; use Resam to print the native resampling mix. For an isolated wet take, stop other sources and let their tails decay.</p>
             </article>
-            <article class="new-feature">
+            <article>
               <p class="control-path">Recorder → Rec Input / live Gain · Pads → destination</p>
-              <span class="feature-badge">New in +c5</span>
+              <span class="feature-badge earlier-badge">Added in +c5</span>
               <h4>Record, edit and return</h4>
               <p>With <strong>Resam</strong>, capture the native mix while playing or editing other pads. Tap the recording destination to stop; the next INFO opens that pad. To reopen an ongoing take without stopping it, select its destination with a left-hand encoder and press INFO.</p>
               <p>The active recorder retains Stop, timers, meters and <strong>Input Gain</strong> or <strong>Resam Gain</strong>. Either right-hand encoder adjusts the native global gain (−96 to +20 dB). Input Gain leaves the overdub backing level unchanged; Resam Gain changes the recorded mix without changing playback volume.</p>
@@ -218,13 +218,13 @@
               <p class="control-path">Select a supported parameter → INFO</p>
               <h4>More sources and destinations</h4>
               <p>Use native sources such as LFO, CV and velocity alongside <strong>KEY</strong> note tracking (centered on MIDI note 60), <strong>ENV</strong> from the pad’s ADSR, per-note <strong>RAND</strong>, evolving <strong>CHAOS</strong> and slow coupled <strong>NET</strong> movement.</p>
-              <p>Custom destinations include Sample Speed, Drive, Filter 2, Res 2 and all three FX sends. <span class="feature-badge">New in +c5</span> Dry Level joins them. Up to three slots per destination share the existing <strong>12-route total per pad</strong>. Sends and Dry act on the pad mix; voice-dependent sources use one active voice’s value.</p>
+              <p>Custom destinations include Sample Speed, Drive, Filter 2, Res 2 and all three FX sends. <span class="feature-badge earlier-badge">Added in +c5</span> Dry Level joins them. Up to three slots per destination share the existing <strong>12-route total per pad</strong>. Sends and Dry act on the pad mix; voice-dependent sources use one active voice’s value.</p>
             </article>
             <article>
               <p class="control-path">Pad → INFO twice → Gen · Tools → Mstr → GEN Run</p>
               <h4>A generator on every pad</h4>
               <p>Run a different clocked pattern on each of the 16 pads. Choose <strong>Euclid, Breakcut, Call+Resp, Evolve, Drummap, Random, Acid, Turing or Learn</strong>. Set timing, probability, velocity and step conditions, send a response to another pad, or teach Learn by playing the grid.</p>
-              <p>Enable Run under Tools → Mstr → Section → GEN Run. Granular pads expose generator settings under Cnf. Patterns follow the internal or MIDI clock.</p>
+              <p>Enable Run under Tools → Mstr → Section → GEN Run. Granular pads expose generator settings under Cnf. Patterns follow the musical clock, including external MIDI/CV clock. Tools → Main → Clock provides the global Run, Stop and Reset controls.</p>
             </article>
             <article>
               <p class="control-path">Pads → status strip</p>
@@ -250,8 +250,46 @@
             </article>
           </div>
         </section>
+        <section class="feature-group" id="clock-transport" aria-labelledby="clock-transport-title">
+          <div class="feature-group-heading"><span class="group-number" aria-hidden="true">06</span><div><h3 id="clock-transport-title">Clock &amp; transport</h3><p>Set the tempo, resume a performance and reset from CV or MIDI.</p></div></div>
+          <div class="feature-grid">
+            <article class="new-feature">
+              <p class="control-path">Tools → Main → Int BPM / Clock</p>
+              <span class="feature-badge">New in +c6</span>
+              <h4>A tempo control on Main</h4>
+              <p>Turn the <strong>Int BPM</strong> encoder to set <strong>40.0–300.0 BPM</strong>. Faster turns accelerate adjustment; slow turns retain fine control. Pausing or reversing direction returns the first movement to fine adjustment.</p>
+              <p><strong>Hold Int BPM for three seconds</strong> to restore and save 120.0 BPM. Releasing early, leaving the square, turning the BPM encoder or changing pages cancels the hold. This changes the internal/fallback tempo without issuing a transport Reset or overriding an active external clock.</p>
+              <p><strong>Clock</strong> opens transport controls and shows the current source and running state. MasterVol and Compressor stay on Main; Brightness and Flip UI move to Disp.</p>
+              <p>When the final external clock source times out, the internal clock <strong>holds the last external tempo and phase</strong>. The inherited tempo is temporary: editing Int BPM saves your choice, and reboot restores the saved tempo. External clock remains authoritative while present; losing pulses does not issue Stop.</p>
+            </article>
+            <article class="new-feature">
+              <p class="control-path">Tools → Main → Clock → Run / Stop / Reset</p>
+              <span class="feature-badge">New in +c6</span>
+              <h4>Resume or reset musical time</h4>
+              <p><strong>Run</strong> resumes from the held position. <strong>Stop</strong> freezes musical time and preserves that position. <strong>Reset</strong> returns musical time to the beginning while keeping the current running or stopped state.</p>
+              <p>The buttons use green for Run, red for Stop and the native cyan-blue accent for Reset. <strong>HOME or Back returns to Tools Main</strong>; HOME from Main keeps its usual behavior.</p>
+              <p>GEN releases held gates and cancels unfinished rolls at Stop. Continue resumes future steps without replaying a partial step; Reset prepares the beginning. GEN’s own Run setting stays independent.</p>
+              <p>The existing counter double-tap still only renumbers the next bar. Clock Reset is the separate musical reset. Native actions such as certain quantized launches can still start transport.</p>
+            </article>
+            <article class="new-feature">
+              <p class="control-path">Clock → Run CV / Reset CV</p>
+              <span class="feature-badge">New in +c6</span>
+              <h4>Run and reset from a gate</h4>
+              <p>Choose <strong>Off or EXT1–EXT4</strong> for each control; both default to Off. Run CV resumes on a rising gate and stops on a falling gate. Reset CV resets on a rising edge.</p>
+              <p>Assign both to the same input for reset-and-run on the rise and Stop on the fall. Enabling an already-high gate does not create an edge: cycle it afterward. Transport reads the raw gate before CV scale/offset, and ordinary modulation routing remains available.</p>
+            </article>
+            <article class="new-feature">
+              <p class="control-path">MIDI transport · Clock → Reset CC / Reset Ch</p>
+              <span class="feature-badge">New in +c6</span>
+              <h4>Keep standard MIDI transport</h4>
+              <p><strong>Start</strong> resets and runs, <strong>Continue</strong> resumes, and <strong>Stop</strong> holds position. Existing MIDI clock-port selection remains in force. MIDI System Reset is not repurposed.</p>
+              <p>Reset CC adds reset while running: choose <strong>Off or CC 0–119</strong>, with channel <strong>1–16</strong>. A low-to-high crossing (0–63 → 64–127) resets once; send a low value to rearm. It defaults to Off/channel 1 and listens on either MIDI input using its own Reset Ch and Reset CC settings. The MIDI clock-port selection filters standard Start / Continue / Stop, not Reset CC. Ordinary CC routing continues, so choose an otherwise unused CC for reset alone.</p>
+            </article>
+          </div>
+          <aside class="playback-note"><strong>Clock Stop does not mute every pad.</strong> Already-playing audio and effect tails may continue; Sample Speed and native Pitch are not directly controlled by BPM. While recording is armed or active, or a final overdub FX write is pending, transport commands are ignored and Clock shows <strong>Rec busy</strong>. Stop the take with the recorder’s normal controls first. Rejected commands are not replayed afterward.</aside>
+        </section>
         <section class="feature-group" id="midi-cv" aria-labelledby="midi-cv-title">
-          <div class="feature-group-heading"><span class="group-number" aria-hidden="true">06</span><div><h3 id="midi-cv-title">MIDI &amp; CV utilities</h3><p>Inspect incoming messages and adapt control voltages.</p></div></div>
+          <div class="feature-group-heading"><span class="group-number" aria-hidden="true">07</span><div><h3 id="midi-cv-title">MIDI &amp; CV utilities</h3><p>Inspect incoming messages and adapt control voltages.</p></div></div>
           <div class="feature-grid">
             <article>
               <p class="control-path">Tools → MIDI → Monitor</p>
@@ -267,25 +305,34 @@
           </div>
         </section>
         <section class="feature-group" id="display-workflow" aria-labelledby="display-workflow-title">
-          <div class="feature-group-heading"><span class="group-number" aria-hidden="true">07</span><div><h3 id="display-workflow-title">Display &amp; everyday controls</h3><p>Find a setting, reset a value or let the screen rest.</p></div></div>
+          <div class="feature-group-heading"><span class="group-number" aria-hidden="true">08</span><div><h3 id="display-workflow-title">Display &amp; everyday controls</h3><p>Find a setting, reset a value or let the screen rest.</p></div></div>
           <div class="feature-grid">
             <article>
               <p class="control-path">Tools → Disp</p>
-              <h4>Screen saver and signal wake</h4>
+              <span class="feature-badge">New in +c6</span>
+              <h4>Display settings together</h4>
+              <p><strong>Brightness</strong> and <strong>Flip UI</strong> now occupy the left column on Disp. Scrn saver and Sig wake are on the right. Tap the header’s <strong>Gfx Off / Gfx On</strong> button to switch the existing line graphic.</p>
               <p>Choose <strong>disabled</strong> (default) or 1, 2, 3, 5, 10, 15, 30 or 60 minutes. Use a black screen or optional moving lines in dark blue, purple and white. The graphic is also off by default.</p>
               <p>The first touch or physical control change wakes only. Optional MIDI, CV-trigger or combined signal wake passes the musical event through. MIDI Clock and Active Sensing do not wake the screen.</p>
+            </article>
+            <article class="new-feature">
+              <p class="control-path">Mixer → mute pads → Save preset</p>
+              <span class="feature-badge">New in +c6</span>
+              <h4>Recall your pad mutes</h4>
+              <p>Set mutes with the existing Mixer controls, then <strong>Save the preset</strong>. Reloading restores the saved mute states, including their indicators and playback behavior. Mute edits mark the preset as changed; they do not save automatically.</p>
+              <p>Presets saved before +c6 load unmuted. Copying a pad preserves its mute; clearing or unloading it, replacing its WAV or recording a new take clears that mute. Tools and FX resets continue to preserve pad settings.</p>
             </article>
             <article>
               <p class="control-path">Numeric dials · Pads / Waveform → Play</p>
               <h4>Reset a value or stop a long sample</h4>
               <p><strong>Double-tap a numeric dial</strong> to restore its base value while keeping modulation assignments. On a Trigger pad, hold one finger on the grid pad for three seconds to stop its voices; the initial touch still retriggers normally.</p>
-              <p><span class="feature-badge">New in +c5</span> The same three-second stop works on the waveform detail <strong>Play button</strong>. A fresh tap, MIDI, CV or GEN can start the sound again.</p>
+              <p><span class="feature-badge earlier-badge">Added in +c5</span> The same three-second stop works on the waveform detail <strong>Play button</strong>. A fresh tap, MIDI, CV or GEN can start the sound again.</p>
             </article>
             <article>
               <p class="control-path">Counter · Tools → Main → RESET</p>
               <h4>Reset the counter or shared settings</h4>
               <p><strong>Double-tap the bar:beat counter</strong> to renumber the next bar as 1:1 without moving playback or clock phase. RESET offers separate confirmed <strong>Tools</strong> and <strong>FX</strong> resets; both preserve pad assignments, pad parameters and modulation. Save the preset to retain an FX reset.</p>
-              <p><span class="feature-badge">New in +c5</span> A Tools reset preserves the screen-saver timeout, graphic and signal-wake preferences. Shorter labels—<strong>MIDI, Disp, Scrn saver and Cnf</strong>—keep navigation readable. Blank pads also expose LFO/Spd and Speed.</p>
+              <p><span class="feature-badge">New in +c6</span> A Tools reset preserves <strong>all five Display preferences</strong>: Brightness, Flip UI, screen-saver timeout, graphic and signal wake. Tools Reset restores the saved internal tempo to 120.0 BPM and clears the CV/CC transport assignments. The inactive header square left of RESET is now gray. Shorter labels—<strong>MIDI, Disp, Scrn saver and Cnf</strong>—keep navigation readable. Blank pads also expose LFO/Spd and Speed.</p>
             </article>
           </div>
         </section>
@@ -295,7 +342,19 @@
         <details id="release-history">
           <summary><h2>What did each release include?</h2><span aria-hidden="true">+</span></summary>
           <div class="history-content">
-            <p class="history-intro">Each release includes the earlier additions. +c is the first custom release, also called c1. The current release is +c5.</p>
+            <p class="history-intro">Each release includes the earlier additions. +c is the first custom release, also called c1. The latest release is +c6, published November 7, 2026.</p>
+            <section id="release-six" aria-labelledby="release-six-title">
+              <div class="history-meta"><h3 id="release-six-title">2.3.4+c6</h3><p class="history-status">Published · November 7, 2026</p></div>
+              <ul>
+                <li>Editable 40.0–300.0 internal BPM on Tools → Main, with faster adjustment for quick encoder turns and a three-second hold to restore 120.0 BPM.</li>
+                <li>A separate Clock screen with colored Run / Stop / Reset controls: resume held musical time, preserve position at Stop, or reset while keeping run state. HOME returns to Tools Main.</li>
+                <li>Hold the last external tempo and phase when the final external clock source times out; inherited tempo remains temporary until explicitly edited.</li>
+                <li>Assignable Run CV and Reset CV on EXT1–4, plus Reset CC 0–119 with a selectable MIDI channel; all assignments default Off.</li>
+                <li>Standard MIDI Start / Continue / Stop, GEN pause/resume cleanup and transport guards while recording.</li>
+                <li>Pad mutes now save with presets and restore on load; older presets default to unmuted.</li>
+                <li>Brightness and Flip UI moved to Disp, Gfx moved to a header button, and all five Display preferences preserved by Tools Reset. The inactive Main header square is gray.</li>
+              </ul>
+            </section>
             <section id="release-five" aria-labelledby="release-five-title">
               <div class="history-meta"><h3 id="release-five-title">2.3.4+c5</h3><p class="history-status">Published · November 6, 2026</p></div>
               <ul>
@@ -358,7 +417,7 @@
         <div class="video-copy">
           <p class="eyebrow">FIRST RELEASE VIDEO · 2.3.4+c</p>
           <h2 id="video-title">Watch the first release.</h2>
-          <p>See waveform zoom, Sample Speed and the other first-release features on the Bitbox MkII. An updated overview of the later releases is coming soon. The downloadable guides currently cover through <strong>+c5</strong>.</p>
+          <p>See waveform zoom, Sample Speed and the other first-release features on the Bitbox MkII. An updated overview of the later releases is coming soon. The downloadable guides currently cover through <strong>+c6</strong>.</p>
           <a class="video-external-link" href="https://youtu.be/OjgC4UoyOIA" target="_blank" rel="noopener noreferrer">Watch on YouTube <span aria-hidden="true">↗</span></a>
           <p class="video-privacy" id="video-privacy">The player connects to YouTube only when you load it. Your firmware stays in the patcher.</p>
         </div>
@@ -383,7 +442,7 @@
           <li><strong>Copy the patched file.</strong> Place <code>BITBOXMK2.bin</code> in the SD card’s root directory, outside any folder.</li>
           <li><strong>Insert the card with the unit powered off.</strong> Hold <strong>INFO</strong> while powering on, then release INFO when the upgrade message appears.</li>
           <li><strong>Wait for the automatic reboot.</strong> Allow about 30 seconds and leave power on until the update finishes.</li>
-          <li><strong>Confirm 2.3.4+c5.</strong> Press <strong>HOME</strong> until the Menu screen appears. The version is in its lower-right corner, and also at the top-right of Tools.</li>
+          <li><strong>Confirm 2.3.4+c6.</strong> Press <strong>HOME</strong> until the Menu screen appears. The version is in its lower-right corner, and also at the top-right of Tools.</li>
         </ol>
       </section>
 
@@ -399,6 +458,14 @@
           <li><strong>Power off and insert the card.</strong> Hold <strong>INFO</strong> while powering back on, then release INFO when the upgrade message appears.</li>
           <li><strong>Wait for the automatic reboot.</strong> Allow about 30 seconds and leave power on until it finishes. Confirm <strong>2.3.4</strong> in the lower-right corner of the Menu screen.</li>
         </ol>
+      </section>
+
+      <section class="use-note feedback-note" id="feedback" aria-labelledby="feedback-title">
+        <p class="eyebrow">COMMUNITY FEEDBACK</p>
+        <h2 id="feedback-title">How is it working for you?</h2>
+        <p><strong>All feedback is welcome</strong>: questions, experiences, suggestions and bug reports. The planned feature set is complete; further updates will focus on polish and fixes.</p>
+        <p><a href="https://discord.gg/gRsY3w4pHc" target="_blank" rel="noopener noreferrer">Join Galagzee Audio on Discord</a> and visit <strong>#bitbox2-custom-firmware</strong> to share your feedback.</p>
+        <p>I’m continuing MIDI and CV testing, and reports from different setups will help identify any remaining issues. For a bug report, include your firmware version, the steps to reproduce it, and what you expected versus what happened. For MIDI or CV issues, also mention the connected gear and relevant clock or transport settings.</p>
       </section>
 
       <section class="use-note" aria-labelledby="use-title">
@@ -421,7 +488,7 @@
             <p>Only the exact official <strong>bitbox mkII 2.3.4</strong> image is accepted. Other versions, models, ZIP archives and already patched files are rejected. Both hashes must match before a download is offered.</p>
             <dl class="hash-list">
               <div><dt>Original · 2.3.4 · SHA-256</dt><dd id="source-hash">35ab7995ad0eca8484f3b28bc76389f10b2037dbb21a4a394e950d9329073e86</dd></div>
-              <div><dt>Patched · 2.3.4+c5 · SHA-256</dt><dd id="target-hash">7982591990d476ca700ecb4b1d2190199fe054f3a5de5e468088ca99f974d53e</dd></div>
+              <div><dt>Patched · 2.3.4+c6 · SHA-256</dt><dd id="target-hash">34d46a67ae411e3820547cf5b0b59488c72d6be9edb8c4b2912ff31a72a0356f</dd></div>
             </dl>
             <p class="small-copy">The patcher uses your browser’s SHA-256 implementation. Use an HTTPS address or a local preview server if your browser cannot verify files from a downloaded page.</p>
           </div>
@@ -432,7 +499,7 @@
     <footer class="site-footer">
       <p>Independent customization. Not an official 1010music release.</p>
       <p><a href="THIRD_PARTY_NOTICES.txt">Code credits &amp; licenses</a></p>
-      <p>For bitbox mkII · 2.3.4 → 2.3.4+c5</p>
+      <p>For bitbox mkII · 2.3.4 → 2.3.4+c6</p>
     </footer>
   </div>
 </body>
