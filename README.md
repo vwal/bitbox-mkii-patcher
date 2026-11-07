@@ -82,7 +82,7 @@ Allow about 30 seconds and leave power on until the automatic reboot. Confirm
 
 ## First custom release (+c / c1), included in +c4
 
-- Vertical waveform zoom from 25–3200%, with two-finger reset and horizontal fit.
+- Vertical waveform zoom from 25–3200%, with two-finger reset to 100% amplitude and the stock horizontal zoom-out level. Long samples may still extend beyond the screen.
 - An optional screen saver with selectable timeout and MIDI/CV-trigger wake.
 - Pitch-preserving Sample Speed from 50–200% with LFO/CV modulation. In +c4 one eligible Sample voice can stretch while native Pitch works on every pad.
 - Double-tap reset on numeric dials, preserving modulation assignments.

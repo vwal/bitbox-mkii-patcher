@@ -12,7 +12,7 @@ See the waveform, control time and shape a loop.
 
 Location: Waveform → two-finger gestures.
 
-Zoom amplitude from 25–3200% with a vertical pinch or spread, independently of horizontal time zoom. A stationary two-finger tap restores 100% amplitude and fits the whole waveform horizontally.
+Zoom amplitude from 25–3200% with a vertical pinch or spread, independently of horizontal time zoom. A stationary two-finger tap restores 100% amplitude and the stock horizontal zoom-out level. Long samples may still extend beyond the screen.
 
 #### Change speed while keeping pitch
 
@@ -247,7 +247,7 @@ Double-tap the bar:beat counter to renumber the next bar as 1:1 without moving p
 
 ### 2.3.4+c (c1) — First custom release
 
-- Independent vertical waveform zoom, including zooming out, and two-finger reset to 100% amplitude plus horizontal fit.
+- Independent vertical waveform zoom, including zooming out, and two-finger reset to 100% amplitude plus the stock horizontal zoom-out level.
 - Optional screen saver with selectable timeout and MIDI/CV-trigger wake.
 - Pitch-preserving 50–200% Sample Speed with LFO/CV modulation. This first release kept Speed exclusive with non-neutral Pitch; +c4 removed that restriction.
 - Double-tap reset for numeric dials without clearing modulation; compact Tools labels and the custom version display.
