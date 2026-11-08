@@ -1,3 +1,18 @@
+# Bitbox MkII firmware 2.3.4+c7
+
+Released November 8, 2026. Apply this cumulative patch directly to official Bitbox MkII 2.3.4.
+
+## Fixes since the original 2.3.4+c6 release
+
+- **Record with a stopped clock.** Rec temporarily starts the clock so a take can begin, then restores the stopped state when recording finishes. If the clock was already running, it stays running afterward.
+- **Play-button hold-to-stop.** Holding the triangle Play button now stops Trigger playback from both the waveform view and all pad parameter pages.
+- **Quicker Trigger Stop.** Hold a Trigger grid pad or its Play button for **two seconds** instead of three. The initial touch still plays or retriggers normally; a later tap, MIDI, CV or GEN can start it again. The Int BPM reset hold remains three seconds.
+- **Consistent Clock navigation.** HOME returns to the main Menu; the on-screen Back button returns to Tools Main.
+- **Correct Rec tab caption.** Tools → Rec → CV In keeps **Rec** in the bottom tab bar.
+- **Restored SD-card free-space readout.** The native readout appears in the second gray header box on Tools Main and CV In.
+
+This is a bugfix release with all earlier features retained. The last three UI corrections were also included in +c6 revision r2.
+
 # Bitbox MkII firmware 2.3.4+c6
 
 Released November 7, 2026. Apply this cumulative patch directly to official Bitbox MkII 2.3.4.

@@ -3,13 +3,13 @@
 [Open the patcher](https://vwal.github.io/bitbox-mkii-patcher/)
 
 An unofficial customization of 1010music Bitbox MkII firmware **2.3.4** to
-**2.3.4+c6**. This repository contains only the static website and a binary delta,
+**2.3.4+c7**. This repository contains only the static website and a binary delta,
 not the complete original or customized firmware.
 
 [Watch the first release (+c) video overview](https://youtu.be/OjgC4UoyOIA). The page also includes
 an optional player that loads only when requested. An updated video covering the later releases is coming soon.
 
-Released November 7, 2026. All earlier custom features are included.
+Released November 8, 2026. Bug fixes and workflow polish; all earlier custom features are included.
 
 ## Use
 
@@ -21,13 +21,13 @@ Released November 7, 2026. All earlier custom features are included.
 
 | Printable PDF | US Letter | A4 |
 | --- | --- | --- |
-| Firmware reference guide | [Download](bitbox-mkii-2.3.4c6-reference.pdf) | [Download](bitbox-mkii-2.3.4c6-reference-a4.pdf) |
-| Navigation card | [Download](bitbox-mkii-2.3.4c6-quick-card.pdf) | [Download](bitbox-mkii-2.3.4c6-quick-card-a4.pdf) |
+| Firmware reference guide | [Download](bitbox-mkii-2.3.4c7-reference.pdf) | [Download](bitbox-mkii-2.3.4c7-reference-a4.pdf) |
+| Navigation card | [Download](bitbox-mkii-2.3.4c7-quick-card.pdf) | [Download](bitbox-mkii-2.3.4c7-quick-card-a4.pdf) |
 
 For flashing, see the [official MkII manual](https://1010music.com/wp-content/uploads/2023/03/bitbox-mk2-2.0-user-manual-2023-03-01-clean.pdf).
 Copy the patched file to the card root. Power off, insert the card, hold INFO
 while powering on, and release INFO when the upgrade message appears. Allow
-about 30 seconds and wait for the automatic reboot. Confirm **2.3.4+c6** at the
+about 30 seconds and wait for the automatic reboot. Confirm **2.3.4+c7** at the
 lower-right of Menu (press HOME until it appears), or the top-right of Tools.
 
 The patcher verifies the entire original file with SHA-256 before applying any
@@ -43,17 +43,18 @@ filename must match exactly. With the unit powered off, insert the card, hold
 Allow about 30 seconds and leave power on until the automatic reboot. Confirm
 **2.3.4** in the lower-right corner of the Menu screen.
 
-## UI maintenance revision r2 — November 7, 2026
+## Fixed in 2.3.4+c7 — November 8, 2026
 
-The firmware still displays **2.3.4+c6**. This revision corrects three UI details:
+This is a bugfix release. It retains all earlier features and includes the UI corrections previously published in +c6 revision r2.
 
-- **Clock navigation:** HOME returns to the main Menu. The on-screen Back button returns to Tools Main.
-- **Rec tab caption:** Tools → Rec → CV In keeps **Rec** in the bottom tab bar.
-- **SD-card free-space readout:** the native readout is visible in the second gray header box on Tools Main and CV In.
+- **Record with a stopped clock.** Rec temporarily starts the clock so a take can begin, then restores the stopped state when recording finishes. If the clock was already running, it stays running afterward.
+- **Play-button hold-to-stop.** Holding the triangle Play button now stops Trigger playback from both the waveform view and all pad parameter pages.
+- **Quicker Trigger Stop.** Hold a Trigger grid pad or its Play button for **two seconds** instead of three. The initial touch still plays or retriggers normally; a later tap, MIDI, CV or GEN can start it again. The Int BPM reset hold remains three seconds.
+- **Consistent Clock navigation.** HOME returns to the main Menu; the on-screen Back button returns to Tools Main.
+- **Correct Rec tab caption.** Tools → Rec → CV In keeps **Rec** in the bottom tab bar.
+- **Restored SD-card free-space readout.** The native readout appears in the second gray header box on Tools Main and CV In.
 
-All existing features are retained. The reference guides and quick cards include these r2 navigation corrections.
-
-## New in 2.3.4+c6
+## Previously added in 2.3.4+c6
 
 - **Internal tempo on Main.** Set 40.0–300.0 BPM with speed-sensitive encoder adjustment: quick turns move faster, slow turns retain fine control. Hold Int BPM for three seconds to restore and save 120.0 BPM.
 - **Clock transport controls.** Run resumes held musical time, Stop preserves position, and Reset returns to the beginning while keeping the running or stopped state. The buttons are green, red and native cyan-blue; HOME returns to the main Menu; Back returns to Tools Main.
@@ -78,7 +79,7 @@ Clock Stop does not mute all playing audio. Pitch and Sample Speed remain indepe
 
 ## All features and earlier releases
 
-See [features by area](FEATURE_LISTS.md) for the complete cumulative feature set and control locations. The website groups features by function and keeps “What did each release include?” collapsed by default. [CHANGELOG](CHANGELOG.md) records +c (c1) through +c6.
+See [features by area](FEATURE_LISTS.md) for the complete cumulative feature set and control locations. The website groups features by function and keeps “What did each release include?” collapsed by default. [CHANGELOG](CHANGELOG.md) records all seven releases, +c (c1) through +c7.
 
 ## Privacy
 
@@ -100,7 +101,7 @@ The direct Watch on YouTube link is always available.
 | Image | Bytes | SHA-256 |
 | --- | ---: | --- |
 | Official 2.3.4 | 674,896 | `35ab7995ad0eca8484f3b28bc76389f10b2037dbb21a4a394e950d9329073e86` |
-| Customized 2.3.4+c6 | 786,280 | `6dc040d6e85ca608619f4fdddf08355245e69fdfe1bcaacd89daa1d8fe14c428` |
+| Customized 2.3.4+c7 | 786,344 | `3108c7fbc839d9880339a9e4764d9e63598a5f8cf5cb9ceb92f73dc2a3415139` |
 
 ## Hosting
 

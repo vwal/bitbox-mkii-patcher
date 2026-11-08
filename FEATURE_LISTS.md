@@ -1,6 +1,6 @@
 # Bitbox MkII features since stock 2.3.4
 
-Updated for UI maintenance revision **r2**, November 7, 2026. The displayed version stays **2.3.4+c6**. All additions below are included in **2.3.4+c6**. Apply the cumulative patch directly to official MkII 2.3.4.
+Updated for **2.3.4+c7**, November 8, 2026. This bugfix release includes all additions below and the earlier +c6 r2 UI corrections. Apply the cumulative patch directly to official MkII 2.3.4.
 
 ## Playback & loop editing
 
@@ -103,6 +103,8 @@ All three include the live stereo input. Shared returns can contain other pads�
 ### Record, edit and return
 
 Recorder → Rec Input / live Gain · Pads → destination
+
+Fixed in +c7: When Rec is pressed with the clock stopped, it temporarily starts the clock for the take and restores the stopped state when recording finishes. A clock that was already running stays running afterward.
 
 With Resam, capture the native mix while playing or editing other pads. Tap the recording destination to stop; the next INFO opens that pad. To reopen an ongoing take without stopping it, select its destination with a left-hand encoder and press INFO.
 
@@ -230,17 +232,17 @@ The first touch or physical control change wakes only. Optional MIDI, CV-trigger
 
 Mixer → mute pads → Save preset
 
-New in +c6: Set mutes with the existing Mixer controls, then Save the preset. Reloading restores the saved mute states, including their indicators and playback behavior. Mute edits mark the preset as changed; they do not save automatically.
+Added in +c6: Set mutes with the existing Mixer controls, then Save the preset. Reloading restores the saved mute states, including their indicators and playback behavior. Mute edits mark the preset as changed; they do not save automatically.
 
 Presets saved before +c6 load unmuted. Copying a pad preserves its mute; clearing or unloading it, replacing its WAV or recording a new take clears that mute. Tools and FX resets continue to preserve pad settings.
 
 ### Reset a value or stop a long sample
 
-Numeric dials · Pads / Waveform → Play
+Numeric dials · Pads / Waveform / Parameter pages → Play
 
-Double-tap a numeric dial to restore its base value while keeping modulation assignments. On a Trigger pad, hold one finger on the grid pad for three seconds to stop its voices; the initial touch still retriggers normally.
+Double-tap a numeric dial to restore its base value while keeping modulation assignments. On a Trigger pad, hold one finger on the grid pad for two seconds to stop its voices; the initial touch still retriggers normally.
 
-Added in +c5 The same three-second stop works on the waveform detail Play button. A fresh tap, MIDI, CV or GEN can start the sound again.
+Fixed in +c7: Hold-to-stop now works on the triangle Play button in both the waveform detail view and all pad parameter pages. The hold is two seconds in every location. A fresh tap, MIDI, CV or GEN can start the sound again. The Int BPM reset hold remains three seconds.
 
 ### Reset the counter or shared settings
 
@@ -248,8 +250,8 @@ Counter · Tools → Main → RESET
 
 Double-tap the bar:beat counter to renumber the next bar as 1:1 without moving playback or clock phase. RESET offers separate confirmed Tools and FX resets; both preserve pad assignments, pad parameters and modulation. Save the preset to retain an FX reset.
 
-New in +c6 A Tools reset preserves all five Display preferences: Brightness, Flip UI, screen-saver timeout, graphic and signal wake. Tools Reset restores the saved internal tempo to 120.0 BPM and clears the CV/CC transport assignments. The native SD-card free-space readout is visible in the gray header on Main and Rec → CV In. Shorter labels—MIDI, Disp, Scrn saver and Cnf—keep navigation readable. Blank pads also expose LFO/Spd and Speed.
+Added in +c6 A Tools reset preserves all five Display preferences: Brightness, Flip UI, screen-saver timeout, graphic and signal wake. Tools Reset restores the saved internal tempo to 120.0 BPM and clears the CV/CC transport assignments. The native SD-card free-space readout is visible in the gray header on Main and Rec → CV In. Shorter labels—MIDI, Disp, Scrn saver and Cnf—keep navigation readable. Blank pads also expose LFO/Spd and Speed.
 
 ## Release history
 
-See [CHANGELOG](CHANGELOG.md) for +c (c1) through +c6.
+See [CHANGELOG](CHANGELOG.md) for all seven releases, +c (c1) through +c7.
