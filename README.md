@@ -45,19 +45,22 @@ Allow about 30 seconds and leave power on until the automatic reboot. Confirm
 
 ## New in 2.3.4+c8 — November 9, 2026
 
-- **Persistent Input FX pad.** In Recorder settings, choose a fixed Pad 1–16 or Follow. Fixed keeps the input sound while browsing; Follow selects another pad’s settings when you tap it.
+- **Persistent Input FX pad.** The global Recorder setting is ordered **Off → Follow → Pad 1–16**. Off is the default for fresh settings and Tools reset; existing saved Follow/fixed choices are preserved. Fixed keeps the input sound while browsing; Follow selects another pad’s settings when you tap it.
 - **Live input Filter and Tone.** Main Filter/Resonance and Tone Fidelity, Drive, Filter 2/Res 2 and Slope 1 now process input before Dry Level and sends. No sample needs to be loaded or playing. These controls use their base values on input; normal sample modulation remains unchanged.
 - **Input Dry Level.** Adjust or modulate the direct input from 100% to 0% while the FX1/FX2/FX3 sends stay independent. Shared return routes remain global.
 - **Corrected live-input FX1/FX2 sends.** External audio now reaches the delay and first reverb correctly. Normal sample sends and raw In1/2 recording are unchanged.
 - **FX1 Purge.** Discard the shared delay tail and feedback history from either delay page, preserving settings and fresh echoes. FX2/FX3 continue normally.
 - **Memory reclaimed without removing features.** Lossless GEN table packing and selected helper optimizations make room for the input processing.
-- **Updated references.** Dedicated “Using Bitbox Mk2 as an effect box” guide page, fixed/Follow setup, routing examples, and a graphical one-page navigation card in Letter and A4.
+- **Empty-pad LFO control fix.** Encoders and both toggles now retain their values on empty pads, just as on loaded pads. LFO modulation still requires an active sample voice.
+- **Updated references.** Dedicated “Using Bitbox Mk2 as an effect box” guide page, Off/fixed/Follow setup and routing examples. The Letter and A4 graphical quick cards include the Pads clipboard shortcut: turn the lower-right encoder for Cut / Copy / Paste / Clear.
 
 ## Using Bitbox Mk2 as an effect box
 
-On an empty pad, press INFO for Recorder settings. Set **Rec Input: In 1/2**, **RecMon: On**, and scroll to **Input FX pad**. Choose **Pad 1–16** to keep a fixed processing pad, or **Follow** to use the currently selected pad. Press INFO again for **Main → Filter/Resonance**, **Tone → Fidelity/Drive/Filter 2/Res 2/Slope 1**, and **Pos → Dry Level/FX sends**. No loaded sample or active recording is required.
+On an empty pad, press INFO for Recorder settings. Set **Rec Input: In 1/2**, **RecMon: On**, and scroll to **Input FX pad**. Its order is **Off → Follow → Pad 1–16**. Choose **Follow** to use the currently selected pad, or **Pad 1–16** to keep a fixed processing pad. Press INFO again for **Main → Filter/Resonance**, **Tone → Fidelity/Drive/Filter 2/Res 2/Slope 1**, and **Pos → Dry Level/FX sends**. No loaded sample or active recording is required.
 
-In Follow, prepare several empty pads with different processing and levels, then tap them to switch input sounds. Save the preset to retain those pad settings. Input Tone uses base values; send and Dry Level modulation remains available. Ordinary In1/2 recording is unchanged.
+**Off** is the default for fresh settings and Tools reset. It bypasses pad Filter/Tone, Dry Level and sends, including during a take; native Gain, RecMon and Mon Output continue normally. Existing saved Follow/fixed choices are preserved, so select Off once to disable a previously enabled setup. Input FX pad is one global choice, even when shown in each pad’s Recorder settings. With input effects enabled, the recording destination supplies monitor settings during the take; the saved selection resumes afterward.
+
+In Follow, prepare several empty pads with different processing and levels, then tap them to switch input sounds. Save the preset to retain those pad settings. Input Tone uses base values; send and Dry Level modulation remains available. Voice-dependent sources such as LFO require an active sample voice; CV/controller sources can work without one. Ordinary In1/2 recording is unchanged.
 
 **Routing example:** set Mon Output to **OUT 1/2**, and the shared FX1/FX2 and FX3 returns to **FX OUT 1/2**. A Follow pad with Dry 100% / sends zero gives direct input on the main pair; Dry 0% / sends raised gives wet input on the FX pair; a blend uses both pairs. Shared effect settings, Mon Output and return routes are not recalled by pad taps, and old effect tails may continue. The dedicated guide page explains the full setup and fixed/Follow behavior.
 
@@ -119,7 +122,7 @@ The direct Watch on YouTube link is always available.
 | Image | Bytes | SHA-256 |
 | --- | ---: | --- |
 | Official 2.3.4 | 674,896 | `35ab7995ad0eca8484f3b28bc76389f10b2037dbb21a4a394e950d9329073e86` |
-| Customized 2.3.4+c8 | 786,288 | `cd07d788f70469c5f72d48fa23c31078508564ea1e0c2d6225c830ba9d54f180` |
+| Customized 2.3.4+c8 | 786,336 | `27356fc1dda4d5decc620df48879a9bfeda0666dbaeb31e850ff190d50e93312` |
 
 ## Hosting
 

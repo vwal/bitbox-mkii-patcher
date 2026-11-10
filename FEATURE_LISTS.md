@@ -88,13 +88,15 @@ Added in +c5 Dry Level, after FX3 Send on Pos, defaults to 100% and trims the pa
 
 ### Connect and process live input
 
-On an empty pad, INFO opens Recorder settings. Set Rec Input **In 1/2**, RecMon **On**, and scroll to **Input FX pad**: fixed **Pad 1–16** or **Follow**. No sample or active recording is needed.
+On an empty pad, INFO opens Recorder settings. Set Rec Input **In 1/2**, RecMon **On**, and scroll to **Input FX pad**: **Off → Follow → Pad 1–16**. Select Follow or a fixed pad to enable input processing. No sample or active recording is needed.
 
 INFO again opens pad parameters. **Main → Filter / Resonance** and **Tone → Fidelity, Drive, Filter 2 / Res 2, Slope 1** process the incoming audio before its direct output and FX sends.
 
 ### Fixed processing or selectable input presets
 
-Fixed keeps the selected processing pad while you browse or play other pads. Follow uses the currently selected pad. Prepare several empty pads with different send/Dry levels, filters, Fidelity and Drive; tap them to change the input sound. Save the preset to retain pad settings. The fixed/Follow choice saves globally.
+**Off** is the default for fresh settings and Tools reset. It bypasses pad Filter/Tone, Dry Level and sends, even during recording. Native Gain, RecMon and Mon Output still work. Saved Follow/fixed choices survive updates; select Off manually to disable an existing setup.
+
+Fixed keeps the selected processing pad while you browse or play other pads. Follow uses the currently selected pad. Prepare several empty pads with different send/Dry levels, filters, Fidelity and Drive; tap them to change the input sound. Save the preset to retain pad settings. Input FX pad is one global choice; changing it in one pad’s Recorder settings changes it everywhere.
 
 **Pos → Dry Level** adjusts the processed direct input from 100% to 0%, independently of the three sends. Send and Dry Level modulation works on input. Here “dry” includes Filter/Tone but excludes shared delay/reverb.
 
@@ -104,7 +106,7 @@ Fixed keeps the selected processing pad while you browse or play other pads. Fol
 
 For quick output combinations in Follow, keep Mon Output on OUT 1/2 and all shared returns on FX OUT 1/2. Set Pad A to Dry 100% / sends zero for direct sound on the main pair, Pad B to Dry 0% / sends raised for wet sound on the FX pair, and Pad C to a blend for both. Pad taps change those levels and Tone settings, not Mon Output or the global effect routes. Existing shared tails can continue after switching.
 
-Input Filter/Tone uses base values, not its pad LFO/CV modulation routes. Pitch, Speed and envelope do not process the external input. Normal In1/2 recording remains unprocessed. During an armed/active take, the recording destination supplies monitor settings; fixed/Follow resumes afterward. Full instructions and examples are in the reference guide.
+Input Filter/Tone uses base values, not its pad LFO/CV modulation routes. Pitch, Speed and envelope do not process the external input. Normal In1/2 recording remains unprocessed. With Follow or a fixed pad enabled, an armed/active take uses the recording destination’s monitor settings, then restores the saved choice. Off continues to bypass pad processing throughout the take. Full instructions and examples are in the reference guide.
 
 ## Recording & resampling
 
@@ -276,7 +278,9 @@ Counter · Tools → Main → RESET
 
 Double-tap the bar:beat counter to renumber the next bar as 1:1 without moving playback or clock phase. RESET offers separate confirmed Tools and FX resets; both preserve pad assignments, pad parameters and modulation. Save the preset to retain an FX reset.
 
-Added in +c6 A Tools reset preserves all five Display preferences: Brightness, Flip UI, screen-saver timeout, graphic and signal wake. Tools Reset restores the saved internal tempo to 120.0 BPM and clears the CV/CC transport assignments. The native SD-card free-space readout is visible in the gray header on Main and Rec → CV In. Shorter labels—MIDI, Disp, Scrn saver and Cnf—keep navigation readable. Blank pads also expose LFO/Spd and Speed.
+Added in +c6 A Tools reset preserves all five Display preferences: Brightness, Flip UI, screen-saver timeout, graphic and signal wake. Tools Reset restores the saved internal tempo to 120.0 BPM and clears the CV/CC transport assignments. The native SD-card free-space readout is visible in the gray header on Main and Rec → CV In. Shorter labels—MIDI, Disp, Scrn saver and Cnf—keep navigation readable. Blank pads also expose LFO/Spd and Speed. Their LFO encoders and toggles now retain edits as on loaded pads; LFO modulation itself still requires an active sample voice.
+
+On Pads, turn the lower-right encoder to reveal Cut / Copy / Paste / Clear (CLR). Select a pad and tap an action; turn back to restore the EXT meters.
 
 ## Release history
 

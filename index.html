@@ -96,7 +96,7 @@
             <h2 id="guide-title">Find a control.</h2>
             <div class="paper-choices"><h3>Reference guide</h3><p>Complete +c8 guide, including “Using Bitbox Mk2 as an effect box”</p><div><a href="bitbox-mkii-2.3.4c8-reference.pdf" download aria-label="Download US Letter reference guide">US Letter ↓</a><a href="bitbox-mkii-2.3.4c8-reference-a4.pdf" download aria-label="Download A4 reference guide">A4 ↓</a></div></div>
             <div class="paper-choices"><h3>Quick reference card</h3><p>Graphical navigation map · US Letter or A4</p><div><a href="bitbox-mkii-2.3.4c8-quick-card.pdf" download aria-label="Download US Letter quick reference card">US Letter ↓</a><a href="bitbox-mkii-2.3.4c8-quick-card-a4.pdf" download aria-label="Download A4 quick reference card">A4 ↓</a></div></div>
-            <p class="small-copy">The guide includes <a href="#input-effects">fixed and Follow input setups</a>, output routing and Purge. The quick card is a one-page graphical navigation map.</p>
+            <p class="small-copy">The guide includes <a href="#input-effects">Off, fixed and Follow input setups</a>, output routing and Purge. The quick card is a one-page graphical navigation map, including the Pads clipboard shortcut.</p>
           </section>
           <section class="support-note" aria-labelledby="support-title">
             <h2 id="support-title">Enjoying the extra control?</h2>
@@ -193,14 +193,15 @@
               <span class="feature-badge">New in +c8</span>
               <p class="control-path">Empty pad → INFO → Recorder settings</p>
               <h4>Connect and process live input</h4>
-              <p>Connect audio to <strong>IN 1/2</strong>. Set <strong>Rec Input: In 1/2</strong> and <strong>RecMon: On</strong>, then scroll to <strong>Input FX pad</strong>. Choose a fixed <strong>Pad 1–16</strong>, or <strong>Follow</strong> for the currently selected pad. There is no need to press Rec.</p>
+              <p>Connect audio to <strong>IN 1/2</strong>. Set <strong>Rec Input: In 1/2</strong> and <strong>RecMon: On</strong>, then scroll to <strong>Input FX pad</strong>. The choices are <strong>Off → Follow → Pad 1–16</strong>. Select <strong>Follow</strong> for the currently selected pad, or a fixed <strong>Pad 1–16</strong> to enable input processing. There is no need to press Rec.</p>
+              <p><strong>Off is the default</strong> for fresh settings and Tools reset. It bypasses pad Filter/Tone, Dry Level and sends, including while recording. Gain, RecMon and Mon Output still work. Existing saved Follow/fixed choices are preserved; select Off to disable an earlier setup.</p>
               <p>Press INFO again for that pad’s parameters. <strong>Main → Filter / Resonance</strong> and <strong>Tone → Fidelity, Drive, Filter 2 / Res 2, Slope 1</strong> now process the input before its direct output and effect sends. No sample needs to be loaded or playing.</p>
             </article>
             <article>
               <p class="control-path">Input FX pad → Follow · Pad → Pos / Main / Tone</p>
               <h4>Switch between input “presets”</h4>
-              <p>Prepare several empty pads with different <strong>FX1/FX2/FX3 sends, Dry Level, filters, Fidelity and Drive</strong>. In Follow, tap a pad to select its input sound instantly. A fixed pad keeps its sound while you browse or play other pads. Save the preset to retain the pad settings; the fixed/Follow choice saves globally.</p>
-              <p><strong>Pos → Dry Level</strong> blends the processed direct input from 100% to 0%; the three sends remain independent. “Dry” here includes Filter/Tone but excludes shared delay and reverb. Existing send and Dry Level modulation works on input.</p>
+              <p>Prepare several empty pads with different <strong>FX1/FX2/FX3 sends, Dry Level, filters, Fidelity and Drive</strong>. In Follow, tap a pad to select its input sound instantly. A fixed pad keeps its sound while you browse or play other pads. Save the preset to retain the pad settings; Input FX pad is one global choice, shared by all Recorder settings pages.</p>
+              <p><strong>Pos → Dry Level</strong> blends the processed direct input from 100% to 0%; the three sends remain independent. “Dry” here includes Filter/Tone but excludes shared delay and reverb. Existing send and Dry Level modulation works on input. Voice-dependent sources such as LFO need an active sample voice; CV/controller sources can work without one.</p>
             </article>
             <article>
               <p class="control-path">Recorder → Mon Output · Tools → Rec → FX Out · FX3 → Out</p>
@@ -210,7 +211,7 @@
               <p>The shared effect settings and return routes stay global; selecting another pad does not recall separate reverbs, delay settings, Mon Output or return routes. The pad’s <strong>Cnf → Output</strong> still controls sample playback, not input monitoring.</p>
             </article>
           </div>
-          <aside class="playback-note"><strong>Input-processing scope.</strong> Filter/Tone uses the controls’ set values; their LFO/CV modulation is not applied to live input. Pitch, Speed and envelope are not input effects. Normal In1/2 recording stays unprocessed; use the documented Resam workflow to print output. During an armed/active take, the recording destination supplies monitor settings, then the fixed/Follow selection resumes. <a href="#guide-title">Full setup in the printable guide.</a></aside>
+          <aside class="playback-note"><strong>Input-processing scope.</strong> Filter/Tone uses the controls’ set values; their LFO/CV modulation is not applied to live input. Pitch, Speed and envelope are not input effects. Normal In1/2 recording stays unprocessed; use the documented Resam workflow to print output. When Follow or a fixed pad is enabled, an armed/active take uses the recording destination’s monitor settings, then restores the saved selection. Off continues to bypass pad processing throughout the take. <a href="#guide-title">Full setup in the printable guide.</a></aside>
         </section>
         <section class="feature-group" id="recording" aria-labelledby="recording-title">
           <div class="feature-group-heading"><span class="group-number" aria-hidden="true">04</span><div><h3 id="recording-title">Recording &amp; resampling</h3><p>Capture a performance, print its sound and keep control of the take.</p></div></div>
@@ -362,7 +363,8 @@
               <p class="control-path">Counter · Tools → Main → RESET</p>
               <h4>Reset the counter or shared settings</h4>
               <p><strong>Double-tap the bar:beat counter</strong> to renumber the next bar as 1:1 without moving playback or clock phase. RESET offers separate confirmed <strong>Tools</strong> and <strong>FX</strong> resets; both preserve pad assignments, pad parameters and modulation. Save the preset to retain an FX reset.</p>
-              <p><span class="feature-badge earlier-badge">Added in +c6</span> A Tools reset preserves <strong>all five Display preferences</strong>: Brightness, Flip UI, screen-saver timeout, graphic and signal wake. Tools Reset restores the saved internal tempo to 120.0 BPM and clears the CV/CC transport assignments. The native SD-card free-space readout is visible in the gray header on <strong>Main</strong> and <strong>Rec → CV In</strong>. Shorter labels—<strong>MIDI, Disp, Scrn saver and Cnf</strong>—keep navigation readable. Blank pads also expose LFO/Spd and Speed.</p>
+              <p><span class="feature-badge earlier-badge">Added in +c6</span> A Tools reset preserves <strong>all five Display preferences</strong>: Brightness, Flip UI, screen-saver timeout, graphic and signal wake. Tools Reset restores the saved internal tempo to 120.0 BPM and clears the CV/CC transport assignments. The native SD-card free-space readout is visible in the gray header on <strong>Main</strong> and <strong>Rec → CV In</strong>. Shorter labels—<strong>MIDI, Disp, Scrn saver and Cnf</strong>—keep navigation readable. Blank pads also expose LFO/Spd and Speed. Their LFO encoders and toggles now retain edits as on loaded pads.</p>
+              <p>On <strong>Pads</strong>, turn the <strong>lower-right encoder</strong> to reveal <strong>Cut / Copy / Paste / Clear (CLR)</strong>. Select a pad and tap an action; turn back to restore the EXT meters.</p>
             </article>
           </div>
         </section>
@@ -376,12 +378,14 @@
             <section id="release-eight" aria-labelledby="release-eight-title">
               <div class="history-meta"><h3 id="release-eight-title">2.3.4+c8</h3><p class="history-status">Published · November 9, 2026</p></div>
               <ul>
-                <li><strong>Persistent Input FX pad:</strong> pin external-input processing to Pad 1–16, or use Follow to switch input sounds by selecting different pads. Set it in the Recorder settings list.</li>
+                <li><strong>Persistent Input FX pad:</strong> the global Recorder selector is ordered Off → Follow → Pad 1–16. Off is the default for fresh settings and Tools reset; saved enabled choices are preserved. Follow switches input sounds with pad selection; a fixed pad keeps its sound while you browse.</li>
+                <li><strong>Input FX Off:</strong> bypass pad Filter/Tone, Dry Level and sends, including during recording. Native Gain, RecMon and Mon Output continue normally.</li>
+                <li><strong>Empty-pad LFO fix:</strong> encoders and both toggles now retain their values on empty pads. LFO modulation still needs an active sample voice.</li>
                 <li><strong>Input Filter and Tone:</strong> primary Filter/Resonance, Fidelity, Drive, Filter 2/Res 2 and Slope 1 process live input, with separate stereo histories. Input Tone uses base values; normal sample modulation is unchanged.</li>
                 <li><strong>Input Dry Level:</strong> the pad’s Dry Level and its modulation control the direct monitor, including 0% wet-only, independently of the three sends. Shared FX return routes remain global.</li>
                 <li><strong>Live-input send fix:</strong> corrected FX1/FX2 monitor routing so external audio reaches the delay and first reverb reliably. Normal sample sends and raw input recording are unchanged.</li>
                 <li><strong>Delay Purge:</strong> the FX1 header button discards the shared old delay tail and feedback while preserving settings and fresh echoes. FX2 and FX3 continue normally.</li>
-                <li><strong>Space reclaimed without removing features:</strong> compact GEN tables and selected helper optimizations make room for the input controls. Includes an effect-box setup guide and a graphical quick reference card.</li>
+                <li><strong>Space reclaimed without removing features:</strong> compact GEN tables and selected helper optimizations make room for the input controls. Includes an effect-box setup guide and a graphical quick reference card with the Pads Cut / Copy / Paste / Clear shortcut.</li>
               </ul>
             </section>
             <section id="release-seven" aria-labelledby="release-seven-title">
@@ -542,7 +546,7 @@
             <p>Only the exact official <strong>bitbox mkII 2.3.4</strong> image is accepted. Other versions, models, ZIP archives and already patched files are rejected. Both hashes must match before a download is offered.</p>
             <dl class="hash-list">
               <div><dt>Original · 2.3.4 · SHA-256</dt><dd id="source-hash">35ab7995ad0eca8484f3b28bc76389f10b2037dbb21a4a394e950d9329073e86</dd></div>
-              <div><dt>Patched · 2.3.4+c8 · SHA-256</dt><dd id="target-hash">cd07d788f70469c5f72d48fa23c31078508564ea1e0c2d6225c830ba9d54f180</dd></div>
+              <div><dt>Patched · 2.3.4+c8 · SHA-256</dt><dd id="target-hash">27356fc1dda4d5decc620df48879a9bfeda0666dbaeb31e850ff190d50e93312</dd></div>
             </dl>
             <p class="small-copy">The patcher uses your browser’s SHA-256 implementation. Use an HTTPS address or a local preview server if your browser cannot verify files from a downloaded page.</p>
           </div>
