@@ -1,6 +1,6 @@
 # Bitbox MkII features since stock 2.3.4
 
-Updated for **2.3.4+c7**, November 8, 2026. This bugfix release includes all additions below and the earlier +c6 r2 UI corrections. Apply the cumulative patch directly to official MkII 2.3.4.
+Updated for **2.3.4+c8**, November 9, 2026. This release adds live input effects and delay Purge while retaining all earlier features and fixes. Apply the cumulative patch directly to official MkII 2.3.4.
 
 ## Playback & loop editing
 
@@ -64,6 +64,10 @@ Choose Digital, Tape, BBD or Codec. Tape adds saturation, frequency loss, wow an
 
 More adds Flutter (0–100%), modulation rate, depth and stereo phase, Drive, Tone and Return dB (±12 dB). Codec replaces Drive and Tone with frame Loss (0–30%) and Bandwidth (4–16 kHz). Flutter at zero retains each type’s base sound, including Tape’s built-in movement.
 
+### Clear a delay tail [+c8]
+
+**FX1 → INFO → Purge**, available on Main and More. Discards the shared delay tail and feedback for Digital, Tape, BBD or Codec. Settings stay intact, fresh input still echoes, and FX2/FX3 continue normally.
+
 ### Two separate reverb tails
 
 FX2 / FX3 → INFO → Type / More
@@ -79,6 +83,28 @@ Pad → Pos · Tools → Rec → FX Out
 Each pad has FX1, FX2 and FX3 sends, all modulatable through select → INFO. Route FX1/FX2 returns to Out1/2 or the physical FX1/2 pair, together or separately; Dly1 Rvb2 splits them between the two mono FX jacks. FX3 has its own Out1/2, FX1/2, mono FX1 or mono FX2 selector.
 
 Added in +c5 Dry Level, after FX3 Send on Pos, defaults to 100% and trims the pad’s direct sound down to 0% while all three sends remain active. Use it for wet-only playback, or modulate it through INFO. The sends and return levels set the wet balance; the effects run in parallel.
+
+## Using Bitbox Mk2 as an effect box [+c8]
+
+### Connect and process live input
+
+On an empty pad, INFO opens Recorder settings. Set Rec Input **In 1/2**, RecMon **On**, and scroll to **Input FX pad**: fixed **Pad 1–16** or **Follow**. No sample or active recording is needed.
+
+INFO again opens pad parameters. **Main → Filter / Resonance** and **Tone → Fidelity, Drive, Filter 2 / Res 2, Slope 1** process the incoming audio before its direct output and FX sends.
+
+### Fixed processing or selectable input presets
+
+Fixed keeps the selected processing pad while you browse or play other pads. Follow uses the currently selected pad. Prepare several empty pads with different send/Dry levels, filters, Fidelity and Drive; tap them to change the input sound. Save the preset to retain pad settings. The fixed/Follow choice saves globally.
+
+**Pos → Dry Level** adjusts the processed direct input from 100% to 0%, independently of the three sends. Send and Dry Level modulation works on input. Here “dry” includes Filter/Tone but excludes shared delay/reverb.
+
+### Output routing and scope
+
+**Recorder → Mon Output** routes the direct input. **Tools → Rec → FX Out** routes shared FX1/FX2 returns, and **FX3 Out** routes FX3 separately. Send all three paths to FX OUT 1/2 for the complete input mix there, or split direct/wet across OUT 1/2 and FX OUT 1/2. Shared effect settings and return routes remain global. Pad **Cnf → Output** still affects sample playback only.
+
+For quick output combinations in Follow, keep Mon Output on OUT 1/2 and all shared returns on FX OUT 1/2. Set Pad A to Dry 100% / sends zero for direct sound on the main pair, Pad B to Dry 0% / sends raised for wet sound on the FX pair, and Pad C to a blend for both. Pad taps change those levels and Tone settings, not Mon Output or the global effect routes. Existing shared tails can continue after switching.
+
+Input Filter/Tone uses base values, not its pad LFO/CV modulation routes. Pitch, Speed and envelope do not process the external input. Normal In1/2 recording remains unprocessed. During an armed/active take, the recording destination supplies monitor settings; fixed/Follow resumes afterward. Full instructions and examples are in the reference guide.
 
 ## Recording & resampling
 

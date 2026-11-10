@@ -3,13 +3,13 @@
 [Open the patcher](https://vwal.github.io/bitbox-mkii-patcher/)
 
 An unofficial customization of 1010music Bitbox MkII firmware **2.3.4** to
-**2.3.4+c7**. This repository contains only the static website and a binary delta,
+**2.3.4+c8**. This repository contains only the static website and a binary delta,
 not the complete original or customized firmware.
 
 [Watch the first release (+c) video overview](https://youtu.be/OjgC4UoyOIA). The page also includes
 an optional player that loads only when requested. An updated video covering the later releases is coming soon.
 
-Released November 8, 2026. Bug fixes and workflow polish; all earlier custom features are included.
+Released November 9, 2026. Live input effects and delay Purge; all earlier custom features and fixes are included.
 
 ## Use
 
@@ -21,13 +21,13 @@ Released November 8, 2026. Bug fixes and workflow polish; all earlier custom fea
 
 | Printable PDF | US Letter | A4 |
 | --- | --- | --- |
-| Firmware reference guide | [Download](bitbox-mkii-2.3.4c7-reference.pdf) | [Download](bitbox-mkii-2.3.4c7-reference-a4.pdf) |
-| Navigation card | [Download](bitbox-mkii-2.3.4c7-quick-card.pdf) | [Download](bitbox-mkii-2.3.4c7-quick-card-a4.pdf) |
+| Firmware reference guide | [Download](bitbox-mkii-2.3.4c8-reference.pdf) | [Download](bitbox-mkii-2.3.4c8-reference-a4.pdf) |
+| Graphical navigation card | [Download](bitbox-mkii-2.3.4c8-quick-card.pdf) | [Download](bitbox-mkii-2.3.4c8-quick-card-a4.pdf) |
 
 For flashing, see the [official MkII manual](https://1010music.com/wp-content/uploads/2023/03/bitbox-mk2-2.0-user-manual-2023-03-01-clean.pdf).
 Copy the patched file to the card root. Power off, insert the card, hold INFO
 while powering on, and release INFO when the upgrade message appears. Allow
-about 30 seconds and wait for the automatic reboot. Confirm **2.3.4+c7** at the
+about 30 seconds and wait for the automatic reboot. Confirm **2.3.4+c8** at the
 lower-right of Menu (press HOME until it appears), or the top-right of Tools.
 
 The patcher verifies the entire original file with SHA-256 before applying any
@@ -42,6 +42,24 @@ filename must match exactly. With the unit powered off, insert the card, hold
 **INFO** while powering on, and release INFO when the upgrade message appears.
 Allow about 30 seconds and leave power on until the automatic reboot. Confirm
 **2.3.4** in the lower-right corner of the Menu screen.
+
+## New in 2.3.4+c8 — November 9, 2026
+
+- **Persistent Input FX pad.** In Recorder settings, choose a fixed Pad 1–16 or Follow. Fixed keeps the input sound while browsing; Follow selects another pad’s settings when you tap it.
+- **Live input Filter and Tone.** Main Filter/Resonance and Tone Fidelity, Drive, Filter 2/Res 2 and Slope 1 now process input before Dry Level and sends. No sample needs to be loaded or playing. These controls use their base values on input; normal sample modulation remains unchanged.
+- **Input Dry Level.** Adjust or modulate the direct input from 100% to 0% while the FX1/FX2/FX3 sends stay independent. Shared return routes remain global.
+- **Corrected live-input FX1/FX2 sends.** External audio now reaches the delay and first reverb correctly. Normal sample sends and raw In1/2 recording are unchanged.
+- **FX1 Purge.** Discard the shared delay tail and feedback history from either delay page, preserving settings and fresh echoes. FX2/FX3 continue normally.
+- **Memory reclaimed without removing features.** Lossless GEN table packing and selected helper optimizations make room for the input processing.
+- **Updated references.** Dedicated “Using Bitbox Mk2 as an effect box” guide page, fixed/Follow setup, routing examples, and a graphical one-page navigation card in Letter and A4.
+
+## Using Bitbox Mk2 as an effect box
+
+On an empty pad, press INFO for Recorder settings. Set **Rec Input: In 1/2**, **RecMon: On**, and scroll to **Input FX pad**. Choose **Pad 1–16** to keep a fixed processing pad, or **Follow** to use the currently selected pad. Press INFO again for **Main → Filter/Resonance**, **Tone → Fidelity/Drive/Filter 2/Res 2/Slope 1**, and **Pos → Dry Level/FX sends**. No loaded sample or active recording is required.
+
+In Follow, prepare several empty pads with different processing and levels, then tap them to switch input sounds. Save the preset to retain those pad settings. Input Tone uses base values; send and Dry Level modulation remains available. Ordinary In1/2 recording is unchanged.
+
+**Routing example:** set Mon Output to **OUT 1/2**, and the shared FX1/FX2 and FX3 returns to **FX OUT 1/2**. A Follow pad with Dry 100% / sends zero gives direct input on the main pair; Dry 0% / sends raised gives wet input on the FX pair; a blend uses both pairs. Shared effect settings, Mon Output and return routes are not recalled by pad taps, and old effect tails may continue. The dedicated guide page explains the full setup and fixed/Follow behavior.
 
 ## Fixed in 2.3.4+c7 — November 8, 2026
 
@@ -79,7 +97,7 @@ Clock Stop does not mute all playing audio. Pitch and Sample Speed remain indepe
 
 ## All features and earlier releases
 
-See [features by area](FEATURE_LISTS.md) for the complete cumulative feature set and control locations. The website groups features by function and keeps “What did each release include?” collapsed by default. [CHANGELOG](CHANGELOG.md) records all seven releases, +c (c1) through +c7.
+See [features by area](FEATURE_LISTS.md) for the complete cumulative feature set and control locations. The website groups features by function and keeps “What did each release include?” collapsed by default. [CHANGELOG](CHANGELOG.md) records all eight releases, +c (c1) through +c8.
 
 ## Privacy
 
@@ -101,7 +119,7 @@ The direct Watch on YouTube link is always available.
 | Image | Bytes | SHA-256 |
 | --- | ---: | --- |
 | Official 2.3.4 | 674,896 | `35ab7995ad0eca8484f3b28bc76389f10b2037dbb21a4a394e950d9329073e86` |
-| Customized 2.3.4+c7 | 786,344 | `3108c7fbc839d9880339a9e4764d9e63598a5f8cf5cb9ceb92f73dc2a3415139` |
+| Customized 2.3.4+c8 | 786,288 | `cd07d788f70469c5f72d48fa23c31078508564ea1e0c2d6225c830ba9d54f180` |
 
 ## Hosting
 

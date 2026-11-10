@@ -1,3 +1,17 @@
+# Bitbox MkII firmware 2.3.4+c8
+
+Released November 9, 2026. Apply directly to official MkII 2.3.4.
+
+## New in 2.3.4+c8 — November 9, 2026
+
+- **Persistent Input FX pad.** In Recorder settings, choose a fixed Pad 1–16 or Follow. Fixed keeps the input sound while browsing; Follow selects another pad’s settings when you tap it.
+- **Live input Filter and Tone.** Main Filter/Resonance and Tone Fidelity, Drive, Filter 2/Res 2 and Slope 1 now process input before Dry Level and sends. No sample needs to be loaded or playing. These controls use their base values on input; normal sample modulation remains unchanged.
+- **Input Dry Level.** Adjust or modulate the direct input from 100% to 0% while the FX1/FX2/FX3 sends stay independent. Shared return routes remain global.
+- **Corrected live-input FX1/FX2 sends.** External audio now reaches the delay and first reverb correctly. Normal sample sends and raw In1/2 recording are unchanged.
+- **FX1 Purge.** Discard the shared delay tail and feedback history from either delay page, preserving settings and fresh echoes. FX2/FX3 continue normally.
+- **Memory reclaimed without removing features.** Lossless GEN table packing and selected helper optimizations make room for the input processing.
+- **Updated references.** Dedicated “Using Bitbox Mk2 as an effect box” guide page, fixed/Follow setup, routing examples, and a graphical one-page navigation card in Letter and A4.
+
 # Bitbox MkII firmware 2.3.4+c7
 
 Released November 8, 2026. Apply this cumulative patch directly to official Bitbox MkII 2.3.4.
