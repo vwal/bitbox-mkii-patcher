@@ -1,6 +1,6 @@
 # Bitbox MkII features since stock 2.3.4
 
-Updated for **2.3.4+c8**, November 9, 2026. This release adds live input effects and delay Purge while retaining all earlier features and fixes. Apply the cumulative patch directly to official MkII 2.3.4.
+Updated for **2.3.4+c9**, November 11, 2026. This release adds an audio load meter and saved display switch while retaining all earlier features and fixes. Apply the cumulative patch directly to official MkII 2.3.4.
 
 ## Playback & loop editing
 
@@ -246,6 +246,15 @@ The separate CV pitch quantizer offers eleven scales and a C–B root, defaultin
 
 ## Display & everyday controls
 
+### Audio load meter [+c9]
+
+Top toolbar · Tools → Disp → CPU On / CPU Off
+
+A smoothed percentage shows audio deadline pressure. Red **100%+** holds for one second after a measured budget excursion or queue problem; it can occur without an audible glitch. **--%** means no fresh valid reading. This is an audio-load guide, not whole-device CPU utilization.
+
+The Disp header switch is between Gfx and the version. It defaults On, saves automatically, and survives Tools/FX resets. Off hides the meter and stops its UI updates; lightweight timing collection continues. Native status/progress takes priority, GEN can use the freed width when hidden, and the meter does not wake the screen saver.
+
+
 ### Display settings together
 
 Tools → Disp
@@ -278,10 +287,10 @@ Counter · Tools → Main → RESET
 
 Double-tap the bar:beat counter to renumber the next bar as 1:1 without moving playback or clock phase. RESET offers separate confirmed Tools and FX resets; both preserve pad assignments, pad parameters and modulation. Save the preset to retain an FX reset.
 
-Added in +c6 A Tools reset preserves all five Display preferences: Brightness, Flip UI, screen-saver timeout, graphic and signal wake. Tools Reset restores the saved internal tempo to 120.0 BPM and clears the CV/CC transport assignments. The native SD-card free-space readout is visible in the gray header on Main and Rec → CV In. Shorter labels—MIDI, Disp, Scrn saver and Cnf—keep navigation readable. Blank pads also expose LFO/Spd and Speed. Their LFO encoders and toggles now retain edits as on loaded pads; LFO modulation itself still requires an active sample voice.
+Added in +c6 A Tools reset preserves all Display preferences: Brightness, Flip UI, screen-saver timeout, graphic and signal wake, plus the CPU display switch added in +c9. Tools Reset restores the saved internal tempo to 120.0 BPM and clears the CV/CC transport assignments. The native SD-card free-space readout is visible in the gray header on Main and Rec → CV In. Shorter labels—MIDI, Disp, Scrn saver and Cnf—keep navigation readable. Blank pads also expose LFO/Spd and Speed. Their LFO encoders and toggles now retain edits as on loaded pads; LFO modulation itself still requires an active sample voice.
 
 On Pads, turn the lower-right encoder to reveal Cut / Copy / Paste / Clear (CLR). Select a pad and tap an action; turn back to restore the EXT meters.
 
 ## Release history
 
-See [CHANGELOG](CHANGELOG.md) for all seven releases, +c (c1) through +c7.
+See [CHANGELOG](CHANGELOG.md) for all nine releases, +c (c1) through +c9.

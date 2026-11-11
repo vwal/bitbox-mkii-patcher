@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Bitbox MkII 2.3.4+c8: use Bitbox MkII as an external-audio effects processor, with Filter, Fidelity, Drive, three sends and delay Purge. Includes waveform zoom, time stretching and recording tools. Apply the patch entirely in your browser; no firmware upload.">
+  <meta name="description" content="Bitbox MkII 2.3.4+c9: audio load meter with a saved display switch. Includes live input effects, waveform zoom, time stretching, recording tools and clock controls. Apply the patch entirely in your browser; no firmware upload.">
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; frame-src https://www.youtube-nocookie.com; object-src 'none'; base-uri 'none'; form-action 'none'">
-  <title>bitbox mkII · 2.3.4+c8 patcher</title>
+  <title>bitbox mkII · 2.3.4+c9 patcher</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="styles.css?v=c8">
-  <script defer src="patch-data.js?v=c8"></script>
-  <script defer src="engine.js?v=c8"></script>
-  <script defer src="app.js?v=c8"></script>
-  <script defer src="video.js?v=c8"></script>
+  <link rel="stylesheet" href="styles.css?v=c9">
+  <script defer src="patch-data.js?v=c9"></script>
+  <script defer src="engine.js?v=c9"></script>
+  <script defer src="app.js?v=c9"></script>
+  <script defer src="video.js?v=c9"></script>
 </head>
 <body>
   <a class="skip-link" href="#patcher">Skip to patcher</a>
@@ -29,12 +29,12 @@
       <section class="intro" aria-labelledby="page-title">
         <p class="eyebrow">UNOFFICIAL COMMUNITY PATCH · MKII ONLY</p>
         <h1 id="page-title">Custom firmware.<br>Patched in your browser.</h1>
-        <p class="intro-copy">Waveform zoom, pitch-preserving playback, live input effects, recording and clock controls for the Bitbox MkII. Browse the additions by feature, or open the release history to see when each arrived.</p>
+        <p class="intro-copy">Waveform zoom, pitch-preserving playback, live input effects, recording, clock controls and an audio load meter for the Bitbox MkII. Browse the additions by feature, or open the release history to see when each arrived.</p>
         <nav class="intro-links" aria-label="On this page"><a href="#features">Explore features</a><a href="#release-history">Release history</a><a href="#patcher">Patch firmware</a><a href="#guide-title">PDF guides</a><a href="#installation">Install &amp; recover</a><a href="#feedback">Feedback</a></nav>
-        <div class="version-path" aria-label="Official version 2.3.4 becomes customized version 2.3.4 plus c8">
+        <div class="version-path" aria-label="Official version 2.3.4 becomes customized version 2.3.4 plus c9">
           <span><small>OFFICIAL</small><strong>2.3.4</strong></span>
           <span class="version-arrow" aria-hidden="true">→</span>
-          <span><small>LATEST RELEASE</small><strong>2.3.4+c8</strong></span>
+          <span><small>LATEST RELEASE</small><strong>2.3.4+c9</strong></span>
         </div>
       </section>
 
@@ -42,10 +42,10 @@
         <section class="patch-card" id="patcher" aria-labelledby="patch-title">
           <div class="card-heading">
             <span class="section-number" aria-hidden="true">01—03</span>
-            <h2 id="patch-title">Make your +c8 firmware</h2>
+            <h2 id="patch-title">Make your +c9 firmware</h2>
           </div>
           <p class="card-copy">Download <a href="https://1010music.com/wp-content/uploads/2024/05/BITBOXMK2234.zip" target="_blank" rel="noopener noreferrer">official bitbox mkII 2.3.4</a>, extract the archive, then choose its <code>BITBOXMK2.bin</code> file below. Start from this official file even if your module already runs a custom release or a test build.</p>
-          <p class="small-copy"><strong>Input effects release · November 9, 2026.</strong> Process external audio through the selected pad’s filters, Fidelity and Drive, blend three effect sends with Dry Level, and clear long delay tails with Purge. <a href="#release-eight">See what’s new.</a></p>
+          <p class="small-copy"><strong>Audio load meter · November 11, 2026.</strong> See smoothed audio-budget use and a red 100%+ warning in the toolbar. Show or hide it with the saved CPU switch under Tools → Disp. <a href="#release-nine">See what’s new.</a></p>
           <p class="backup-reminder"><strong>Before reflashing:</strong> back up your entire microSD card—including projects, samples and presets—to another drive.</p>
 
           <div class="file-zone" id="file-zone">
@@ -69,14 +69,14 @@
           <ol class="progress-list" id="progress-list" aria-label="Patch verification progress">
             <li id="stage-input" data-state="pending"><span class="step-marker" aria-hidden="true">1</span><span><strong>Verify original</strong><small>Match the official 2.3.4 SHA-256</small></span><span class="step-state">Waiting</span></li>
             <li id="stage-patch" data-state="pending"><span class="step-marker" aria-hidden="true">2</span><span><strong>Apply customizations</strong><small>Build a separate file in browser memory</small></span><span class="step-state">Waiting</span></li>
-            <li id="stage-output" data-state="pending"><span class="step-marker" aria-hidden="true">3</span><span><strong>Verify result</strong><small>Match the exact 2.3.4+c8 SHA-256</small></span><span class="step-state">Waiting</span></li>
+            <li id="stage-output" data-state="pending"><span class="step-marker" aria-hidden="true">3</span><span><strong>Verify result</strong><small>Match the exact 2.3.4+c9 SHA-256</small></span><span class="step-state">Waiting</span></li>
           </ol>
 
           <button class="primary-button" id="apply-patch" type="button" disabled>Apply patch <span aria-hidden="true">→</span></button>
           <div class="download-result" id="download-result" hidden>
             <p><strong>Verified and ready.</strong> Your original file is unchanged.</p>
             <a class="download-button" id="download-file" download="BITBOXMK2.bin">Download BITBOXMK2.bin <span aria-hidden="true">↓</span></a>
-            <p class="download-note">The downloaded file identifies itself as <strong>2.3.4+c8</strong> in Tools. This page creates a file; it does not flash your module.</p>
+            <p class="download-note">The downloaded file identifies itself as <strong>2.3.4+c9</strong> in Tools. This page creates a file; it does not flash your module.</p>
             <p class="download-note">On your SD card, the patched file must be named exactly <code>BITBOXMK2.bin</code>. Remove any duplicate-download suffix such as <code>(1)</code> before copying it. <a href="#installation">See installation steps below.</a></p>
           </div>
 
@@ -94,8 +94,8 @@
           <section class="feature-summary" aria-labelledby="guide-title">
             <p class="eyebrow">AT THE MODULE</p>
             <h2 id="guide-title">Find a control.</h2>
-            <div class="paper-choices"><h3>Reference guide</h3><p>Complete +c8 guide, including “Using Bitbox Mk2 as an effect box”</p><div><a href="bitbox-mkii-2.3.4c8-reference.pdf" download aria-label="Download US Letter reference guide">US Letter ↓</a><a href="bitbox-mkii-2.3.4c8-reference-a4.pdf" download aria-label="Download A4 reference guide">A4 ↓</a></div></div>
-            <div class="paper-choices"><h3>Quick reference card</h3><p>Graphical navigation map · US Letter or A4</p><div><a href="bitbox-mkii-2.3.4c8-quick-card.pdf" download aria-label="Download US Letter quick reference card">US Letter ↓</a><a href="bitbox-mkii-2.3.4c8-quick-card-a4.pdf" download aria-label="Download A4 quick reference card">A4 ↓</a></div></div>
+            <div class="paper-choices"><h3>Reference guide</h3><p>Complete +c9 guide, including the audio load meter and effect-box setup</p><div><a href="bitbox-mkii-2.3.4c9-reference.pdf" download aria-label="Download US Letter reference guide">US Letter ↓</a><a href="bitbox-mkii-2.3.4c9-reference-a4.pdf" download aria-label="Download A4 reference guide">A4 ↓</a></div></div>
+            <div class="paper-choices"><h3>Quick reference card</h3><p>Graphical navigation map · US Letter or A4</p><div><a href="bitbox-mkii-2.3.4c9-quick-card.pdf" download aria-label="Download US Letter quick reference card">US Letter ↓</a><a href="bitbox-mkii-2.3.4c9-quick-card-a4.pdf" download aria-label="Download A4 quick reference card">A4 ↓</a></div></div>
             <p class="small-copy">The guide includes <a href="#input-effects">Off, fixed and Follow input setups</a>, output routing and Purge. The quick card is a one-page graphical navigation map, including the Pads clipboard shortcut.</p>
           </section>
           <section class="support-note" aria-labelledby="support-title">
@@ -117,7 +117,7 @@
       <section class="feature-catalog" id="features" aria-labelledby="features-title">
         <p class="eyebrow">ALL ADDITIONS SINCE STOCK 2.3.4</p>
         <h2 id="features-title">Explore by feature.</h2>
-        <p class="catalog-intro">All additions since official 2.3.4, grouped by what you want to do. <span class="feature-badge">New in +c8</span> marks the latest input-processing and delay-tail controls. All earlier features and fixes remain included.</p>
+        <p class="catalog-intro">All additions since official 2.3.4, grouped by what you want to do. <span class="feature-badge">New in +c9</span> marks the audio load meter and its display switch. All earlier features and fixes remain included.</p>
         <nav class="feature-nav" aria-label="Feature sets"><a href="#playback">Playback &amp; loop editing</a><a href="#tone-effects">Tone &amp; effects</a><a href="#input-effects">Input effects</a><a href="#recording">Recording &amp; resampling</a><a href="#modulation-gen">Modulation &amp; GEN</a><a href="#master">Master processing</a><a href="#clock-transport">Clock &amp; transport</a><a href="#midi-cv">MIDI &amp; CV utilities</a><a href="#display-workflow">Display &amp; everyday controls</a></nav>
         <section class="feature-group" id="playback" aria-labelledby="playback-title">
           <div class="feature-group-heading"><span class="group-number" aria-hidden="true">01</span><div><h3 id="playback-title">Playback &amp; loop editing</h3><p>See the waveform, control time and shape a loop.</p></div></div>
@@ -170,7 +170,7 @@
               <h4>Four delay characters</h4>
               <p>Choose <strong>Digital, Tape, BBD or Codec</strong>. Tape adds saturation, frequency loss, wow and flutter; BBD gives dark, drifting repeats; Codec builds up 16 kHz, 4-bit ADPCM color.</p>
               <p>More adds Flutter (0–100%), modulation rate, depth and stereo phase, Drive, Tone and Return dB (±12 dB). Codec replaces Drive and Tone with frame Loss (0–30%) and Bandwidth (4–16 kHz). Flutter at zero retains each type’s base sound, including Tape’s built-in movement.</p>
-            <p><span class="feature-badge">New in +c8</span> Tap <strong>Purge</strong> in the FX1 header to discard the shared delay tail and feedback history. Settings stay intact, fresh input still produces echoes, and FX2/FX3 continue. Available on both delay pages for every delay type.</p>
+            <p><span class="feature-badge earlier-badge">Added in +c8</span> Tap <strong>Purge</strong> in the FX1 header to discard the shared delay tail and feedback history. Settings stay intact, fresh input still produces echoes, and FX2/FX3 continue. Available on both delay pages for every delay type.</p>
             </article>
             <article>
               <p class="control-path">FX2 / FX3 → INFO → Type / More</p>
@@ -190,7 +190,7 @@
           <div class="feature-group-heading"><span class="group-number" aria-hidden="true">03</span><div><h3 id="input-effects-title">Using Bitbox Mk2 as an effect box</h3><p>Process external audio without loading or recording a sample.</p></div></div>
           <div class="feature-grid">
             <article>
-              <span class="feature-badge">New in +c8</span>
+              <span class="feature-badge earlier-badge">Added in +c8</span>
               <p class="control-path">Empty pad → INFO → Recorder settings</p>
               <h4>Connect and process live input</h4>
               <p>Connect audio to <strong>IN 1/2</strong>. Set <strong>Rec Input: In 1/2</strong> and <strong>RecMon: On</strong>, then scroll to <strong>Input FX pad</strong>. The choices are <strong>Off → Follow → Pad 1–16</strong>. Select <strong>Follow</strong> for the currently selected pad, or a fixed <strong>Pad 1–16</strong> to enable input processing. There is no need to press Rec.</p>
@@ -338,6 +338,15 @@
         <section class="feature-group" id="display-workflow" aria-labelledby="display-workflow-title">
           <div class="feature-group-heading"><span class="group-number" aria-hidden="true">09</span><div><h3 id="display-workflow-title">Display &amp; everyday controls</h3><p>Find a setting, reset a value or let the screen rest.</p></div></div>
           <div class="feature-grid">
+            <article id="audio-load-meter">
+              <p class="control-path">Top toolbar · Tools → Disp → CPU On / CPU Off</p>
+              <span class="feature-badge">New in +c9</span>
+              <h4>See audio-processing headroom</h4>
+              <p>A <strong>smoothed percentage</strong> tracks audio deadline pressure while voices and effects run. Red <strong>100%+</strong> flags a measured budget excursion or queue problem and stays visible for one second. It is a useful load warning, not proof of a crackle or a measurement of whole-device CPU use. <strong>--%</strong> means no fresh valid reading.</p>
+              <p>The Disp header’s <strong>CPU On / CPU Off</strong> button sits between Gfx and the version. It defaults to <strong>On</strong>, saves automatically and survives Tools/FX resets. Off removes the readout and its UI updates; lightweight timing collection continues.</p>
+              <p>Native status and progress messages take priority. GEN can use the freed width with CPU Off. The meter does not wake the screen saver.</p>
+            </article>
+
             <article>
               <p class="control-path">Tools → Disp</p>
               <span class="feature-badge earlier-badge">Added in +c6</span>
@@ -363,7 +372,7 @@
               <p class="control-path">Counter · Tools → Main → RESET</p>
               <h4>Reset the counter or shared settings</h4>
               <p><strong>Double-tap the bar:beat counter</strong> to renumber the next bar as 1:1 without moving playback or clock phase. RESET offers separate confirmed <strong>Tools</strong> and <strong>FX</strong> resets; both preserve pad assignments, pad parameters and modulation. Save the preset to retain an FX reset.</p>
-              <p><span class="feature-badge earlier-badge">Added in +c6</span> A Tools reset preserves <strong>all five Display preferences</strong>: Brightness, Flip UI, screen-saver timeout, graphic and signal wake. Tools Reset restores the saved internal tempo to 120.0 BPM and clears the CV/CC transport assignments. The native SD-card free-space readout is visible in the gray header on <strong>Main</strong> and <strong>Rec → CV In</strong>. Shorter labels—<strong>MIDI, Disp, Scrn saver and Cnf</strong>—keep navigation readable. Blank pads also expose LFO/Spd and Speed. Their LFO encoders and toggles now retain edits as on loaded pads.</p>
+              <p><span class="feature-badge earlier-badge">Added in +c6</span> A Tools reset preserves <strong>all Display preferences</strong>: Brightness, Flip UI, screen-saver timeout, graphic and signal wake, plus the CPU meter switch added in +c9. Tools Reset restores the saved internal tempo to 120.0 BPM and clears the CV/CC transport assignments. The native SD-card free-space readout is visible in the gray header on <strong>Main</strong> and <strong>Rec → CV In</strong>. Shorter labels—<strong>MIDI, Disp, Scrn saver and Cnf</strong>—keep navigation readable. Blank pads also expose LFO/Spd and Speed. Their LFO encoders and toggles now retain edits as on loaded pads.</p>
               <p>On <strong>Pads</strong>, turn the <strong>lower-right encoder</strong> to reveal <strong>Cut / Copy / Paste / Clear (CLR)</strong>. Select a pad and tap an action; turn back to restore the EXT meters.</p>
             </article>
           </div>
@@ -374,7 +383,17 @@
         <details id="release-history">
           <summary><h2>What did each release include?</h2><span aria-hidden="true">+</span></summary>
           <div class="history-content">
-            <p class="history-intro">Eight releases, each including the earlier additions. +c is the first custom release, also called c1. The latest is +c8, the input-effects release published November 9, 2026.</p>
+            <p class="history-intro">Nine releases, each including the earlier additions. +c is the first custom release, also called c1. The latest is +c9, the audio-load-meter release published November 11, 2026.</p>
+            <section id="release-nine" aria-labelledby="release-nine-title">
+              <div class="history-meta"><h3 id="release-nine-title">2.3.4+c9</h3><p class="history-status">Published · November 11, 2026</p></div>
+              <ul>
+                <li><strong>Audio load meter:</strong> smoothed percentage in the top toolbar for judging audio-processing headroom.</li>
+                <li><strong>Red 100%+:</strong> a one-second warning for measured audio-budget excursions or queue problems. A warning can occur without an audible glitch; --% means no fresh valid reading.</li>
+                <li><strong>Saved CPU On/Off:</strong> Tools → Disp header, between Gfx and the version. On by default; preserved by restart and Tools/FX reset. Off hides the meter and stops its UI updates while lightweight timing collection continues.</li>
+                <li><strong>Status-strip integration:</strong> native status/progress has priority, GEN can expand when the meter is hidden, and the meter does not wake the screen saver.</li>
+                <li><strong>Existing features retained:</strong> reclaimed obsolete diagnostics and duplicate helper code. Updated Letter/A4 reference guides and graphical quick cards.</li>
+              </ul>
+            </section>
             <section id="release-eight" aria-labelledby="release-eight-title">
               <div class="history-meta"><h3 id="release-eight-title">2.3.4+c8</h3><p class="history-status">Published · November 9, 2026</p></div>
               <ul>
@@ -475,7 +494,7 @@
         <div class="video-copy">
           <p class="eyebrow">FIRST RELEASE VIDEO · 2.3.4+c</p>
           <h2 id="video-title">Watch the first release.</h2>
-          <p>See waveform zoom, Sample Speed and the other first-release features on the Bitbox MkII. An updated overview of the later releases is coming soon. The downloadable guides currently cover through <strong>+c8</strong>.</p>
+          <p>See waveform zoom, Sample Speed and the other first-release features on the Bitbox MkII. An updated overview of the later releases is coming soon. The downloadable guides currently cover through <strong>+c9</strong>.</p>
           <a class="video-external-link" href="https://youtu.be/OjgC4UoyOIA" target="_blank" rel="noopener noreferrer">Watch on YouTube <span aria-hidden="true">↗</span></a>
           <p class="video-privacy" id="video-privacy">The player connects to YouTube only when you load it. Your firmware stays in the patcher.</p>
         </div>
@@ -500,7 +519,7 @@
           <li><strong>Copy the patched file.</strong> Place <code>BITBOXMK2.bin</code> in the SD card’s root directory, outside any folder.</li>
           <li><strong>Insert the card with the unit powered off.</strong> Hold <strong>INFO</strong> while powering on, then release INFO when the upgrade message appears.</li>
           <li><strong>Wait for the automatic reboot.</strong> Allow about 30 seconds and leave power on until the update finishes.</li>
-          <li><strong>Confirm 2.3.4+c8.</strong> Press <strong>HOME</strong> until the Menu screen appears. The version is in its lower-right corner, and also at the top-right of Tools.</li>
+          <li><strong>Confirm 2.3.4+c9.</strong> Press <strong>HOME</strong> until the Menu screen appears. The version is in its lower-right corner, and also at the top-right of Tools.</li>
         </ol>
       </section>
 
@@ -546,7 +565,7 @@
             <p>Only the exact official <strong>bitbox mkII 2.3.4</strong> image is accepted. Other versions, models, ZIP archives and already patched files are rejected. Both hashes must match before a download is offered.</p>
             <dl class="hash-list">
               <div><dt>Original · 2.3.4 · SHA-256</dt><dd id="source-hash">35ab7995ad0eca8484f3b28bc76389f10b2037dbb21a4a394e950d9329073e86</dd></div>
-              <div><dt>Patched · 2.3.4+c8 · SHA-256</dt><dd id="target-hash">27356fc1dda4d5decc620df48879a9bfeda0666dbaeb31e850ff190d50e93312</dd></div>
+              <div><dt>Patched · 2.3.4+c9 · SHA-256</dt><dd id="target-hash">64d8afce76cae837bb0ddc99161958eb69d1e681700c04f305dd350dbf5cd791</dd></div>
             </dl>
             <p class="small-copy">The patcher uses your browser’s SHA-256 implementation. Use an HTTPS address or a local preview server if your browser cannot verify files from a downloaded page.</p>
           </div>
@@ -558,7 +577,7 @@
       <p>Independent customization. Not an official 1010music release.</p>
       <p>This project contains carefully tested AI-generated code.</p>
       <p><a href="THIRD_PARTY_NOTICES.txt">Code credits &amp; licenses</a></p>
-      <p>For bitbox mkII · 2.3.4 → 2.3.4+c8</p>
+      <p>For bitbox mkII · 2.3.4 → 2.3.4+c9</p>
     </footer>
   </div>
 </body>

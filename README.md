@@ -3,13 +3,13 @@
 [Open the patcher](https://vwal.github.io/bitbox-mkii-patcher/)
 
 An unofficial customization of 1010music Bitbox MkII firmware **2.3.4** to
-**2.3.4+c8**. This repository contains only the static website and a binary delta,
+**2.3.4+c9**. This repository contains only the static website and a binary delta,
 not the complete original or customized firmware.
 
 [Watch the first release (+c) video overview](https://youtu.be/OjgC4UoyOIA). The page also includes
 an optional player that loads only when requested. An updated video covering the later releases is coming soon.
 
-Released November 9, 2026. Live input effects and delay Purge; all earlier custom features and fixes are included.
+Released November 11, 2026. Smoothed audio load meter and a saved CPU display switch; all earlier custom features and fixes are included.
 
 ## Use
 
@@ -21,13 +21,13 @@ Released November 9, 2026. Live input effects and delay Purge; all earlier custo
 
 | Printable PDF | US Letter | A4 |
 | --- | --- | --- |
-| Firmware reference guide | [Download](bitbox-mkii-2.3.4c8-reference.pdf) | [Download](bitbox-mkii-2.3.4c8-reference-a4.pdf) |
-| Graphical navigation card | [Download](bitbox-mkii-2.3.4c8-quick-card.pdf) | [Download](bitbox-mkii-2.3.4c8-quick-card-a4.pdf) |
+| Firmware reference guide | [Download](bitbox-mkii-2.3.4c9-reference.pdf) | [Download](bitbox-mkii-2.3.4c9-reference-a4.pdf) |
+| Graphical navigation card | [Download](bitbox-mkii-2.3.4c9-quick-card.pdf) | [Download](bitbox-mkii-2.3.4c9-quick-card-a4.pdf) |
 
 For flashing, see the [official MkII manual](https://1010music.com/wp-content/uploads/2023/03/bitbox-mk2-2.0-user-manual-2023-03-01-clean.pdf).
 Copy the patched file to the card root. Power off, insert the card, hold INFO
 while powering on, and release INFO when the upgrade message appears. Allow
-about 30 seconds and wait for the automatic reboot. Confirm **2.3.4+c8** at the
+about 30 seconds and wait for the automatic reboot. Confirm **2.3.4+c9** at the
 lower-right of Menu (press HOME until it appears), or the top-right of Tools.
 
 The patcher verifies the entire original file with SHA-256 before applying any
@@ -42,6 +42,14 @@ filename must match exactly. With the unit powered off, insert the card, hold
 **INFO** while powering on, and release INFO when the upgrade message appears.
 Allow about 30 seconds and leave power on until the automatic reboot. Confirm
 **2.3.4** in the lower-right corner of the Menu screen.
+
+## New in 2.3.4+c9 — November 11, 2026
+
+- **Audio load meter.** A smoothed percentage in the top toolbar helps gauge audio-processing headroom as you add voices, Speed and effects.
+- **Red 100%+ indicator.** A measured audio-budget excursion or queue problem holds the warning for one second. It signals deadline pressure, not proof of an audible glitch or whole-device CPU utilization. `--%` means no fresh valid measurement.
+- **Saved CPU On/Off switch.** Tools → Disp, between Gfx and the version. On is the default, including older settings. Off hides the meter and stops its UI updates; lightweight audio timing collection continues. The choice survives restart and Tools/FX reset.
+- **Status-strip integration.** Native status and progress messages have priority. GEN can use the freed width with CPU Off. The meter does not wake the screen saver.
+- **All earlier functionality retained.** Obsolete diagnostic code and duplicate helpers were reduced to make room. Updated Letter/A4 reference guides and graphical quick cards cover the new controls.
 
 ## New in 2.3.4+c8 — November 9, 2026
 
@@ -100,7 +108,7 @@ Clock Stop does not mute all playing audio. Pitch and Sample Speed remain indepe
 
 ## All features and earlier releases
 
-See [features by area](FEATURE_LISTS.md) for the complete cumulative feature set and control locations. The website groups features by function and keeps “What did each release include?” collapsed by default. [CHANGELOG](CHANGELOG.md) records all eight releases, +c (c1) through +c8.
+See [features by area](FEATURE_LISTS.md) for the complete cumulative feature set and control locations. The website groups features by function and keeps “What did each release include?” collapsed by default. [CHANGELOG](CHANGELOG.md) records all nine releases, +c (c1) through +c9.
 
 ## Privacy
 
@@ -122,7 +130,7 @@ The direct Watch on YouTube link is always available.
 | Image | Bytes | SHA-256 |
 | --- | ---: | --- |
 | Official 2.3.4 | 674,896 | `35ab7995ad0eca8484f3b28bc76389f10b2037dbb21a4a394e950d9329073e86` |
-| Customized 2.3.4+c8 | 786,336 | `27356fc1dda4d5decc620df48879a9bfeda0666dbaeb31e850ff190d50e93312` |
+| Customized 2.3.4+c9 | 786,412 | `64d8afce76cae837bb0ddc99161958eb69d1e681700c04f305dd350dbf5cd791` |
 
 ## Hosting
 

@@ -1,3 +1,15 @@
+# Bitbox MkII firmware 2.3.4+c9
+
+Released November 11, 2026. Apply directly to official MkII 2.3.4.
+
+## New in 2.3.4+c9 — November 11, 2026
+
+- **Audio load meter.** A smoothed percentage in the top toolbar helps gauge audio-processing headroom as you add voices, Speed and effects.
+- **Red 100%+ indicator.** A measured audio-budget excursion or queue problem holds the warning for one second. It signals deadline pressure, not proof of an audible glitch or whole-device CPU utilization. `--%` means no fresh valid measurement.
+- **Saved CPU On/Off switch.** Tools → Disp, between Gfx and the version. On is the default, including older settings. Off hides the meter and stops its UI updates; lightweight audio timing collection continues. The choice survives restart and Tools/FX reset.
+- **Status-strip integration.** Native status and progress messages have priority. GEN can use the freed width with CPU Off. The meter does not wake the screen saver.
+- **All earlier functionality retained.** Obsolete diagnostic code and duplicate helpers were reduced to make room. Updated Letter/A4 reference guides and graphical quick cards cover the new controls.
+
 # Bitbox MkII firmware 2.3.4+c8
 
 Released November 9, 2026. Apply directly to official MkII 2.3.4.
