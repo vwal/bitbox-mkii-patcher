@@ -169,3 +169,11 @@ Thanks to [semierendonmez-commits](https://github.com/semierendonmez-commits) an
 GEN adapts the donor sequencer, including Breakcut, Acid and Turing procedures derived from OpenTracker. [Donor license](GEN-DONOR-LICENSE.txt) · [OpenTracker license](GEN-APACHE-2.0.txt).
 
 The original 1010music firmware is not included or licensed here. Share this patcher rather than complete patched firmware. See the full third-party notices for the imports and licenses.
+
+## License and 1010music exception
+
+Copyright (c) 2026 vwal for the copyrightable original additions. Free use, modification and sharing are permitted with notices retained. Sales, paid bundles, products containing the additions and paid firmware services are prohibited except under the 1010music exception or separate written permission.
+
+1010music may incorporate and commercially distribute these additions in official firmware and products without further permission or a fee, while retaining copyright and license notices. Authorized distribution and resale of those official products are covered.
+
+Musical use, including paid performances and recordings, remains unrestricted. Upstream MIT and Apache-2.0 permissions are preserved. These terms cover only our original contributions, do not license 1010music's firmware and do not withdraw previously granted permissions. See [the complete license](LICENSE.txt) and [third-party notices](THIRD_PARTY_NOTICES.txt).
