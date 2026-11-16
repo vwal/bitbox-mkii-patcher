@@ -8,7 +8,8 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; frame-src https://www.youtube-nocookie.com; object-src 'none'; base-uri 'none'; form-action 'none'">
   <title>bitbox mkII · 2.3.4+c9 patcher</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="styles.css?v=c9">
+  <script src="theme.js?v=20261116"></script>
+  <link rel="stylesheet" href="styles.css?v=20261116">
   <script defer src="patch-data.js?v=c9"></script>
   <script defer src="engine.js?v=c9"></script>
   <script defer src="app.js?v=c9"></script>
@@ -22,7 +23,12 @@
         <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
         <span>bitbox mkII <span class="brand-subtitle">/ custom firmware</span></span>
       </a>
-      <span class="local-badge"><span aria-hidden="true"></span>Browser-local</span>
+      <div class="header-actions">
+        <span class="local-badge"><span aria-hidden="true"></span>Browser-local</span>
+        <button class="theme-toggle" id="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Night mode" hidden>
+          <span class="theme-track" aria-hidden="true"></span><span>Night mode</span>
+        </button>
+      </div>
     </header>
 
     <main>
@@ -88,7 +94,7 @@
             <span class="privacy-icon" aria-hidden="true">↳</span>
             <h2 id="privacy-title">Your file stays here.</h2>
             <p>Reading, hashing and patching happen in your browser. No firmware uploads or account needed.</p>
-            <p class="small-copy">Once this page has loaded, applying the patch does not need a network connection.</p>
+            <p class="small-copy">Once this page has loaded, applying the patch does not need a network connection. Your day/night preference is saved only in this browser.</p>
           </section>
 
           <section class="feature-summary" aria-labelledby="guide-title">

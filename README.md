@@ -113,7 +113,9 @@ See [features by area](FEATURE_LISTS.md) for the complete cumulative feature set
 ## Privacy
 
 Firmware is processed entirely in your browser. No file, filename, hash or patch
-result is uploaded. The patcher itself has no analytics, cookies, third-party
+result is uploaded. The header’s Night mode switch follows your system appearance until you choose a mode. Your choice is saved only in browser local storage. It stores no firmware data.
+
+The patcher itself has no analytics, cookies, third-party
 scripts or remote fonts. The page's Content Security Policy disables scripted
 network connections and form submission, with a specific frame allowance for
 the optional YouTube player. The host receives ordinary requests for website
