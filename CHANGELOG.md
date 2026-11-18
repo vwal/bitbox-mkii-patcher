@@ -1,3 +1,13 @@
+# Bitbox MkII firmware 2.3.4+c10
+
+Released November 17, 2026. Apply directly to official MkII 2.3.4.
+
+## Fixed in 2.3.4+c10 — November 17, 2026
+
+- **Acid Rotate:** shifts hits, pitches, accents and ties together; positive values advance left, matching Euclid. Wraps at the selected Steps length.
+- **Acid Range 0:** root-only notes while preserving rhythm, accents and ties. Nonzero Range behavior and other generators remain unchanged.
+- **Updated reference:** expanded Acid instructions for Hits, Seed and Mutate, plus the fixes, in both Letter/A4 guides and quick cards.
+
 # Bitbox MkII firmware 2.3.4+c9
 
 Released November 11, 2026. Apply directly to official MkII 2.3.4.

@@ -1,6 +1,6 @@
 # Bitbox MkII features since stock 2.3.4
 
-Updated for **2.3.4+c9**, November 11, 2026. This release adds an audio load meter and saved display switch while retaining all earlier features and fixes. Apply the cumulative patch directly to official MkII 2.3.4.
+Updated for **2.3.4+c10**, November 17, 2026. This release fixes Acid Rotate and root-only Range 0 while retaining all earlier features and fixes. Apply the cumulative patch directly to official MkII 2.3.4.
 
 ## Playback & loop editing
 
@@ -155,6 +155,8 @@ Custom destinations include Sample Speed, Drive, Filter 2, Res 2 and all three F
 Pad → INFO twice → Gen · Tools → Mstr → GEN Run
 
 Run a different clocked pattern on each of the 16 pads. Choose Euclid, Breakcut, Call+Resp, Evolve, Drummap, Random, Acid, Turing or Learn. Set timing, probability, velocity and step conditions, send a response to another pad, or teach Learn by playing the grid.
+
+Fixed in +c10: Acid Rotate shifts the full pattern, including pitches, accents and ties, left with positive values and wraps at Steps. GEN Learn → Range 0 keeps Acid notes at the pad’s root pitch. Nonzero Range behavior and other generators remain unchanged. Guide page 27 explains Hits, Seed and Mutate.
 
 Enable Run under Tools → Mstr → Section → GEN Run. Granular pads expose generator settings under Cnf. Patterns follow the musical clock, including external MIDI/CV clock. Tools → Main → Clock provides the global Run, Stop and Reset controls.
 

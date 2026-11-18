@@ -3,13 +3,13 @@
 [Open the patcher](https://vwal.github.io/bitbox-mkii-patcher/)
 
 An unofficial customization of 1010music Bitbox MkII firmware **2.3.4** to
-**2.3.4+c9**. This repository contains only the static website and a binary delta,
+**2.3.4+c10**. This repository contains only the static website and a binary delta,
 not the complete original or customized firmware.
 
 [Watch the first release (+c) video overview](https://youtu.be/OjgC4UoyOIA). The page also includes
 an optional player that loads only when requested. An updated video covering the later releases is coming soon.
 
-Released November 11, 2026. Smoothed audio load meter and a saved CPU display switch; all earlier custom features and fixes are included.
+Released November 17, 2026. Acid Rotate and root-only Range fixes; all earlier custom features and fixes are included.
 
 ## Use
 
@@ -21,13 +21,13 @@ Released November 11, 2026. Smoothed audio load meter and a saved CPU display sw
 
 | Printable PDF | US Letter | A4 |
 | --- | --- | --- |
-| Firmware reference guide | [Download](bitbox-mkii-2.3.4c9-reference.pdf) | [Download](bitbox-mkii-2.3.4c9-reference-a4.pdf) |
-| Graphical navigation card | [Download](bitbox-mkii-2.3.4c9-quick-card.pdf) | [Download](bitbox-mkii-2.3.4c9-quick-card-a4.pdf) |
+| Firmware reference guide | [Download](bitbox-mkii-2.3.4c10-reference.pdf) | [Download](bitbox-mkii-2.3.4c10-reference-a4.pdf) |
+| Graphical navigation card | [Download](bitbox-mkii-2.3.4c10-quick-card.pdf) | [Download](bitbox-mkii-2.3.4c10-quick-card-a4.pdf) |
 
 For flashing, see the [official MkII manual](https://1010music.com/wp-content/uploads/2023/03/bitbox-mk2-2.0-user-manual-2023-03-01-clean.pdf).
 Copy the patched file to the card root. Power off, insert the card, hold INFO
 while powering on, and release INFO when the upgrade message appears. Allow
-about 30 seconds and wait for the automatic reboot. Confirm **2.3.4+c9** at the
+about 30 seconds and wait for the automatic reboot. Confirm **2.3.4+c10** at the
 lower-right of Menu (press HOME until it appears), or the top-right of Tools.
 
 The patcher verifies the entire original file with SHA-256 before applying any
@@ -42,6 +42,12 @@ filename must match exactly. With the unit powered off, insert the card, hold
 **INFO** while powering on, and release INFO when the upgrade message appears.
 Allow about 30 seconds and leave power on until the automatic reboot. Confirm
 **2.3.4** in the lower-right corner of the Menu screen.
+
+## Fixed in 2.3.4+c10 — November 17, 2026
+
+- **Acid Rotate:** shifts hits, pitches, accents and ties together; positive values advance left, matching Euclid. Wraps at the selected Steps length.
+- **Acid Range 0:** root-only notes while preserving rhythm, accents and ties. Nonzero Range behavior and other generators remain unchanged.
+- **Updated reference:** expanded Acid instructions for Hits, Seed and Mutate, plus the fixes, in both Letter/A4 guides and quick cards.
 
 ## New in 2.3.4+c9 — November 11, 2026
 
@@ -108,7 +114,7 @@ Clock Stop does not mute all playing audio. Pitch and Sample Speed remain indepe
 
 ## All features and earlier releases
 
-See [features by area](FEATURE_LISTS.md) for the complete cumulative feature set and control locations. The website groups features by function and keeps “What did each release include?” collapsed by default. [CHANGELOG](CHANGELOG.md) records all nine releases, +c (c1) through +c9.
+See [features by area](FEATURE_LISTS.md) for the complete cumulative feature set and control locations. The website groups features by function and keeps “What did each release include?” collapsed by default. [CHANGELOG](CHANGELOG.md) records all ten releases, +c (c1) through +c10.
 
 ## Privacy
 
@@ -132,7 +138,7 @@ The direct Watch on YouTube link is always available.
 | Image | Bytes | SHA-256 |
 | --- | ---: | --- |
 | Official 2.3.4 | 674,896 | `35ab7995ad0eca8484f3b28bc76389f10b2037dbb21a4a394e950d9329073e86` |
-| Customized 2.3.4+c9 | 786,412 | `64d8afce76cae837bb0ddc99161958eb69d1e681700c04f305dd350dbf5cd791` |
+| Customized 2.3.4+c10 | 786,404 | `6e6bdad389914acb4335ff56ef0467245d5a5f4d0ee42a5f31a749a8a58c8814` |
 
 ## Hosting
 
