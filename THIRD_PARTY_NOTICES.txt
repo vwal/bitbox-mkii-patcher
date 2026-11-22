@@ -121,3 +121,10 @@ SOFTWARE.
 GEN in G1
 =========
 Adapted from src/gen.c at https://github.com/semierendonmez-commits/bitbox-mk2-semi/tree/b7dfa9ab815342914ade82585756bd701b0c99d7 . See GEN-DONOR-LICENSE.txt (MIT, portkit contributors). The BBCut, Acid and Turing sections originate in the author's Apache-2.0 OpenTracker fork (https://github.com/semierendonmez-commits/polyend-tracker-re-semi). See GEN-APACHE-2.0.txt. Upstream credits Nick Collins / BBenCut, TB-3PO, and Music Thing Turing Machine. G1 adapts storage, queue scheduling, lifecycle, native parameter registration and pad/Tools screens for U3.
+
+Fog F1 for the Bitbox MkII
+==========================
+The FX3 Fog network in src/fog.c adapts Mutable Instruments Beads' reverb
+and delay engine by Emilie Gillet, copyright 2014, under the MIT license.
+The source notice in src/fog.c and the complete 2014 MIT notice above apply.
+Source snapshot: https://github.com/pichenettes/eurorack/tree/f4cfa7697095a28d292bff758beb51deb49b5a86/beads/dsp/fx

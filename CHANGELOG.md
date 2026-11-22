@@ -1,3 +1,14 @@
+# Bitbox MkII firmware 2.3.4+c11
+
+Released November 22, 2026. Apply directly to official MkII 2.3.4.
+
+## New in 2.3.4+c11 — November 22, 2026
+
+- **Fog reverb on FX3.** Tap the selected FX2 cell again, press INFO and turn Type past Chamber to Fog. Keep a different reverb on FX2 and set each pad’s sends independently.
+- **Smoother Codec delay.** FX1 → More → Loss still drops packets for its broken-up sound. Short fades at dropout and recovery reduce the sharp crackle.
+- **Smoother GEN retriggers.** On a Sample pad, raise Pos → Loop Fade to soften clicks when GEN rapidly retriggers a filtered sound. At 0% the original attack and release are preserved.
+- **FX3 send fix.** With FX3 selected, the FX overview now shows and edits the pad’s FX3 send by touch or encoder. It agrees with Pad → Pos.
+
 # Bitbox MkII firmware 2.3.4+c10
 
 Released November 17, 2026. Apply directly to official MkII 2.3.4.

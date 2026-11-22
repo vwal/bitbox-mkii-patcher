@@ -3,13 +3,13 @@
 [Open the patcher](https://vwal.github.io/bitbox-mkii-patcher/)
 
 An unofficial customization of 1010music Bitbox MkII firmware **2.3.4** to
-**2.3.4+c10**. This repository contains only the static website and a binary delta,
+**2.3.4+c11**. This repository contains only the static website and a binary delta,
 not the complete original or customized firmware.
 
 [Watch the first release (+c) video overview](https://youtu.be/OjgC4UoyOIA). The page also includes
 an optional player that loads only when requested. An updated video covering the later releases is coming soon.
 
-Released November 17, 2026. Acid Rotate and root-only Range fixes; all earlier custom features and fixes are included.
+Released November 22, 2026. Adds FX3 Fog reverb and smooths Codec delay dropouts and fast GEN Sample retriggers. The FX overview also targets the correct FX3 send.
 
 ## Use
 
@@ -21,13 +21,13 @@ Released November 17, 2026. Acid Rotate and root-only Range fixes; all earlier c
 
 | Printable PDF | US Letter | A4 |
 | --- | --- | --- |
-| Firmware reference guide | [Download](bitbox-mkii-2.3.4c10-reference.pdf) | [Download](bitbox-mkii-2.3.4c10-reference-a4.pdf) |
-| Graphical navigation card | [Download](bitbox-mkii-2.3.4c10-quick-card.pdf) | [Download](bitbox-mkii-2.3.4c10-quick-card-a4.pdf) |
+| Firmware reference guide | [Download](bitbox-mkii-2.3.4c11-reference.pdf) | [Download](bitbox-mkii-2.3.4c11-reference-a4.pdf) |
+| Graphical navigation card | [Download](bitbox-mkii-2.3.4c11-quick-card.pdf) | [Download](bitbox-mkii-2.3.4c11-quick-card-a4.pdf) |
 
 For flashing, see the [official MkII manual](https://1010music.com/wp-content/uploads/2023/03/bitbox-mk2-2.0-user-manual-2023-03-01-clean.pdf).
 Copy the patched file to the card root. Power off, insert the card, hold INFO
 while powering on, and release INFO when the upgrade message appears. Allow
-about 30 seconds and wait for the automatic reboot. Confirm **2.3.4+c10** at the
+about 30 seconds and wait for the automatic reboot. Confirm **2.3.4+c11** at the
 lower-right of Menu (press HOME until it appears), or the top-right of Tools.
 
 The patcher verifies the entire original file with SHA-256 before applying any
@@ -42,6 +42,13 @@ filename must match exactly. With the unit powered off, insert the card, hold
 **INFO** while powering on, and release INFO when the upgrade message appears.
 Allow about 30 seconds and leave power on until the automatic reboot. Confirm
 **2.3.4** in the lower-right corner of the Menu screen.
+
+## New in 2.3.4+c11 — November 22, 2026
+
+- **Fog reverb on FX3.** Tap the selected FX2 cell again, press INFO and turn Type past Chamber to Fog. Keep a different reverb on FX2 and set each pad’s sends independently.
+- **Smoother Codec delay.** FX1 → More → Loss still drops packets for its broken-up sound. Short fades at dropout and recovery reduce the sharp crackle.
+- **Smoother GEN retriggers.** On a Sample pad, raise Pos → Loop Fade to soften clicks when GEN rapidly retriggers a filtered sound. At 0% the original attack and release are preserved.
+- **FX3 send fix.** With FX3 selected, the FX overview now shows and edits the pad’s FX3 send by touch or encoder. It agrees with Pad → Pos.
 
 ## Fixed in 2.3.4+c10 — November 17, 2026
 
@@ -114,7 +121,7 @@ Clock Stop does not mute all playing audio. Pitch and Sample Speed remain indepe
 
 ## All features and earlier releases
 
-See [features by area](FEATURE_LISTS.md) for the complete cumulative feature set and control locations. The website groups features by function and keeps “What did each release include?” collapsed by default. [CHANGELOG](CHANGELOG.md) records all ten releases, +c (c1) through +c10.
+See [features by area](FEATURE_LISTS.md) for the complete cumulative feature set and control locations. The website groups features by function and keeps “What did each release include?” collapsed by default. [CHANGELOG](CHANGELOG.md) records all eleven releases, +c (c1) through +c11.
 
 ## Privacy
 
@@ -138,7 +145,7 @@ The direct Watch on YouTube link is always available.
 | Image | Bytes | SHA-256 |
 | --- | ---: | --- |
 | Official 2.3.4 | 674,896 | `35ab7995ad0eca8484f3b28bc76389f10b2037dbb21a4a394e950d9329073e86` |
-| Customized 2.3.4+c10 | 786,404 | `6e6bdad389914acb4335ff56ef0467245d5a5f4d0ee42a5f31a749a8a58c8814` |
+| Customized 2.3.4+c11 | 785,964 | `c4e91702438dafe2161bf4498895f0f59dc8e4fe88cadec478452b7e219b89b3` |
 
 ## Hosting
 

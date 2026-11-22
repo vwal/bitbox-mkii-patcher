@@ -11,15 +11,15 @@
   const RELEASE = Object.freeze({
     format: "bitbox-delta-v1",
     device: "1010music bitbox mkII",
-    version: "2.3.4+c10",
+    version: "2.3.4+c11",
     source: Object.freeze({
       size: 674896,
       sha256: "35ab7995ad0eca8484f3b28bc76389f10b2037dbb21a4a394e950d9329073e86",
     }),
     target: Object.freeze({
-      size: 786404,
-      sha256: "6e6bdad389914acb4335ff56ef0467245d5a5f4d0ee42a5f31a749a8a58c8814",
-      version: "2.3.4+c10",
+      size: 785964,
+      sha256: "c4e91702438dafe2161bf4498895f0f59dc8e4fe88cadec478452b7e219b89b3",
+      version: "2.3.4+c11",
       filename: "BITBOXMK2.bin",
     }),
   });

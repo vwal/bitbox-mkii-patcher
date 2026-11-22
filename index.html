@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Bitbox MkII 2.3.4+c10: Acid Rotate and root-only Range fixes. Includes live input effects, waveform zoom, time stretching, recording tools and clock controls. Apply the patch entirely in your browser; no firmware upload.">
+  <meta name="description" content="Bitbox MkII 2.3.4+c11 adds FX3 Fog reverb, smoother Codec delay and GEN Sample retriggers, and an FX3 send fix. Apply the patch locally in your browser.">
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; frame-src https://www.youtube-nocookie.com; object-src 'none'; base-uri 'none'; form-action 'none'">
-  <title>bitbox mkII · 2.3.4+c10 patcher</title>
+  <title>bitbox mkII · 2.3.4+c11 patcher</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <script src="theme.js?v=20261116"></script>
   <link rel="stylesheet" href="styles.css?v=20261116">
-  <script defer src="patch-data.js?v=c10"></script>
-  <script defer src="engine.js?v=c10"></script>
-  <script defer src="app.js?v=c10"></script>
-  <script defer src="video.js?v=c10"></script>
+  <script defer src="patch-data.js?v=c11"></script>
+  <script defer src="engine.js?v=c11"></script>
+  <script defer src="app.js?v=c11"></script>
+  <script defer src="video.js?v=c11"></script>
 </head>
 <body>
   <a class="skip-link" href="#patcher">Skip to patcher</a>
@@ -37,10 +37,10 @@
         <h1 id="page-title">Custom firmware.<br>Patched in your browser.</h1>
         <p class="intro-copy">Waveform zoom, pitch-preserving playback, live input effects, recording, clock controls and an audio load meter for the Bitbox MkII. Browse the additions by feature, or open the release history to see when each arrived.</p>
         <nav class="intro-links" aria-label="On this page"><a href="#features">Explore features</a><a href="#release-history">Release history</a><a href="#patcher">Patch firmware</a><a href="#guide-title">PDF guides</a><a href="#installation">Install &amp; recover</a><a href="#feedback">Feedback</a></nav>
-        <div class="version-path" aria-label="Official version 2.3.4 becomes customized version 2.3.4 plus c10">
+        <div class="version-path" aria-label="Official version 2.3.4 becomes customized version 2.3.4 plus c11">
           <span><small>OFFICIAL</small><strong>2.3.4</strong></span>
           <span class="version-arrow" aria-hidden="true">→</span>
-          <span><small>LATEST RELEASE</small><strong>2.3.4+c10</strong></span>
+          <span><small>LATEST RELEASE</small><strong>2.3.4+c11</strong></span>
         </div>
       </section>
 
@@ -48,10 +48,10 @@
         <section class="patch-card" id="patcher" aria-labelledby="patch-title">
           <div class="card-heading">
             <span class="section-number" aria-hidden="true">01—03</span>
-            <h2 id="patch-title">Make your +c10 firmware</h2>
+            <h2 id="patch-title">Make your +c11 firmware</h2>
           </div>
           <p class="card-copy">Download <a href="https://1010music.com/wp-content/uploads/2024/05/BITBOXMK2234.zip" target="_blank" rel="noopener noreferrer">official bitbox mkII 2.3.4</a>, extract the archive, then choose its <code>BITBOXMK2.bin</code> file below. Start from this official file even if your module already runs a custom release or a test build.</p>
-          <p class="small-copy"><strong>Acid GEN fixes · November 17, 2026.</strong> Rotate now moves the complete pattern, and Range 0 keeps notes at the root. All earlier features remain included. <a href="#release-ten">See what’s new.</a></p>
+          <p class="small-copy"><strong>Fog reverb and smoother retriggers · November 22, 2026.</strong> Try Fog on FX3, smoother Codec repeats and click reduction for fast GEN Sample patterns. <a href="#release-eleven">See what’s new.</a></p>
           <p class="backup-reminder"><strong>Before reflashing:</strong> back up your entire microSD card—including projects, samples and presets—to another drive.</p>
 
           <div class="file-zone" id="file-zone">
@@ -75,14 +75,14 @@
           <ol class="progress-list" id="progress-list" aria-label="Patch verification progress">
             <li id="stage-input" data-state="pending"><span class="step-marker" aria-hidden="true">1</span><span><strong>Verify original</strong><small>Match the official 2.3.4 SHA-256</small></span><span class="step-state">Waiting</span></li>
             <li id="stage-patch" data-state="pending"><span class="step-marker" aria-hidden="true">2</span><span><strong>Apply customizations</strong><small>Build a separate file in browser memory</small></span><span class="step-state">Waiting</span></li>
-            <li id="stage-output" data-state="pending"><span class="step-marker" aria-hidden="true">3</span><span><strong>Verify result</strong><small>Match the exact 2.3.4+c10 SHA-256</small></span><span class="step-state">Waiting</span></li>
+            <li id="stage-output" data-state="pending"><span class="step-marker" aria-hidden="true">3</span><span><strong>Verify result</strong><small>Match the exact 2.3.4+c11 SHA-256</small></span><span class="step-state">Waiting</span></li>
           </ol>
 
           <button class="primary-button" id="apply-patch" type="button" disabled>Apply patch <span aria-hidden="true">→</span></button>
           <div class="download-result" id="download-result" hidden>
             <p><strong>Verified and ready.</strong> Your original file is unchanged.</p>
             <a class="download-button" id="download-file" download="BITBOXMK2.bin">Download BITBOXMK2.bin <span aria-hidden="true">↓</span></a>
-            <p class="download-note">The downloaded file identifies itself as <strong>2.3.4+c10</strong> in Tools. This page creates a file; it does not flash your module.</p>
+            <p class="download-note">The downloaded file identifies itself as <strong>2.3.4+c11</strong> in Tools. This page creates a file; it does not flash your module.</p>
             <p class="download-note">On your SD card, the patched file must be named exactly <code>BITBOXMK2.bin</code>. Remove any duplicate-download suffix such as <code>(1)</code> before copying it. <a href="#installation">See installation steps below.</a></p>
           </div>
 
@@ -100,8 +100,8 @@
           <section class="feature-summary" aria-labelledby="guide-title">
             <p class="eyebrow">AT THE MODULE</p>
             <h2 id="guide-title">Find a control.</h2>
-            <div class="paper-choices"><h3>Reference guide</h3><p>Complete +c10 guide, including the audio load meter, effect-box setup and Acid GEN instructions (page 27)</p><div><a href="bitbox-mkii-2.3.4c10-reference.pdf" download aria-label="Download US Letter reference guide">US Letter ↓</a><a href="bitbox-mkii-2.3.4c10-reference-a4.pdf" download aria-label="Download A4 reference guide">A4 ↓</a></div></div>
-            <div class="paper-choices"><h3>Quick reference card</h3><p>Graphical navigation map · US Letter or A4</p><div><a href="bitbox-mkii-2.3.4c10-quick-card.pdf" download aria-label="Download US Letter quick reference card">US Letter ↓</a><a href="bitbox-mkii-2.3.4c10-quick-card-a4.pdf" download aria-label="Download A4 quick reference card">A4 ↓</a></div></div>
+            <div class="paper-choices"><h3>Reference guide</h3><p>Complete +c11 guide, including effect-box setup, Acid GEN (page 27) and Fog, Codec and rapid retriggers (page 28)</p><div><a href="bitbox-mkii-2.3.4c11-reference.pdf" download aria-label="Download US Letter reference guide">US Letter ↓</a><a href="bitbox-mkii-2.3.4c11-reference-a4.pdf" download aria-label="Download A4 reference guide">A4 ↓</a></div></div>
+            <div class="paper-choices"><h3>Quick reference card</h3><p>Graphical navigation map · US Letter or A4</p><div><a href="bitbox-mkii-2.3.4c11-quick-card.pdf" download aria-label="Download US Letter quick reference card">US Letter ↓</a><a href="bitbox-mkii-2.3.4c11-quick-card-a4.pdf" download aria-label="Download A4 quick reference card">A4 ↓</a></div></div>
             <p class="small-copy">The guide includes <a href="#input-effects">Off, fixed and Follow input setups</a>, output routing and Purge. The quick card is a one-page graphical navigation map, including the Pads clipboard shortcut.</p>
           </section>
           <section class="support-note" aria-labelledby="support-title">
@@ -123,7 +123,7 @@
       <section class="feature-catalog" id="features" aria-labelledby="features-title">
         <p class="eyebrow">ALL ADDITIONS SINCE STOCK 2.3.4</p>
         <h2 id="features-title">Explore by feature.</h2>
-        <p class="catalog-intro">All additions since official 2.3.4, grouped by what you want to do. <span class="feature-badge">Fixed in +c10</span> marks the Acid generator refinements. All earlier features and fixes remain included.</p>
+        <p class="catalog-intro">All additions since official 2.3.4, grouped by what you want to do. <span class="feature-badge">+c11</span> marks the latest additions and fixes.</p>
         <nav class="feature-nav" aria-label="Feature sets"><a href="#playback">Playback &amp; loop editing</a><a href="#tone-effects">Tone &amp; effects</a><a href="#input-effects">Input effects</a><a href="#recording">Recording &amp; resampling</a><a href="#modulation-gen">Modulation &amp; GEN</a><a href="#master">Master processing</a><a href="#clock-transport">Clock &amp; transport</a><a href="#midi-cv">MIDI &amp; CV utilities</a><a href="#display-workflow">Display &amp; everyday controls</a></nav>
         <section class="feature-group" id="playback" aria-labelledby="playback-title">
           <div class="feature-group-heading"><span class="group-number" aria-hidden="true">01</span><div><h3 id="playback-title">Playback &amp; loop editing</h3><p>See the waveform, control time and shape a loop.</p></div></div>
@@ -176,6 +176,7 @@
               <h4>Four delay characters</h4>
               <p>Choose <strong>Digital, Tape, BBD or Codec</strong>. Tape adds saturation, frequency loss, wow and flutter; BBD gives dark, drifting repeats; Codec builds up 16 kHz, 4-bit ADPCM color.</p>
               <p>More adds Flutter (0–100%), modulation rate, depth and stereo phase, Drive, Tone and Return dB (±12 dB). Codec replaces Drive and Tone with frame Loss (0–30%) and Bandwidth (4–16 kHz). Flutter at zero retains each type’s base sound, including Tape’s built-in movement.</p>
+              <p><span class="feature-badge">+c11</span> Short fades soften the crackle at the edges of Codec dropouts. Loss still sets how often packets drop.</p>
             <p><span class="feature-badge earlier-badge">Added in +c8</span> Tap <strong>Purge</strong> in the FX1 header to discard the shared delay tail and feedback history. Settings stay intact, fresh input still produces echoes, and FX2/FX3 continue. Available on both delay pages for every delay type.</p>
             </article>
             <article>
@@ -183,6 +184,7 @@
               <h4>Two separate reverb tails</h4>
               <p><strong>Room, Hall and Chamber</strong> join Plate. The added types offer Size, Diffusion and Width; their More page adds Bass x, Xover, Mod Rate, Mod Dpth, Early, Hi Cut and Lo Cut. All types have Level. Switching control pages preserves the tail.</p>
               <p>Tap the <strong>selected FX2 cell again</strong> to switch to FX3, then press INFO. FX3 is an independent second reverb with its own settings and tail. Tap the selected cell again to return to FX2.</p>
+              <p><span class="feature-badge">+c11</span> For <strong>Fog</strong>, turn FX3 Type past Chamber. Adjust Decay, PreDelay, Damp, Width, Level and FX3 Out on its main page. The FX overview now shows and edits FX3 Send when FX3 is selected.</p>
             </article>
             <article>
               <p class="control-path">Pad → Pos · Tools → Rec → FX Out</p>
@@ -262,7 +264,8 @@
               <h4>A generator on every pad</h4>
               <p>Run a different clocked pattern on each of the 16 pads. Choose <strong>Euclid, Breakcut, Call+Resp, Evolve, Drummap, Random, Acid, Turing or Learn</strong>. Set timing, probability, velocity and step conditions, send a response to another pad, or teach Learn by playing the grid.</p>
               <p>Enable Run under Tools → Mstr → Section → GEN Run. Granular pads expose generator settings under Cnf. Patterns follow the musical clock, including external MIDI/CV clock. Tools → Main → Clock provides the global Run, Stop and Reset controls.</p>
-              <p><span class="feature-badge">Fixed in +c10</span> Acid’s <strong>Rotate</strong> now shifts the complete pattern, including pitches, accents and ties. <strong>GEN Learn → Range 0</strong> keeps its notes at the pad’s root pitch. Hits remains sparse in the middle and dense at either end; see guide page 27 for Seed and Mutate.</p>
+              <p><span class="feature-badge earlier-badge">Fixed in +c10</span> Acid’s <strong>Rotate</strong> now shifts the complete pattern, including pitches, accents and ties. <strong>GEN Learn → Range 0</strong> keeps its notes at the pad’s root pitch. Hits remains sparse in the middle and dense at either end; see guide page 27 for Seed and Mutate.</p>
+              <p><span class="feature-badge">+c11</span> For clicks on fast GEN Sample retriggers, raise <strong>Pad → Pos → Loop Fade</strong>. It smooths the incoming attack and the end of the outgoing filtered sound. At 0% the original transients are preserved.</p>
             </article>
             <article>
               <p class="control-path">Pads → status strip</p>
@@ -390,7 +393,16 @@
         <details id="release-history">
           <summary><h2>What did each release include?</h2><span aria-hidden="true">+</span></summary>
           <div class="history-content">
-            <p class="history-intro">Ten releases, each including the earlier additions. +c is the first custom release, also called c1. The latest is +c10, an Acid GEN bugfix release published November 17, 2026.</p>
+            <p class="history-intro">Eleven cumulative releases. +c is the first custom release, also called c1.</p>
+            <section id="release-eleven" aria-labelledby="release-eleven-title">
+              <div class="history-meta"><h3 id="release-eleven-title">2.3.4+c11</h3><p class="history-status">Published · November 22, 2026</p></div>
+              <ul>
+                <li><strong>Fog reverb on FX3.</strong> Tap the selected FX2 cell again, press INFO and turn Type past Chamber to Fog. Keep a different reverb on FX2 and set each pad’s sends independently.</li>
+                <li><strong>Smoother Codec delay.</strong> FX1 → More → Loss still drops packets for its broken-up sound. Short fades at dropout and recovery reduce the sharp crackle.</li>
+                <li><strong>Smoother GEN retriggers.</strong> On a Sample pad, raise Pos → Loop Fade to soften clicks when GEN rapidly retriggers a filtered sound. At 0% the original attack and release are preserved.</li>
+                <li><strong>FX3 send fix.</strong> With FX3 selected, the FX overview now shows and edits the pad’s FX3 send by touch or encoder. It agrees with Pad → Pos.</li>
+              </ul>
+            </section>
             <section id="release-ten" aria-labelledby="release-ten-title">
               <div class="history-meta"><h3 id="release-ten-title">2.3.4+c10</h3><p class="history-status">Published · November 17, 2026</p></div>
               <ul>
@@ -509,7 +521,7 @@
         <div class="video-copy">
           <p class="eyebrow">FIRST RELEASE VIDEO · 2.3.4+c</p>
           <h2 id="video-title">Watch the first release.</h2>
-          <p>See waveform zoom, Sample Speed and the other first-release features on the Bitbox MkII. An updated overview of the later releases is coming soon. The downloadable guides currently cover through <strong>+c10</strong>.</p>
+          <p>See waveform zoom, Sample Speed and the other first-release features on the Bitbox MkII. An updated overview of the later releases is coming soon. The downloadable guides currently cover through <strong>+c11</strong>.</p>
           <a class="video-external-link" href="https://youtu.be/OjgC4UoyOIA" target="_blank" rel="noopener noreferrer">Watch on YouTube <span aria-hidden="true">↗</span></a>
           <p class="video-privacy" id="video-privacy">The player connects to YouTube only when you load it. Your firmware stays in the patcher.</p>
         </div>
@@ -534,7 +546,7 @@
           <li><strong>Copy the patched file.</strong> Place <code>BITBOXMK2.bin</code> in the SD card’s root directory, outside any folder.</li>
           <li><strong>Insert the card with the unit powered off.</strong> Hold <strong>INFO</strong> while powering on, then release INFO when the upgrade message appears.</li>
           <li><strong>Wait for the automatic reboot.</strong> Allow about 30 seconds and leave power on until the update finishes.</li>
-          <li><strong>Confirm 2.3.4+c10.</strong> Press <strong>HOME</strong> until the Menu screen appears. The version is in its lower-right corner, and also at the top-right of Tools.</li>
+          <li><strong>Confirm 2.3.4+c11.</strong> Press <strong>HOME</strong> until the Menu screen appears. The version is in its lower-right corner, and also at the top-right of Tools.</li>
         </ol>
       </section>
 
@@ -577,6 +589,7 @@
         <h2 id="credits-title">Code and community credits</h2>
         <p>With thanks to <a href="https://github.com/semierendonmez-commits">semierendonmez-commits</a> for <a href="https://github.com/semierendonmez-commits/bitbox-mk2-semi">bitbox-mk2-semi</a>, and to the <a href="https://github.com/kyrillleier-jpg/portkit-micro">portkit contributors</a> (MIT), whose work supplied code and ideas adapted for this release.</p>
         <p>The Fidelity and filter work draws on <a href="https://github.com/j3threejay/blackbox-mod">blackbox-mod by Justin Joe</a> (MIT); the state-variable filter follows <a href="https://github.com/pichenettes/stmlib">Emilie Gillet’s stmlib</a> (MIT). See the <a href="THIRD_PARTY_NOTICES.txt">full notices and import details</a>.</p>
+        <p>FX3 Fog adapts Émilie Gillet’s Mutable Instruments Beads reverb (MIT), also used for Fog in the Seal Eggs project.</p>
         <p>GEN adapts the donor sequencer, including Breakcut, Acid and Turing procedures derived from OpenTracker. <a href="GEN-DONOR-LICENSE.txt">Donor license</a> · <a href="GEN-APACHE-2.0.txt">OpenTracker license</a>.</p>
         <p>The original 1010music firmware is not distributed here and is not covered by those licenses. Please share this patcher link rather than patched firmware files.</p>
       </section>
@@ -588,7 +601,7 @@
             <p>Only the exact official <strong>bitbox mkII 2.3.4</strong> image is accepted. Other versions, models, ZIP archives and already patched files are rejected. Both hashes must match before a download is offered.</p>
             <dl class="hash-list">
               <div><dt>Original · 2.3.4 · SHA-256</dt><dd id="source-hash">35ab7995ad0eca8484f3b28bc76389f10b2037dbb21a4a394e950d9329073e86</dd></div>
-              <div><dt>Patched · 2.3.4+c10 · SHA-256</dt><dd id="target-hash">6e6bdad389914acb4335ff56ef0467245d5a5f4d0ee42a5f31a749a8a58c8814</dd></div>
+              <div><dt>Patched · 2.3.4+c11 · SHA-256</dt><dd id="target-hash">c4e91702438dafe2161bf4498895f0f59dc8e4fe88cadec478452b7e219b89b3</dd></div>
             </dl>
             <p class="small-copy">The patcher uses your browser’s SHA-256 implementation. Use an HTTPS address or a local preview server if your browser cannot verify files from a downloaded page.</p>
           </div>
@@ -600,7 +613,7 @@
       <p>Independent customization. Not an official 1010music release.</p>
       <p>This project contains carefully tested AI-generated code.</p>
       <p><a href="LICENSE.txt">License &amp; 1010music exception</a> · <a href="THIRD_PARTY_NOTICES.txt">Upstream credits &amp; licenses</a></p>
-      <p>For bitbox mkII · 2.3.4 → 2.3.4+c10</p>
+      <p>For bitbox mkII · 2.3.4 → 2.3.4+c11</p>
     </footer>
   </div>
 </body>

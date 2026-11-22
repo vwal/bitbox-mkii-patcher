@@ -1,6 +1,6 @@
 # Bitbox MkII features since stock 2.3.4
 
-Updated for **2.3.4+c10**, November 17, 2026. This release fixes Acid Rotate and root-only Range 0 while retaining all earlier features and fixes. Apply the cumulative patch directly to official MkII 2.3.4.
+Updated for **2.3.4+c11**, November 22, 2026. Apply the cumulative patch directly to official MkII 2.3.4.
 
 ## Playback & loop editing
 
@@ -64,6 +64,8 @@ Choose Digital, Tape, BBD or Codec. Tape adds saturation, frequency loss, wow an
 
 More adds Flutter (0–100%), modulation rate, depth and stereo phase, Drive, Tone and Return dB (±12 dB). Codec replaces Drive and Tone with frame Loss (0–30%) and Bandwidth (4–16 kHz). Flutter at zero retains each type’s base sound, including Tape’s built-in movement.
 
+In +c11, short fades soften the edges of lost and returning Codec packets. Loss still controls how often gaps occur.
+
 ### Clear a delay tail [+c8]
 
 **FX1 → INFO → Purge**, available on Main and More. Discards the shared delay tail and feedback for Digital, Tape, BBD or Codec. Settings stay intact, fresh input still echoes, and FX2/FX3 continue normally.
@@ -73,6 +75,8 @@ More adds Flutter (0–100%), modulation rate, depth and stereo phase, Drive, To
 FX2 / FX3 → INFO → Type / More
 
 Room, Hall and Chamber join Plate. The added types offer Size, Diffusion and Width; their More page adds Bass x, Xover, Mod Rate, Mod Dpth, Early, Hi Cut and Lo Cut. All types have Level. Switching control pages preserves the tail.
+
+FX3 also offers **Fog**. Select FX3, press INFO and turn Type past Chamber. Decay, PreDelay, Damp, Width, Level and FX3 Out are on the main page. The FX overview now shows and edits the selected pad’s FX3 send independently of FX2.
 
 Tap the selected FX2 cell again to switch to FX3, then press INFO. FX3 is an independent second reverb with its own settings and tail. Tap the selected cell again to return to FX2.
 
@@ -157,6 +161,8 @@ Pad → INFO twice → Gen · Tools → Mstr → GEN Run
 Run a different clocked pattern on each of the 16 pads. Choose Euclid, Breakcut, Call+Resp, Evolve, Drummap, Random, Acid, Turing or Learn. Set timing, probability, velocity and step conditions, send a response to another pad, or teach Learn by playing the grid.
 
 Fixed in +c10: Acid Rotate shifts the full pattern, including pitches, accents and ties, left with positive values and wraps at Steps. GEN Learn → Range 0 keeps Acid notes at the pad’s root pitch. Nonzero Range behavior and other generators remain unchanged. Guide page 27 explains Hits, Seed and Mutate.
+
+On a Sample pad, raise **Pos → Loop Fade** to smooth rapid GEN retriggers. At 100%, up to 2 ms smooths the incoming attack and the end of the outgoing filtered voice. At 0% GEN uses the original envelopes.
 
 Enable Run under Tools → Mstr → Section → GEN Run. Granular pads expose generator settings under Cnf. Patterns follow the musical clock, including external MIDI/CV clock. Tools → Main → Clock provides the global Run, Stop and Reset controls.
 
