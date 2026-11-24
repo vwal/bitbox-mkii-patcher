@@ -1,6 +1,6 @@
 # Bitbox MkII features since stock 2.3.4
 
-Updated for **2.3.4+c11**, November 22, 2026. Apply the cumulative patch directly to official MkII 2.3.4.
+Features in **2.3.4+c12**, cumulative since official MkII **2.3.4**.
 
 ## Playback & loop editing
 
@@ -9,6 +9,14 @@ Updated for **2.3.4+c11**, November 22, 2026. Apply the cumulative patch directl
 Waveform → two-finger gestures
 
 Zoom amplitude from 25–3200% with a vertical pinch or spread, independently of horizontal time zoom. Added in +c5 Horizontal pinch now zooms out 4× farther than stock. A stationary two-finger tap still restores 100% amplitude and the stock horizontal zoom-out level. Long samples may still extend beyond the screen. Loop markers use LStr / LEnd, with long values kept inside their fields.
+
+### Start the next trigger at a waveform cue [+c12]
+
+Single-WAV Sample pad → INFO → large waveform
+
+Tap and lift one finger where you want to start. A yellow line marks the cue. Tap elsewhere on the large waveform to move it. The next launch of that pad starts there and clears the line. The following launch uses the usual start. You can place the cue while listening to a voice already playing. The small overview still navigates the waveform.
+
+Only one cue can be armed at a time. The cue follows the pad, WAV, playback direction and launch quantization. Forward playback can start in the intro or the loop, and reverse playback can start in the tail or the loop. The saved Start, Length and loop markers stay in place.
 
 ### Change speed while keeping pitch
 
@@ -70,6 +78,12 @@ In +c11, short fades soften the edges of lost and returning Codec packets. Loss 
 
 **FX1 → INFO → Purge**, available on Main and More. Discards the shared delay tail and feedback for Digital, Tape, BBD or Codec. Settings stay intact, fresh input still echoes, and FX2/FX3 continue normally.
 
+### Choose the reverb input per pad [+c12]
+
+Pad → Pos → Rvb In
+
+Sum (default) uses the existing stereo send. Choose Left or Right when the channels cancel in the reverb, as can happen with a mono mic recorded in stereo. The selected channel feeds both FX2 and FX3 after pan. Their send levels and modulation stay independent, and the setting saves per pad with the preset. Dry, FX1 and FX4 keep their normal routing.
+
 ### Two separate reverb tails
 
 FX2 / FX3 → INFO → Type / More
@@ -86,7 +100,17 @@ Pad → Pos · Tools → Rec → FX Out
 
 Each pad has FX1, FX2 and FX3 sends, all modulatable through select → INFO. Route FX1/FX2 returns to Out1/2 or the physical FX1/2 pair, together or separately; Dly1 Rvb2 splits them between the two mono FX jacks. FX3 has its own Out1/2, FX1/2, mono FX1 or mono FX2 selector.
 
-Added in +c5 Dry Level, after FX3 Send on Pos, defaults to 100% and trims the pad’s direct sound down to 0% while all three sends remain active. Use it for wet-only playback, or modulate it through INFO. The sends and return levels set the wet balance; the effects run in parallel.
+Added in +c5 Dry Level on Pos defaults to 100% and trims the pad’s direct sound down to 0% while all three sends remain active. Use it for wet-only playback, or modulate it through INFO. The sends and return levels set the wet balance; the effects run in parallel.
+
+### Send pads to external hardware [+c12]
+
+Pad → Pos → FX4 Send
+
+FX4 Send sets how much of each playing pad goes to the physical FX1 and FX2 jacks. The manual 0–100% send is taken before Dry Level, saves with the pad and starts at zero in older presets. All pads share the same stereo loop. Use FX3 Send for Fog and FX4 Send for outboard processing, on separate pads or together on one pad.
+
+- Connect the FX1 and FX2 jacks to the processor’s left and right inputs. Return its outputs to IN1 and IN2 and listen on OUT1 and OUT2. Set a parallel delay or reverb fully wet.
+- On an empty pad, press INFO for Recorder. Set **Rec Input → In 1/2**, **RecMon → On**, **Mon Output → Out 1/2** and **Input FX pad → Off**. You can leave the Recorder. Keep Mon Output on the main pair so the return cannot feed back into its own send.
+- To dedicate the FX jacks to FX4, use **Cnf → Output → Out1/2** on the playing pads and **Out1/2** for both **Tools → Rec → FX Out** and **FX3 Out** in FX3 settings. A pad routed directly to the FX jacks already feeds the processor through its ordinary output.
 
 ## Using Bitbox Mk2 as an effect box [+c8]
 
@@ -289,6 +313,8 @@ Double-tap a numeric dial to restore its base value while keeping modulation ass
 
 Fixed in +c7: Hold-to-stop now works on the triangle Play button in both the waveform detail view and all pad parameter pages. The hold is two seconds in every location. A fresh tap, MIDI, CV or GEN can start the sound again. The Int BPM reset hold remains three seconds.
 
+In +c12 the bottom bar on the grid clears as soon as the hold stops playback. In a waveform or parameter view, the Play triangle returns to its released appearance at the same moment, even with your finger still down.
+
 ### Reset the counter or shared settings
 
 Counter · Tools → Main → RESET
@@ -301,4 +327,4 @@ On Pads, turn the lower-right encoder to reveal Cut / Copy / Paste / Clear (CLR)
 
 ## Release history
 
-See [CHANGELOG](CHANGELOG.md) for all nine releases, +c (c1) through +c9.
+The [change log](CHANGELOG.md) covers the original +c (c1) through +c12.

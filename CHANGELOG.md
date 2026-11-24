@@ -1,3 +1,12 @@
+# Bitbox MkII firmware 2.3.4+c12
+
+Released November 23, 2026. Apply directly to official MkII 2.3.4.
+
+- **Cue the next Sample trigger.** On a single-WAV Sample pad, tap the large waveform to place a yellow cue. The next trigger starts there in the current direction and clears the line. Your saved Start, Length and loop markers stay in place.
+- **Send pads to an external effect.** Each pad has a manual **Pos → FX4 Send** that feeds the stereo FX output before Dry Level. Monitor the external return on the main pair and use FX3 Fog alongside it.
+- **Choose the reverb input per pad.** Under **Pad → Pos → Rvb In**, Sum (default), Left or Right feeds both FX2 and FX3. Choose one channel when a centered stereo sample loses its reverb. Its dry stereo signal and other sends keep their routing.
+- **See when a held pad stops.** At the two-second stop, the grid pad’s bottom bar clears and the detail Play triangle returns to its released appearance, even while your finger is still down.
+
 # Bitbox MkII firmware 2.3.4+c11
 
 Released November 22, 2026. Apply directly to official MkII 2.3.4.

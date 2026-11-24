@@ -3,13 +3,13 @@
 [Open the patcher](https://vwal.github.io/bitbox-mkii-patcher/)
 
 An unofficial customization of 1010music Bitbox MkII firmware **2.3.4** to
-**2.3.4+c11**. This repository contains only the static website and a binary delta,
+**2.3.4+c12**. This repository contains only the static website and a binary delta,
 not the complete original or customized firmware.
 
 [Watch the first release (+c) video overview](https://youtu.be/OjgC4UoyOIA). The page also includes
 an optional player that loads only when requested. An updated video covering the later releases is coming soon.
 
-Released November 22, 2026. Adds FX3 Fog reverb and smooths Codec delay dropouts and fast GEN Sample retriggers. The FX overview also targets the correct FX3 send.
+Released November 23, 2026. Bitbox MkII 2.3.4+c12 adds an external FX4 send, a one-shot waveform cue, per-pad reverb input selection and immediate hold-to-stop indicators.
 
 ## Use
 
@@ -21,13 +21,13 @@ Released November 22, 2026. Adds FX3 Fog reverb and smooths Codec delay dropouts
 
 | Printable PDF | US Letter | A4 |
 | --- | --- | --- |
-| Firmware reference guide | [Download](bitbox-mkii-2.3.4c11-reference.pdf) | [Download](bitbox-mkii-2.3.4c11-reference-a4.pdf) |
-| Graphical navigation card | [Download](bitbox-mkii-2.3.4c11-quick-card.pdf) | [Download](bitbox-mkii-2.3.4c11-quick-card-a4.pdf) |
+| Firmware reference guide | [Download](bitbox-mkii-2.3.4c12-reference.pdf) | [Download](bitbox-mkii-2.3.4c12-reference-a4.pdf) |
+| Graphical navigation card | [Download](bitbox-mkii-2.3.4c12-quick-card.pdf) | [Download](bitbox-mkii-2.3.4c12-quick-card-a4.pdf) |
 
 For flashing, see the [official MkII manual](https://1010music.com/wp-content/uploads/2023/03/bitbox-mk2-2.0-user-manual-2023-03-01-clean.pdf).
 Copy the patched file to the card root. Power off, insert the card, hold INFO
 while powering on, and release INFO when the upgrade message appears. Allow
-about 30 seconds and wait for the automatic reboot. Confirm **2.3.4+c11** at the
+about 30 seconds and wait for the automatic reboot. Confirm **2.3.4+c12** at the
 lower-right of Menu (press HOME until it appears), or the top-right of Tools.
 
 The patcher verifies the entire original file with SHA-256 before applying any
@@ -42,6 +42,13 @@ filename must match exactly. With the unit powered off, insert the card, hold
 **INFO** while powering on, and release INFO when the upgrade message appears.
 Allow about 30 seconds and leave power on until the automatic reboot. Confirm
 **2.3.4** in the lower-right corner of the Menu screen.
+
+## New in 2.3.4+c12 — November 23, 2026
+
+- **Cue the next Sample trigger.** On a single-WAV Sample pad, tap the large waveform to place a yellow cue. The next trigger starts there in the current direction and clears the line. Your saved Start, Length and loop markers stay in place.
+- **Send pads to an external effect.** Each pad has a manual **Pos → FX4 Send** that feeds the stereo FX output before Dry Level. Monitor the external return on the main pair and use FX3 Fog alongside it.
+- **Choose the reverb input per pad.** Under **Pad → Pos → Rvb In**, Sum (default), Left or Right feeds both FX2 and FX3. Choose one channel when a centered stereo sample loses its reverb. Its dry stereo signal and other sends keep their routing.
+- **See when a held pad stops.** At the two-second stop, the grid pad’s bottom bar clears and the detail Play triangle returns to its released appearance, even while your finger is still down.
 
 ## New in 2.3.4+c11 — November 22, 2026
 
@@ -121,7 +128,7 @@ Clock Stop does not mute all playing audio. Pitch and Sample Speed remain indepe
 
 ## All features and earlier releases
 
-See [features by area](FEATURE_LISTS.md) for the complete cumulative feature set and control locations. The website groups features by function and keeps “What did each release include?” collapsed by default. [CHANGELOG](CHANGELOG.md) records all eleven releases, +c (c1) through +c11.
+See [features by area](FEATURE_LISTS.md) for the complete cumulative feature set and control locations. The website groups features by function and keeps “What did each release include?” collapsed by default. [CHANGELOG](CHANGELOG.md) records all twelve releases, +c (c1) through +c12.
 
 ## Privacy
 
@@ -145,7 +152,7 @@ The direct Watch on YouTube link is always available.
 | Image | Bytes | SHA-256 |
 | --- | ---: | --- |
 | Official 2.3.4 | 674,896 | `35ab7995ad0eca8484f3b28bc76389f10b2037dbb21a4a394e950d9329073e86` |
-| Customized 2.3.4+c11 | 785,964 | `c4e91702438dafe2161bf4498895f0f59dc8e4fe88cadec478452b7e219b89b3` |
+| Customized 2.3.4+c12 | 785,748 | `b860a1fc204097f613b53f3cb543c53652c1463d75577333b499db09e2a0d510` |
 
 ## Hosting
 
